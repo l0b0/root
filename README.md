@@ -1,4 +1,14 @@
 root
 ====
 
-System configuration
+System configuration.
+
+Test
+----
+
+    make test
+
+Install
+-------
+
+    sudo make install
