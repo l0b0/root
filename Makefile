@@ -1,12 +1,11 @@
 PUPPET = /usr/bin/puppet
-PUPPET_LINT = $(wildcard /.gem/ruby/*/bin/puppet-lint)
 VAGRANT = /usr/bin/vagrant
 
 .PHONY: all
 all: test
 
 .PHONY: test
-test: deploy lint
+test: lint
 
 .PHONY: deploy
 deploy:
@@ -14,9 +13,9 @@ deploy:
 	$(VAGRANT) provision
 
 .PHONY: lint
-lint:
-	$(PUPPET_LINT) manifests
-	$(PUPPET_LINT) modules
+lint: deploy
+	$(VAGRANT) ssh --command 'puppet-lint /vagrant/manifests'
+	$(VAGRANT) ssh --command 'puppet-lint /vagrant/modules'
 
 .PHONY: install
 install:
