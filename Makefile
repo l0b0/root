@@ -1,17 +1,29 @@
 PUPPET = /usr/bin/puppet
 PUPPET_LINT = $(wildcard /.gem/ruby/*/bin/puppet-lint)
+VAGRANT = /usr/bin/vagrant
 
 .PHONY: all
 all: test
 
 .PHONY: test
-test: lint
+test: deploy lint
+
+.PHONY: deploy
+deploy:
+	$(VAGRANT) up
 
 .PHONY: lint
 lint:
-	$(PUPPET_LINT) puppet/manifests
-	$(PUPPET_LINT) puppet/modules
+	$(PUPPET_LINT) manifests
+	$(PUPPET_LINT) modules
 
 .PHONY: install
 install:
-	$(PUPPET) apply --modulepath puppet/modules puppet/manifests/host.pp
+	$(PUPPET) apply --modulepath modules manifests/host.pp
+
+.PHONY: clean
+clean: clean-test
+
+.PHONY: clean-test
+clean-test:
+	$(VAGRANT) destroy --force
