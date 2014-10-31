@@ -16,6 +16,7 @@ deploy:
 lint: deploy
 	$(VAGRANT) ssh --command 'puppet-lint /vagrant/manifests'
 	$(VAGRANT) ssh --command 'puppet-lint /vagrant/modules'
+	$(VAGRANT) ssh --command 'firefox --version'
 
 .PHONY: install
 install:
