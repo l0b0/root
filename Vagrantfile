@@ -5,7 +5,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "modules"
-    puppet.manifest_file = "test.pp"
+    puppet.manifest_file = "host.pp"
     puppet.options = "--verbose --debug"
+    puppet.facter = {
+      "test" => true
+    }
   end
 end
