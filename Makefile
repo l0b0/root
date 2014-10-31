@@ -25,7 +25,7 @@ test-deploy: deploy
 
 .PHONY: install
 install:
-	$(PUPPET) apply --modulepath modules manifests/host.pp
+	$(PUPPET) apply --verbose --debug --modulepath modules manifests/host.pp
 
 .PHONY: clean
 clean: clean-test
