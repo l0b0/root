@@ -7,7 +7,7 @@ PUPPET_LINT_OPTIONS = --no-documentation-check
 all: test
 
 .PHONY: test
-test: lint
+test: lint test-deploy
 
 .PHONY: deploy
 deploy:
@@ -18,6 +18,9 @@ deploy:
 lint: deploy
 	$(VAGRANT) ssh --command 'puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/manifests'
 	$(VAGRANT) ssh --command 'puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
+
+.PHONY: test-deploy
+test-deploy: deploy
 	$(VAGRANT) ssh --command 'firefox --version'
 
 .PHONY: install
