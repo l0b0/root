@@ -22,6 +22,7 @@ lint: deploy
 .PHONY: test-deploy
 test-deploy: deploy
 	$(VAGRANT) ssh --command 'firefox --version'
+	$(VAGRANT) ssh --command '[[ "$$(sudo passwd --status root)" =~ ^root\ LK\ .*$$ ]]'
 
 .PHONY: install
 install:
