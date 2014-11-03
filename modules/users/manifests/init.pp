@@ -3,6 +3,6 @@ class users {
 
   user { 'root':
     password => '*',
-    require => Package['ruby-shadow'],
+    require  => Package['ruby-shadow'],
   }
 }
