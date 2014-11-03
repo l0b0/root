@@ -12,7 +12,7 @@ test: lint test-deploy
 .PHONY: deploy
 deploy:
 	$(VAGRANT) up || [ $? -eq 2 ]
-	$(VAGRANT) provision
+	$(VAGRANT) provision || [ $? -eq 2 ]
 
 .PHONY: lint
 lint: deploy
