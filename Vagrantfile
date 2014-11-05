@@ -1,10 +1,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "CentOS_6.5_x64"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box"
+  config.vm.box = "terrywang/archlinux"
 
-  config.vm.network :private_network, ip: "192.168.100.100"
+  config.vm.provision "shell", inline: "pacman --sync --needed --refresh --noconfirm puppet"
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "modules"
