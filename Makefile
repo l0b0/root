@@ -4,6 +4,8 @@ VAGRANT = /usr/bin/vagrant
 
 PUPPET_LINT_OPTIONS = --no-documentation-check
 
+vm_ip = 192.168.100.100
+
 .PHONY: all
 all: test
 
@@ -25,7 +27,7 @@ test-deploy: test-firefox-install test-root-account-lock test-ping
 
 .PHONY: test-ping
 test-ping: deploy
-	$(PING) -n -c 1 192.168.100.100
+	$(PING) -n -c 1 $(vm_ip)
 
 .PHONY: test-root-account-lock
 test-root-account-lock: deploy
