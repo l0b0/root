@@ -1,3 +1,4 @@
+PING = /usr/bin/ping
 PUPPET = /usr/bin/puppet
 VAGRANT = /usr/bin/vagrant
 
@@ -20,7 +21,11 @@ lint: deploy
 	$(VAGRANT) ssh --command 'puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock
+test-deploy: test-firefox-install test-root-account-lock test-ping
+
+.PHONY: test-ping
+test-ping: deploy
+	$(PING) -n -c 1 192.168.100.100
 
 .PHONY: test-root-account-lock
 test-root-account-lock: deploy
