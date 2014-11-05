@@ -9,12 +9,22 @@ System configuration. It currently does the following:
 Test
 ----
 
+Dependencies:
+
+- `make`
+- `puppet`
+- `vagrant`
+- `virtualbox`
+
     make test
 
 Install
 -------
 
-    sudo make install
-    sudo make install
+Dependencies:
 
-Yes, twice, [unless you already have `ruby-shadow` installed](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied).
+- `make`
+- `puppet`
+- [`ruby-shadow`](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied)
+
+    sudo make install
