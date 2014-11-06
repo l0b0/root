@@ -5,6 +5,7 @@ System configuration. It currently does the following:
 
 - [Installs an excellent browser](https://www.mozilla.org/firefox)
 - [Disables the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
+- [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 
 Test
 ----
