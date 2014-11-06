@@ -23,11 +23,15 @@ lint: deploy
 	$(VAGRANT) ssh --command 'puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock
+test-deploy: test-firefox-install test-root-account-lock test-ping
+
+.PHONY: test-ping
+test-ping: deploy
+	$(PING) -n -c 1 $(vm_ip)
 
 .PHONY: test-root-account-lock
 test-root-account-lock: deploy
-	$(VAGRANT) ssh --command '[[ "$$(sudo passwd --status root)" =~ ^root\ L\ .*$$ ]]'
+	$(VAGRANT) ssh --command '[[ "$$(sudo passwd --status root)" =~ ^root\ LK\ .*$$ ]]'
 
 .PHONY: test-firefox-install
 test-firefox-install: deploy
