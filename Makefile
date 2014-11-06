@@ -4,8 +4,6 @@ VAGRANT = /usr/bin/vagrant
 
 PUPPET_LINT_OPTIONS = --no-documentation-check
 
-vm_ip = 192.168.100.100
-
 .PHONY: all
 all: test
 
