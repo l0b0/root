@@ -6,6 +6,8 @@ System configuration. It currently does the following:
 - [Installs an excellent browser](https://www.mozilla.org/firefox)
 - [Disables the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
 - [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
+- [Disables root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/?PageSpeed=noscript)
+- Enables SSH login only for members of the 'users' group
 
 Test
 ----
