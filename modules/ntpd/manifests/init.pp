@@ -1,6 +1,6 @@
 class ntpd {
   package { 'ntp':
-    ensure => present,
+    ensure => installed,
   }->
   service { 'ntpd':
     ensure => running,

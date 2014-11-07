@@ -1,6 +1,6 @@
 class tor {
   package { 'torsocks':
-    ensure => present,
+    ensure => installed,
   }->
   service { 'tor':
     ensure => running,
