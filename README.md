@@ -13,6 +13,8 @@ System configuration. It currently does the following:
 Test
 ----
 
+    make test
+
 Dependencies:
 
 - `make`
@@ -20,19 +22,13 @@ Dependencies:
 - `vagrant`
 - `virtualbox`
 
-<!-- -->
-
-    make test
-
 Install
 -------
+
+    sudo make install
 
 Dependencies:
 
 - `make`
 - `puppet`
 - [`ruby-shadow`](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied)
-
-<!-- -->
-
-    sudo make install
