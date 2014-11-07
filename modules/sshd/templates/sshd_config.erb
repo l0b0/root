@@ -2,7 +2,7 @@
 AuthorizedKeysFile .ssh/authorized_keys
 ChallengeResponseAuthentication no
 PasswordAuthentication no
-PermitRootLogin <% if @test %>yes<% else %>no<% end %>
+PermitRootLogin no
 PrintMotd no
 Subsystem sftp /usr/lib/ssh/sftp-server
 UsePAM yes
