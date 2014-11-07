@@ -10,6 +10,32 @@ vm_user = vagrant
 vm_ip = 127.0.0.1
 vm_port = 2222
 
+vm_test_date_format = %Y-%m-%d
+define ntpd_test
+set -o errexit
+vm_test_date=2000-01-01
+sudo systemctl stop ntpd.service
+sudo systemctl stop vboxservice.service
+sudo timedatectl set-timezone UTC
+sudo timedatectl set-time $$vm_test_date
+[ "$$(date --utc +$(vm_test_date_format))" = "$$vm_test_date" ]
+sudo systemctl start ntpd.service
+tries=30
+while true
+do
+    if [ "$$(date --utc +$(vm_test_date_format))" = "$(shell date +$(vm_test_date_format))" ]
+    then
+        break
+    else
+        sleep 1s
+        echo $$tries
+        let --tries
+    fi
+done
+sudo systemctl start vboxservice.service
+endef
+export ntpd_test
+
 .PHONY: all
 all: test
 
@@ -27,7 +53,12 @@ lint: deploy
 	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor
+test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd
+
+.PHONY: test-ntpd
+test-ntpd:
+	echo "$$ntpd_test"
+	$(VAGRANT) ssh <<< "$$ntpd_test"
 
 .PHONY: test-tor
 test-tor:

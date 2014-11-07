@@ -9,6 +9,7 @@ Automated system configuration setup:
 - [Disables root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/?PageSpeed=noscript)
 - Enables SSH login only for members of the 'users' group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
+- [Keep time in sync](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 
