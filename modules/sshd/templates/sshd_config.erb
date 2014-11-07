@@ -1,0 +1,10 @@
+<% if @test %>AllowUsers vagrant<% else %>AllowGroups users<% end %>
+AuthorizedKeysFile .ssh/authorized_keys
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+PermitRootLogin <% if @test %>yes<% else %>no<% end %>
+PrintMotd no
+Subsystem sftp /usr/lib/ssh/sftp-server
+UsePAM yes
+UsePrivilegeSeparation sandbox
+X11Forwarding yes
