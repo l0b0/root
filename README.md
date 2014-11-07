@@ -8,6 +8,7 @@ System configuration. It currently does the following:
 - [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 - [Disables root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/?PageSpeed=noscript)
 - Enables SSH login only for members of the 'users' group
+- [Enable Tor](https://wiki.archlinux.org/index.php/tor)
 
 Test
 ----

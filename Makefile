@@ -27,7 +27,11 @@ lint: deploy
 	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle
+test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor
+
+.PHONY: test-tor
+test-tor:
+	$(VAGRANT) ssh --command 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-ssh-throttle
 test-ssh-throttle: deploy
