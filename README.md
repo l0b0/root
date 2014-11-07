@@ -1,7 +1,7 @@
 root
 ====
 
-System configuration. It currently does the following:
+Automated system configuration setup:
 
 - [Installs an excellent browser](https://www.mozilla.org/firefox)
 - [Disables the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
@@ -9,6 +9,8 @@ System configuration. It currently does the following:
 - [Disables root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/?PageSpeed=noscript)
 - Enables SSH login only for members of the 'users' group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
+
+Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 
 Test
 ----
