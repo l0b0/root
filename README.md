@@ -20,6 +20,8 @@ Dependencies:
 - `vagrant`
 - `virtualbox`
 
+<!-- -->
+
     make test
 
 Install
@@ -30,5 +32,7 @@ Dependencies:
 - `make`
 - `puppet`
 - [`ruby-shadow`](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied)
+
+<!-- -->
 
     sudo make install
