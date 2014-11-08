@@ -56,12 +56,12 @@ lint: deploy
 test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd
 
 .PHONY: test-ntpd
-test-ntpd:
+test-ntpd: deploy
 	echo "$$ntpd_test"
 	$(VAGRANT) ssh <<< "$$ntpd_test"
 
 .PHONY: test-tor
-test-tor:
+test-tor: deploy
 	$(VAGRANT) ssh --command 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-ssh-throttle
