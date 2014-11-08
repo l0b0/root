@@ -51,6 +51,7 @@ deploy:
 lint: deploy
 	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/manifests'
 	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
+	$(VAGRANT) ssh --command '/vagrant/test/reek.sh'
 
 .PHONY: test-deploy
 test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd test-battery-indicator
