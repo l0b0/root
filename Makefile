@@ -65,7 +65,7 @@ test-password-manager: deploy
 	$(VAGRANT) ssh --command 'which keepassx'
 
 .PHONY: test-battery-indicator
-test-battery-indicator:
+test-battery-indicator: deploy
 	# TODO: Use --version after <https://github.com/valr/cbatticon/issues/15> is fixed
 	if grep -q Battery /sys/class/power_supply/*/type; then \
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
