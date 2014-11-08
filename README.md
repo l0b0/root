@@ -37,3 +37,18 @@ Dependencies:
 - `make`
 - `puppet`
 - [`ruby-shadow`](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied)
+
+Bugs
+----
+
+Please submit bugs using the [project issue tracker](https://github.com/l0b0/root/issues).
+
+License
+-------
+
+[GPL v3 or later](LICENSE)
+
+Copyright
+---------
+
+© 2014 Victor Engmark
