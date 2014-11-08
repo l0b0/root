@@ -1,3 +1,4 @@
+include battery_indicator
 include browser
 include firewall
 include fonts

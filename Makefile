@@ -53,7 +53,14 @@ lint: deploy
 	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd
+test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd test-battery-indicator
+
+.PHONY: test-battery-indicator
+test-battery-indicator:
+	# TODO: Use --version after <https://github.com/valr/cbatticon/issues/15> is fixed
+	if grep -q Battery /sys/class/power_supply/*/type; then \
+		$(VAGRANT) ssh --command 'cbatticon --help'; \
+	fi
 
 .PHONY: test-ntpd
 test-ntpd: deploy

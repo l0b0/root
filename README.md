@@ -11,6 +11,7 @@ Automated system configuration setup:
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
 - [Keep time in sync](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Installs some nice fonts
+- Installs a battery indicator if necessary
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 
