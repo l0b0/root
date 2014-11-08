@@ -4,8 +4,6 @@ SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
 VAGRANT = /usr/bin/vagrant
 
-PUPPET_LINT_OPTIONS = --no-documentation-check
-
 vm_user = vagrant
 vm_ip = 127.0.0.1
 vm_port = 2222
@@ -49,8 +47,7 @@ deploy:
 
 .PHONY: lint
 lint: deploy
-	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/manifests'
-	$(VAGRANT) ssh --command '~/.gem/ruby/*/gems/puppet-lint-*/bin/puppet-lint $(PUPPET_LINT_OPTIONS) /vagrant/modules'
+	$(VAGRANT) ssh --command '/vagrant/test/puppet-lint.sh'
 	$(VAGRANT) ssh --command '/vagrant/test/reek.sh'
 
 .PHONY: test-deploy
