@@ -3,6 +3,7 @@ include browser
 include firewall
 include fonts
 include ntpd
+include password_manager
 include sshd
 include tor
 include users

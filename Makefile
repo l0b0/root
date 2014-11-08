@@ -51,7 +51,11 @@ lint: deploy
 	$(VAGRANT) ssh --command '/vagrant/test/reek.sh'
 
 .PHONY: test-deploy
-test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd test-battery-indicator
+test-deploy: test-firefox-install test-root-account-lock test-ssh-throttle test-tor test-ntpd test-battery-indicator test-password-manager
+
+.PHONY: test-password-manager
+test-password-manager: deploy
+	$(VAGRANT) ssh --command 'which keepassx'
 
 .PHONY: test-battery-indicator
 test-battery-indicator:
