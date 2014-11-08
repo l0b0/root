@@ -3,7 +3,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "terrywang/archlinux"
 
-  config.vm.provision "shell", path: "test/install-puppet.sh"
+  config.vm.provision "shell", path: "test/install-dependencies.sh"
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "modules"
