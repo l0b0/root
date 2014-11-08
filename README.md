@@ -7,7 +7,7 @@ Automated system configuration setup:
 - [Disable the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
 - [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 - [Disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
-- Enable SSH login only for members of the 'users' group
+- Enable SSH login only for members of the ‘users’ group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Install some nice fonts
