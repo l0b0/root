@@ -12,7 +12,7 @@ Automated system configuration setup:
 - Install packages:
     - [Browser](https://www.mozilla.org/firefox)
     - Fonts
-    - Battery indicator (if necessary)
+    - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Password manager](https://www.keepassx.org/)
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
