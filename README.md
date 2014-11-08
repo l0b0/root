@@ -11,9 +11,9 @@ Automated system configuration setup:
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Install packages:
     - [Browser](https://www.mozilla.org/firefox)
-    - Fonts
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Password manager](https://www.keepassx.org/)
+    - Fonts
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 
