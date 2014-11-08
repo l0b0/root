@@ -3,15 +3,17 @@ root
 
 Automated system configuration setup:
 
-- [Install an excellent browser](https://www.mozilla.org/firefox)
 - [Disable the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
 - [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 - [Disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
 - Enable SSH login only for members of the ‘users’ group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
-- Install some nice fonts
-- Install a battery indicator if necessary
+- Install packages:
+    - [Browser](https://www.mozilla.org/firefox)
+    - Fonts
+    - Battery indicator (if necessary)
+    - [Password manager](https://www.keepassx.org/)
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 
