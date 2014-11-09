@@ -1,6 +1,6 @@
 class battery_indicator {
   $ensure = str2bool($::has_battery) ? {
-    true    => installed,
+    true    => latest,
     default => absent,
   }
 

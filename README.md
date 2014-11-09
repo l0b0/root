@@ -9,7 +9,7 @@ Automated system configuration setup:
 - Enable SSH login only for members of the ‘users’ group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
-- Install packages:
+- Install latest version of packages:
     - [Browser](https://www.mozilla.org/firefox)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Password manager](https://www.keepassx.org/)
