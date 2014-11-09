@@ -26,7 +26,6 @@ Test
 Dependencies:
 
 - `make`
-- `puppet`
 - `vagrant`
 - `virtualbox`
 
