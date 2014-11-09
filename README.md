@@ -13,6 +13,7 @@ Automated system configuration setup:
     - [Browser](https://www.mozilla.org/firefox)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Password manager](https://www.keepassx.org/)
+    - [vCard validator](https://github.com/l0b0/vcard/)
     - Fonts
 
 Any of these can be disabled by removing the appropriate line in `manifests/host.pp`. Some of them are grouped as a single entry in that file, but it should be self-explanatory.

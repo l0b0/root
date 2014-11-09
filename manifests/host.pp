@@ -7,3 +7,4 @@ include password_manager
 include sshd
 include tor
 include users
+include vcard_validator

@@ -58,7 +58,12 @@ test-deploy: \
 	test-password-manager \
 	test-root-account-lock \
 	test-ssh-throttle \
-	test-tor
+	test-tor \
+	test-vcard-validator
+
+.PHONY: test-vcard-validator
+test-vcard-validator: deploy
+	$(VAGRANT) ssh --command 'vcard --help'
 
 .PHONY: test-password-manager
 test-password-manager: deploy
