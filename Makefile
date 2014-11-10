@@ -47,8 +47,7 @@ deploy:
 
 .PHONY: lint
 lint: deploy
-	$(VAGRANT) ssh --command '/vagrant/test/puppet-lint.sh'
-	$(VAGRANT) ssh --command '/vagrant/test/reek.sh'
+	$(VAGRANT) ssh --command '/vagrant/test/lint.sh'
 
 .PHONY: test-deploy
 test-deploy: \
