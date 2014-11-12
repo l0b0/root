@@ -41,12 +41,12 @@ all: test
 test: lint test-deploy
 
 .PHONY: deploy
-deploy:
+deploy: $(VAGRANT)
 	$(VAGRANT) up --no-provision || [ $$? -eq 2 ]
 	$(VAGRANT) provision || [ $$? -eq 2 ]
 
 .PHONY: lint
-lint: deploy
+lint: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command '/vagrant/test/lint.sh'
 
 .PHONY: test-deploy
@@ -61,30 +61,30 @@ test-deploy: \
 	test-vcard-validator
 
 .PHONY: test-vcard-validator
-test-vcard-validator: deploy
+test-vcard-validator: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'vcard --help'
 
 .PHONY: test-password-manager
-test-password-manager: deploy
+test-password-manager: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which keepassx'
 
 .PHONY: test-battery-indicator
-test-battery-indicator: deploy
+test-battery-indicator: deploy $(GREP) $(VAGRANT)
 	# TODO: Use --version after <https://github.com/valr/cbatticon/issues/15> is fixed
 	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
 
 .PHONY: test-ntpd
-test-ntpd: deploy
+test-ntpd: deploy $(VAGRANT)
 	$(VAGRANT) ssh <<< "$$ntpd_test"
 
 .PHONY: test-tor
-test-tor: deploy
+test-tor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-ssh-throttle
-test-ssh-throttle: deploy
+test-ssh-throttle: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(SLEEP) 31s # ensure aborted runs don't sabotage subsequent runs
 	for i in 1 2 3 4 5 6; do \
 		! $(SSH) -p $(vm_port) -o ConnectTimeout=1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no $(vm_user)@$(vm_ip) || exit 1; \
@@ -94,20 +94,20 @@ test-ssh-throttle: deploy
 	$(VAGRANT) ssh --command 'exit'
 
 .PHONY: test-root-account-lock
-test-root-account-lock: deploy
+test-root-account-lock: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command '[[ "$$(sudo passwd --status root)" =~ ^root\ L\ .*$$ ]]'
 
 .PHONY: test-firefox-install
-test-firefox-install: deploy
+test-firefox-install: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'firefox --version'
 
 .PHONY: install
-install:
+install: $(PUPPET)
 	$(PUPPET) apply --verbose --debug --modulepath modules manifests/host.pp
 
 .PHONY: clean
 clean: clean-test
 
 .PHONY: clean-test
-clean-test:
+clean-test: $(VAGRANT)
 	$(VAGRANT) destroy --force
