@@ -11,7 +11,7 @@ vm_port = 2222
 
 vm_test_date_format = %Y-%m-%d
 define ntpd_test
-set -o errexit
+set -o errexit -o noclobber -o nounset -o xtrace
 vm_test_date=2000-01-01
 sudo systemctl stop ntpd.service
 sudo systemctl stop vboxservice.service
@@ -27,7 +27,6 @@ do
         break
     else
         sleep 1s
-        echo $$tries
         let --tries
     fi
 done
@@ -78,7 +77,6 @@ test-battery-indicator: deploy
 
 .PHONY: test-ntpd
 test-ntpd: deploy
-	echo "$$ntpd_test"
 	$(VAGRANT) ssh <<< "$$ntpd_test"
 
 .PHONY: test-tor
