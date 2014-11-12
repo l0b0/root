@@ -1,3 +1,4 @@
+GREP = /usr/bin/grep
 PING = /usr/bin/ping
 PUPPET = /usr/bin/puppet
 SLEEP = /usr/bin/sleep
@@ -71,7 +72,7 @@ test-password-manager: deploy
 .PHONY: test-battery-indicator
 test-battery-indicator: deploy
 	# TODO: Use --version after <https://github.com/valr/cbatticon/issues/15> is fixed
-	if grep -q Battery /sys/class/power_supply/*/type; then \
+	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
 
