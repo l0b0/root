@@ -52,21 +52,13 @@ lint: deploy $(VAGRANT)
 .PHONY: test-deploy
 test-deploy: \
 	test-battery-indicator \
-	test-firefox-install \
+	test-browser \
+	test-firewall \
 	test-ntpd \
 	test-password-manager \
-	test-root-account-lock \
-	test-ssh-throttle \
 	test-tor \
+	test-users \
 	test-vcard-validator
-
-.PHONY: test-vcard-validator
-test-vcard-validator: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'vcard --help'
-
-.PHONY: test-password-manager
-test-password-manager: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'which keepassx'
 
 .PHONY: test-battery-indicator
 test-battery-indicator: deploy $(GREP) $(VAGRANT)
@@ -75,16 +67,12 @@ test-battery-indicator: deploy $(GREP) $(VAGRANT)
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
 
-.PHONY: test-ntpd
-test-ntpd: deploy $(VAGRANT)
-	$(VAGRANT) ssh <<< "$$ntpd_test"
+.PHONY: test-browser
+test-browser: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'firefox --version'
 
-.PHONY: test-tor
-test-tor: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
-
-.PHONY: test-ssh-throttle
-test-ssh-throttle: deploy $(SLEEP) $(SSH) $(VAGRANT)
+.PHONY: test-firewall
+test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(SLEEP) 31s # ensure aborted runs don't sabotage subsequent runs
 	for i in 1 2 3 4 5 6; do \
 		! $(SSH) -p $(vm_port) -o ConnectTimeout=1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no $(vm_user)@$(vm_ip) || exit 1; \
@@ -93,13 +81,25 @@ test-ssh-throttle: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(SLEEP) 31s
 	$(VAGRANT) ssh --command 'exit'
 
-.PHONY: test-root-account-lock
-test-root-account-lock: deploy $(VAGRANT)
+.PHONY: test-ntpd
+test-ntpd: deploy $(VAGRANT)
+	$(VAGRANT) ssh <<< "$$ntpd_test"
+
+.PHONY: test-password-manager
+test-password-manager: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'which keepassx'
+
+.PHONY: test-tor
+test-tor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
+
+.PHONY: test-users
+test-users: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command '[[ "$$(sudo passwd --status root)" =~ ^root\ L\ .*$$ ]]'
 
-.PHONY: test-firefox-install
-test-firefox-install: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'firefox --version'
+.PHONY: test-vcard-validator
+test-vcard-validator: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'vcard --help'
 
 .PHONY: install
 install: $(PUPPET)
