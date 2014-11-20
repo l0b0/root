@@ -178,6 +178,7 @@ test-screen-locker: deploy $(VAGRANT)
 .PHONY: test-spell-checker
 test-spell-checker: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'aspell --version'
+	$(VAGRANT) ssh --command 'hunspell --version'
 
 .PHONY: test-sshd
 test-sshd: deploy $(VAGRANT)
