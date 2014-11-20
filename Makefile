@@ -52,13 +52,32 @@ lint: deploy $(VAGRANT)
 .PHONY: test-deploy
 test-deploy: \
 	test-battery-indicator \
+	test-bittorrent \
 	test-browser \
+	test-calculator \
+	test-dvcs \
 	test-firewall \
+	test-flash \
+	test-fonts \
+	test-graph-visualizer \
+	test-image-editor \
+	test-image-viewer \
+	test-image-viewer-cli \
+	test-login-manager \
+	test-media-player \
 	test-ntpd \
 	test-password-manager \
+	test-photo-editor \
+	test-printing-system \
+	test-scanner \
+	test-screen-grabber \
+	test-screen-locker \
+	test-spell-checker \
+	test-sshd \
 	test-tor \
 	test-users \
-	test-vcard-validator
+	test-vcard-validator \
+	test-window-manager
 
 .PHONY: test-battery-indicator
 test-battery-indicator: deploy $(GREP) $(VAGRANT)
@@ -67,9 +86,21 @@ test-battery-indicator: deploy $(GREP) $(VAGRANT)
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
 
+.PHONY: test-bittorrent
+test-bittorrent: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'deluge --version'
+
 .PHONY: test-browser
 test-browser: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'firefox --version'
+
+.PHONY: test-calculator
+test-calculator: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'test "$$(echo 2+2 | bc)" -eq 4'
+
+.PHONY: test-dvcs
+test-dvcs: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'git --version'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
@@ -81,6 +112,38 @@ test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(SLEEP) 31s
 	$(VAGRANT) ssh --command 'exit'
 
+.PHONY: test-flash
+test-flash: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'which flash-player-properties'
+
+.PHONY: test-fonts
+test-fonts: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'fc-list : family | grep "Liberation"'
+
+.PHONY: test-graph-visualizer
+test-graph-visualizer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'dot -V'
+
+.PHONY: test-image-editor
+test-image-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'gimp --version'
+
+.PHONY: test-image-viewer
+test-image-viewer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'eog --version'
+
+.PHONY: test-image-viewer-cli
+test-image-viewer-cli: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'feh --version'
+
+.PHONY: test-login-manager
+test-login-manager: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'slim -v'
+
+.PHONY: test-media-player
+test-media-player: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'vlc --version'
+
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
 	$(VAGRANT) ssh <<< "$$ntpd_test"
@@ -88,6 +151,36 @@ test-ntpd: deploy $(VAGRANT)
 .PHONY: test-password-manager
 test-password-manager: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which keepassx'
+
+.PHONY: test-photo-editor
+test-photo-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'digikam --version'
+
+.PHONY: test-printing-system
+test-printing-system: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'cups-config --version'
+
+.PHONY: test-scanner
+test-scanner: deploy $(VAGRANT)
+	# TODO: Use --version after <https://bugs.launchpad.net/simple-scan/+bug/1394385> is fixed
+	$(VAGRANT) ssh --command 'which simple-scan'
+
+.PHONY: test-screen-grabber
+test-screen-grabber: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'scrot --version'
+
+.PHONY: test-screen-locker
+test-screen-locker: deploy $(VAGRANT)
+	# TODO: Use -v once it returns exit code 0
+	$(VAGRANT) ssh --command 'which slock'
+
+.PHONY: test-spell-checker
+test-spell-checker: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'aspell --version'
+
+.PHONY: test-sshd
+test-sshd: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'systemctl status sshd'
 
 .PHONY: test-tor
 test-tor: deploy $(VAGRANT)
@@ -100,6 +193,10 @@ test-users: deploy $(VAGRANT)
 .PHONY: test-vcard-validator
 test-vcard-validator: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'vcard --help'
+
+.PHONY: test-window-manager
+test-window-manager: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'awesome --version'
 
 .PHONY: install
 install: $(PUPPET)
