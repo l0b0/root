@@ -72,6 +72,7 @@ test-deploy: \
 	test-scanner \
 	test-screen-grabber \
 	test-screen-locker \
+	test-shell \
 	test-spell-checker \
 	test-sshd \
 	test-tor \
@@ -174,6 +175,10 @@ test-screen-grabber: deploy $(VAGRANT)
 test-screen-locker: deploy $(VAGRANT)
 	# TODO: Use -v once it returns exit code 0
 	$(VAGRANT) ssh --command 'which slock'
+
+.PHONY: test-shell
+test-shell: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'bash --version'
 
 .PHONY: test-spell-checker
 test-spell-checker: deploy $(VAGRANT)

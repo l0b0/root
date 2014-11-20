@@ -19,6 +19,7 @@ include printing_system
 include scanner
 include screen_grabber
 include screen_locker
+include shell
 include spell_checker
 include sshd
 include tor
