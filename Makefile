@@ -52,6 +52,7 @@ lint: deploy $(VAGRANT)
 .PHONY: test-deploy
 test-deploy: \
 	test-battery-indicator \
+	test-bitmap-image-editor \
 	test-bittorrent \
 	test-browser \
 	test-calculator \
@@ -60,7 +61,6 @@ test-deploy: \
 	test-flash \
 	test-fonts \
 	test-graph-visualizer \
-	test-image-editor \
 	test-image-viewer \
 	test-image-viewer-cli \
 	test-login-manager \
@@ -77,6 +77,7 @@ test-deploy: \
 	test-tor \
 	test-users \
 	test-vcard-validator \
+	test-vector-image-editor \
 	test-window-manager
 
 .PHONY: test-battery-indicator
@@ -85,6 +86,10 @@ test-battery-indicator: deploy $(GREP) $(VAGRANT)
 	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
 		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
+
+.PHONY: test-bitmap-image-editor
+test-bitmap-image-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'gimp --version'
 
 .PHONY: test-bittorrent
 test-bittorrent: deploy $(VAGRANT)
@@ -123,10 +128,6 @@ test-fonts: deploy $(VAGRANT)
 .PHONY: test-graph-visualizer
 test-graph-visualizer: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'dot -V'
-
-.PHONY: test-image-editor
-test-image-editor: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'gimp --version'
 
 .PHONY: test-image-viewer
 test-image-viewer: deploy $(VAGRANT)
@@ -193,6 +194,10 @@ test-users: deploy $(VAGRANT)
 .PHONY: test-vcard-validator
 test-vcard-validator: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'vcard --help'
+
+.PHONY: test-vector-image-editor
+test-vector-image-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'inkscape --version'
 
 .PHONY: test-window-manager
 test-window-manager: deploy $(VAGRANT)

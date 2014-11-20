@@ -1,4 +1,5 @@
 include battery_indicator
+include bitmap_image_editor
 include bittorrent
 include browser
 include calculator
@@ -7,7 +8,6 @@ include firewall
 include flash
 include fonts
 include graph_visualizer
-include image_editor
 include image_viewer
 include image_viewer_cli
 include login_manager
@@ -24,4 +24,5 @@ include sshd
 include tor
 include users
 include vcard_validator
+include vector_image_editor
 include window_manager
