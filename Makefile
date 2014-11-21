@@ -67,6 +67,7 @@ test-deploy: \
 	test-media-player \
 	test-ntpd \
 	test-password-manager \
+	test-pdf-editor \
 	test-photo-editor \
 	test-printing-system \
 	test-scanner \
@@ -154,6 +155,10 @@ test-ntpd: deploy $(VAGRANT)
 .PHONY: test-password-manager
 test-password-manager: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which keepassx'
+
+.PHONY: test-pdf-editor
+test-pdf-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'which xournal'
 
 .PHONY: test-photo-editor
 test-photo-editor: deploy $(VAGRANT)

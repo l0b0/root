@@ -14,6 +14,7 @@ include login_manager
 include media_player
 include ntpd
 include password_manager
+include pdf_editor
 include photo_editor
 include printing_system
 include scanner
