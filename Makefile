@@ -79,6 +79,7 @@ test-deploy: \
 	test-users \
 	test-vcard-validator \
 	test-vector-image-editor \
+	test-video-downloader \
 	test-window-manager
 
 .PHONY: test-battery-indicator
@@ -204,6 +205,10 @@ test-vcard-validator: deploy $(VAGRANT)
 .PHONY: test-vector-image-editor
 test-vector-image-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'inkscape --version'
+
+.PHONY: test-video-downloader
+test-video-downloader: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'youtube-dl --version'
 
 .PHONY: test-window-manager
 test-window-manager: deploy $(VAGRANT)
