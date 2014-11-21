@@ -53,14 +53,14 @@ lint: deploy $(VAGRANT)
 test-deploy: \
 	test-battery-indicator \
 	test-bitmap-image-editor \
-	test-bittorrent \
+	test-bittorrent-client \
 	test-browser \
 	test-calculator \
 	test-dvcs \
 	test-firewall \
-	test-flash \
+	test-flash-plugin \
 	test-fonts \
-	test-graph-visualizer \
+	test-graph-editor \
 	test-image-viewer \
 	test-image-viewer-cli \
 	test-login-manager \
@@ -92,8 +92,8 @@ test-battery-indicator: deploy $(GREP) $(VAGRANT)
 test-bitmap-image-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'gimp --version'
 
-.PHONY: test-bittorrent
-test-bittorrent: deploy $(VAGRANT)
+.PHONY: test-bittorrent-client
+test-bittorrent-client: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'deluge --version'
 
 .PHONY: test-browser
@@ -118,16 +118,16 @@ test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(SLEEP) 31s
 	$(VAGRANT) ssh --command 'exit'
 
-.PHONY: test-flash
-test-flash: deploy $(VAGRANT)
+.PHONY: test-flash-plugin
+test-flash-plugin: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which flash-player-properties'
 
 .PHONY: test-fonts
 test-fonts: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'fc-list : family | grep "Liberation"'
 
-.PHONY: test-graph-visualizer
-test-graph-visualizer: deploy $(VAGRANT)
+.PHONY: test-graph-editor
+test-graph-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'dot -V'
 
 .PHONY: test-image-viewer

@@ -1,4 +1,4 @@
-class flash {
+class flash_plugin {
   package { 'flashplugin':
     ensure => latest,
   }

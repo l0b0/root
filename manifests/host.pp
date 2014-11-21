@@ -1,13 +1,13 @@
 include battery_indicator
 include bitmap_image_editor
-include bittorrent
+include bittorrent_client
 include browser
 include calculator
 include dvcs
 include firewall
-include flash
+include flash_plugin
 include fonts
-include graph_visualizer
+include graph_editor
 include image_viewer
 include image_viewer_cli
 include login_manager

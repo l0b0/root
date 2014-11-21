@@ -1,4 +1,4 @@
-class graph_visualizer {
+class graph_editor {
   package { 'graphviz':
     ensure => latest,
   }
