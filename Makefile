@@ -76,6 +76,7 @@ test-deploy: \
 	test-shell \
 	test-spell-checker \
 	test-sshd \
+	test-terminal \
 	test-tor \
 	test-users \
 	test-vcard-validator \
@@ -194,6 +195,10 @@ test-spell-checker: deploy $(VAGRANT)
 .PHONY: test-sshd
 test-sshd: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'systemctl status sshd'
+
+.PHONY: test-terminal
+test-terminal: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'xterm -version'
 
 .PHONY: test-tor
 test-tor: deploy $(VAGRANT)

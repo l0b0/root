@@ -23,6 +23,7 @@ include screen_locker
 include shell
 include spell_checker
 include sshd
+include terminal
 include tor
 include users
 include vcard_validator
