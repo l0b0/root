@@ -14,6 +14,7 @@ include image_viewer_cli
 include login_manager
 include media_player
 include ntpd
+include panorama_editor
 include password_manager
 include pdf_editor
 include photo_editor

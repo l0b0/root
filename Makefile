@@ -67,6 +67,7 @@ test-deploy: \
 	test-login-manager \
 	test-media-player \
 	test-ntpd \
+	test-panorama-editor \
 	test-password-manager \
 	test-pdf-editor \
 	test-photo-editor \
@@ -158,6 +159,10 @@ test-media-player: deploy $(VAGRANT)
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
 	$(VAGRANT) ssh <<< "$$ntpd_test"
+
+.PHONY: test-panorama-editor
+test-panorama-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'which hugin'
 
 .PHONY: test-password-manager
 test-password-manager: deploy $(VAGRANT)
