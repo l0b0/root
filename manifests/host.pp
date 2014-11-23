@@ -4,6 +4,7 @@ include bittorrent_client
 include browser
 include cad_editor
 include calculator
+include diagram_editor
 include dvcs
 include firewall
 include flash_plugin

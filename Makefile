@@ -57,6 +57,7 @@ test-deploy: \
 	test-browser \
 	test-cad-editor \
 	test-calculator \
+	test-diagram-editor \
 	test-dvcs \
 	test-firewall \
 	test-flash-plugin \
@@ -113,6 +114,10 @@ test-cad-editor: deploy $(VAGRANT)
 .PHONY: test-calculator
 test-calculator: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'test "$$(echo 2+2 | bc)" -eq 4'
+
+.PHONY: test-diagram-editor
+test-diagram-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'dia --version'
 
 .PHONY: test-dvcs
 test-dvcs: deploy $(VAGRANT)
