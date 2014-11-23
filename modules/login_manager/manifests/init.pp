@@ -1,4 +1,6 @@
 class login_manager {
+  include display_server
+
   package { 'slim':
     ensure => latest,
   }->

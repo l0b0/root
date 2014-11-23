@@ -12,7 +12,6 @@ include fonts
 include graph_editor
 include image_viewer
 include image_viewer_cli
-include login_manager
 include media_player
 include ntpd
 include panorama_editor

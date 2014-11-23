@@ -1,4 +1,6 @@
 class fonts {
+  include display_server
+
   package {
     [
       'adobe-source-code-pro-fonts',
