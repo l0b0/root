@@ -55,6 +55,7 @@ test-deploy: \
 	test-bitmap-image-editor \
 	test-bittorrent-client \
 	test-browser \
+	test-cad-editor \
 	test-calculator \
 	test-dvcs \
 	test-firewall \
@@ -102,6 +103,11 @@ test-bittorrent-client: deploy $(VAGRANT)
 .PHONY: test-browser
 test-browser: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'firefox --version'
+
+.PHONY: test-cad-editor
+test-cad-editor: deploy $(VAGRANT)
+	# TODO: Use --version after <https://github.com/openscad/openscad/issues/1028> is fixed
+	$(VAGRANT) ssh --command 'which openscad'
 
 .PHONY: test-calculator
 test-calculator: deploy $(VAGRANT)

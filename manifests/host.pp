@@ -2,6 +2,7 @@ include battery_indicator
 include bitmap_image_editor
 include bittorrent_client
 include browser
+include cad_editor
 include calculator
 include dvcs
 include firewall
