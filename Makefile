@@ -58,6 +58,7 @@ test-deploy: \
 	test-cad-editor \
 	test-calculator \
 	test-diagram-editor \
+	test-diff-gui \
 	test-dvcs \
 	test-firewall \
 	test-flash-plugin \
@@ -67,7 +68,9 @@ test-deploy: \
 	test-image-viewer-cli \
 	test-login-manager \
 	test-media-player \
+	test-newline-converter \
 	test-ntpd \
+	test-open-files-lister \
 	test-panorama-editor \
 	test-password-manager \
 	test-pdf-editor \
@@ -80,6 +83,7 @@ test-deploy: \
 	test-shell \
 	test-spell-checker \
 	test-sshd \
+	test-system-call-tracer \
 	test-terminal \
 	test-text-editor \
 	test-tor \
@@ -120,6 +124,10 @@ test-calculator: deploy $(VAGRANT)
 .PHONY: test-diagram-editor
 test-diagram-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'dia --version'
+
+.PHONY: test-diff-gui
+test-diff-gui: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'which meld'
 
 .PHONY: test-dvcs
 test-dvcs: deploy $(VAGRANT)
@@ -163,9 +171,17 @@ test-login-manager: deploy $(VAGRANT)
 test-media-player: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'vlc --version'
 
+.PHONY: test-newline-converter
+test-newline-converter: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'dos2unix --version'
+
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
 	$(VAGRANT) ssh <<< "$$ntpd_test"
+
+.PHONY: test-open-files-lister
+test-open-files-lister: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'lsof -v'
 
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy $(VAGRANT)
@@ -217,6 +233,10 @@ test-spell-checker: deploy $(VAGRANT)
 .PHONY: test-sshd
 test-sshd: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'systemctl status sshd'
+
+.PHONY: test-system-call-tracer
+test-system-call-tracer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'strace -V'
 
 .PHONY: test-terminal
 test-terminal: deploy $(VAGRANT)

@@ -42,6 +42,11 @@ Automated system configuration setup:
     - [Vector image editor](https://inkscape.org/)
     - [Video downloader](https://rg3.github.io/youtube-dl/)
     - [Window manager](http://awesome.naquadah.org/)
+- General purpose development tools:
+    - [Diff and merge GUI](http://meldmerge.org/)
+    - [Newline converter](http://dos2unix.sourceforge.net/)
+    - [Open files lister](http://people.freebsd.org/~abe/)
+    - [System call tracer](http://sourceforge.net/projects/strace/)
 
 Any of these can be disabled by removing the appropriate line in [`manifests/host.pp`](manifests/host.pp). Some of them are grouped as a single entry in that file, but it should be self-explanatory.
 

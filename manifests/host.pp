@@ -24,6 +24,7 @@ include scanner
 include screen_grabber
 include screen_locker
 include shell
+include general_development_tools
 include spell_checker
 include sshd
 include terminal
