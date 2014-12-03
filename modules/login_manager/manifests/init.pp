@@ -1,7 +1,7 @@
 class login_manager {
   include display_server
 
-  package { ['lightdm', 'lightdm-gtk3-greeter']:
+  package { ['lightdm', 'lightdm-gtk2-greeter']:
     ensure => latest,
   }->
   service { 'lightdm':
