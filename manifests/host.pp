@@ -17,6 +17,7 @@ include ntpd
 include panorama_editor
 include password_manager
 include pdf_editor
+include pdf_reader
 include photo_editor
 include printing_system
 include scanner

@@ -71,6 +71,7 @@ test-deploy: \
 	test-panorama-editor \
 	test-password-manager \
 	test-pdf-editor \
+	test-pdf-reader \
 	test-photo-editor \
 	test-printing-system \
 	test-scanner \
@@ -176,6 +177,10 @@ test-password-manager: deploy $(VAGRANT)
 .PHONY: test-pdf-editor
 test-pdf-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which xournal'
+
+.PHONY: test-pdf-reader
+test-pdf-reader: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'evince --version'
 
 .PHONY: test-photo-editor
 test-photo-editor: deploy $(VAGRANT)

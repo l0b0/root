@@ -13,6 +13,7 @@ Automated system configuration setup:
     - [Browser](https://www.mozilla.org/firefox)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Password manager](https://www.keepassx.org/)
+    - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [vCard validator](https://github.com/l0b0/vcard/)
     - Fonts
 
