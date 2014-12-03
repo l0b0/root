@@ -36,6 +36,7 @@ Automated system configuration setup:
     - Spell checkers for English, French and German
     - [SSH daemon](http://www.openssh.com/)
     - [Terminal](http://invisible-island.net/xterm/)
+    - [Text editor](http://www.vim.org/)
     - [Tor](https://www.torproject.org/)
     - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)

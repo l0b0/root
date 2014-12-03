@@ -27,6 +27,7 @@ include shell
 include spell_checker
 include sshd
 include terminal
+include text_editor
 include tor
 include users
 include vcard_validator

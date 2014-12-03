@@ -81,6 +81,7 @@ test-deploy: \
 	test-spell-checker \
 	test-sshd \
 	test-terminal \
+	test-text-editor \
 	test-tor \
 	test-users \
 	test-vcard-validator \
@@ -220,6 +221,10 @@ test-sshd: deploy $(VAGRANT)
 .PHONY: test-terminal
 test-terminal: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'xterm -version'
+
+.PHONY: test-text-editor
+test-text-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'vim --version'
 
 .PHONY: test-tor
 test-tor: deploy $(VAGRANT)
