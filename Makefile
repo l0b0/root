@@ -170,7 +170,7 @@ test-image-viewer-cli: deploy $(VAGRANT)
 
 .PHONY: test-login-manager
 test-login-manager: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'systemctl status display-manager.service | grep slim.service'
+	$(VAGRANT) ssh --command 'systemctl status display-manager.service | grep lightdm.service'
 
 .PHONY: test-media-player
 test-media-player: deploy $(VAGRANT)

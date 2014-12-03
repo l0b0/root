@@ -1,11 +1,18 @@
 class login_manager {
   include display_server
 
-  package { 'slim':
+  package { ['lightdm', 'lightdm-gtk3-greeter']:
     ensure => latest,
   }->
-  service { 'slim':
+  service { 'lightdm':
     ensure => running,
     enable => true,
+  }
+
+  package { 'slim':
+    ensure => absent,
+  }->
+  service { 'slim':
+    enable => false,
   }
 }
