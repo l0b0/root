@@ -6,6 +6,7 @@ include cad_editor
 include calculator
 include diagram_editor
 include dvcs
+include file_copier
 include firewall
 include flash_plugin
 include fonts

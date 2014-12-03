@@ -18,6 +18,7 @@ Automated system configuration setup:
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
+    - [File copier](http://rsync.samba.org/)
     - [Flash browser plugin](https://get.adobe.com/flashplayer/)
     - Fonts
     - [Graph editor](http://www.graphviz.org/)

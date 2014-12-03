@@ -61,6 +61,7 @@ test-deploy: \
 	test-diff-gui \
 	test-dvcs \
 	test-firewall \
+	test-file-copier \
 	test-flash-plugin \
 	test-fonts \
 	test-graph-editor \
@@ -132,6 +133,10 @@ test-diff-gui: deploy $(VAGRANT)
 .PHONY: test-dvcs
 test-dvcs: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'git --version'
+
+.PHONY: test-file-copier
+test-file-copier: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'rsync --version'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
