@@ -36,6 +36,7 @@ Automated system configuration setup:
     - [Shell](https://www.gnu.org/software/bash/)
     - Spell checkers for English, French and German
     - [SSH daemon](http://www.openssh.com/)
+    - [Office suite](http://www.libreoffice.org/)
     - [Terminal](http://invisible-island.net/xterm/)
     - [Text editor](http://www.vim.org/)
     - [Tor](https://www.torproject.org/)

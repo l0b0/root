@@ -71,6 +71,7 @@ test-deploy: \
 	test-media-player \
 	test-newline-converter \
 	test-ntpd \
+	test-office-suite \
 	test-open-files-lister \
 	test-panorama-editor \
 	test-password-manager \
@@ -182,6 +183,10 @@ test-newline-converter: deploy $(VAGRANT)
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
 	$(VAGRANT) ssh <<< "$$ntpd_test"
+
+.PHONY: test-office-suite
+test-office-suite: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'libreoffice --version'
 
 .PHONY: test-open-files-lister
 test-open-files-lister: deploy $(VAGRANT)
