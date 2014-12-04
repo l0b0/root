@@ -62,6 +62,7 @@ test-deploy: \
 	test-dvcs \
 	test-firewall \
 	test-file-copier \
+	test-file-manager \
 	test-flash-plugin \
 	test-fonts \
 	test-graph-editor \
@@ -137,6 +138,10 @@ test-dvcs: deploy $(VAGRANT)
 .PHONY: test-file-copier
 test-file-copier: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'rsync --version'
+
+.PHONY: test-file-manager
+test-file-manager: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'pcmanfm --help'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)

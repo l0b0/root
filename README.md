@@ -19,6 +19,7 @@ Automated system configuration setup:
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
     - [File copier](http://rsync.samba.org/)
+    - [File manager](http://wiki.lxde.org/en/PCManFM)
     - [Flash browser plugin](https://get.adobe.com/flashplayer/)
     - Fonts
     - [Graph editor](http://www.graphviz.org/)
