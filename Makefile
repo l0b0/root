@@ -60,7 +60,6 @@ test-deploy: \
 	test-diagram-editor \
 	test-diff-gui \
 	test-dvcs \
-	test-firewall \
 	test-file-copier \
 	test-file-manager \
 	test-flash-plugin \
@@ -94,7 +93,9 @@ test-deploy: \
 	test-vcard-validator \
 	test-vector-image-editor \
 	test-video-downloader \
-	test-window-manager
+	test-window-manager \
+	| \
+	test-firewall
 
 .PHONY: test-battery-indicator
 test-battery-indicator: deploy $(GREP) $(VAGRANT)
@@ -145,7 +146,6 @@ test-file-manager: deploy $(VAGRANT)
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
-	$(SLEEP) 31s # ensure aborted runs don't sabotage subsequent runs
 	for i in 1 2 3 4 5 6; do \
 		! $(SSH) -p $(vm_port) -o ConnectTimeout=1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no $(vm_user)@$(vm_ip) || exit 1; \
 	done
