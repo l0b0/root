@@ -99,8 +99,9 @@ test-deploy: \
 
 .PHONY: test-battery-indicator
 test-battery-indicator: deploy $(GREP) $(VAGRANT)
+	# Change to `--version` when <https://github.com/valr/cbatticon/issues/17> is fixed
 	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
-		$(VAGRANT) ssh --command 'cbatticon --version'; \
+		$(VAGRANT) ssh --command 'cbatticon --help'; \
 	fi
 
 .PHONY: test-bitmap-image-editor
