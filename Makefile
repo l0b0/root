@@ -290,8 +290,8 @@ install: $(PUPPET)
 	$(PUPPET) apply --verbose --debug --modulepath modules manifests/host.pp
 
 .PHONY: clean
-clean: clean-test
+clean: clean-deploy
 
-.PHONY: clean-test
-clean-test: $(VAGRANT)
+.PHONY: clean-deploy
+clean-deploy: $(VAGRANT)
 	$(VAGRANT) destroy --force
