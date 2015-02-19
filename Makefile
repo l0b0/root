@@ -5,6 +5,8 @@ SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
 VAGRANT = /usr/bin/vagrant
 
+gpg_public_key_fingerprint = 92126B54
+
 vm_user = vagrant
 vm_ip = 127.0.0.1
 vm_port = 2222
@@ -72,6 +74,7 @@ test-deploy: \
 	test-ntpd \
 	test-office-suite \
 	test-open-files-lister \
+	test-openpgp-tools \
 	test-panorama-editor \
 	test-password-manager \
 	test-pdf-editor \
@@ -197,6 +200,9 @@ test-office-suite: deploy $(VAGRANT)
 test-open-files-lister: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'lsof -v'
 
+.PHONY: test-openpgp-tools
+test-openpgp-tools: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command gpg --import $(gpg_public_key_fingerprint) # Import public key
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which hugin'

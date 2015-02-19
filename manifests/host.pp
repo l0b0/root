@@ -17,6 +17,7 @@ include image_viewer_cli
 include media_player
 include ntpd
 include office_suite
+include openpgp_tools
 include panorama_editor
 include password_manager
 include pdf_editor

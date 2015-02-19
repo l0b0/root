@@ -29,6 +29,7 @@ Automated system configuration setup:
     - [Password manager](https://www.keepassx.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
+    - [OpenPGP tools](https://www.gnupg.org/)
     - [Photo editor](https://www.digikam.org/)
     - [Printing system](https://www.cups.org/)
     - [Scanner](https://launchpad.net/simple-scan)
