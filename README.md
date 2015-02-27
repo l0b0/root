@@ -33,6 +33,7 @@ Automated system configuration setup:
     - [Photo editor](https://www.digikam.org/)
     - [Printing system](https://www.cups.org/)
     - [Scanner](https://launchpad.net/simple-scan)
+    - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/)
     - [Screen grabber](http://freecode.com/projects/scrot)
     - [Screen locker](http://tools.suckless.org/slock/)
     - [Shell](https://www.gnu.org/software/bash/)

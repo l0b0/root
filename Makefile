@@ -82,6 +82,7 @@ test-deploy: \
 	test-photo-editor \
 	test-printing-system \
 	test-scanner \
+	test-screen-backlight-adjuster \
 	test-screen-grabber \
 	test-screen-locker \
 	test-shell \
@@ -231,6 +232,12 @@ test-printing-system: deploy $(VAGRANT)
 test-scanner: deploy $(VAGRANT)
 	# TODO: Use --version after <https://bugs.launchpad.net/simple-scan/+bug/1394385> is fixed
 	$(VAGRANT) ssh --command 'which simple-scan'
+
+.PHONY: test-screen-backlight-adjuster
+test-screen-backlight-adjuster: deploy $(VAGRANT)
+	# TODO: Use -help after <https://bugs.freedesktop.org/show_bug.cgi?id=89358> is fixed,
+	# or -version after <https://bugs.freedesktop.org/show_bug.cgi?id=89359> is fixed
+	$(VAGRANT) ssh --command 'which xbacklight'
 
 .PHONY: test-screen-grabber
 test-screen-grabber: deploy $(VAGRANT)

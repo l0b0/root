@@ -25,6 +25,7 @@ include pdf_reader
 include photo_editor
 include printing_system
 include scanner
+include screen_backlight_adjuster
 include screen_grabber
 include screen_locker
 include shell
