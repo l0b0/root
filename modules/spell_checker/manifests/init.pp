@@ -1,5 +1,6 @@
 class spell_checker {
-  package { [
+  package {
+    [
       'aspell-de',
       'aspell-en',
       'aspell-fr',
@@ -7,6 +8,6 @@ class spell_checker {
       'hunspell-en',
       'hunspell-fr',
     ]:
-    ensure => latest,
+      ensure => latest,
   }
 }
