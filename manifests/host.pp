@@ -1,3 +1,9 @@
+File {
+  owner => root,
+  group => 0,
+  mode  => '0600',
+}
+
 include battery_indicator
 include bitmap_image_editor
 include bittorrent_client
