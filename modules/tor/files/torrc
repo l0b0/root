@@ -1,0 +1,2 @@
+Log notice syslog
+DataDirectory /var/lib/tor
