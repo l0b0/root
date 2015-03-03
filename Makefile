@@ -307,3 +307,5 @@ clean: clean-deploy
 .PHONY: clean-deploy
 clean-deploy: $(VAGRANT)
 	$(VAGRANT) destroy --force
+
+include vm.mk
