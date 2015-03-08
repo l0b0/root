@@ -91,4 +91,4 @@ License
 Copyright
 ---------
 
-© 2014 Victor Engmark
+© 2014-2015 Victor Engmark
