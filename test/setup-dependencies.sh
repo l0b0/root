@@ -1,5 +1,5 @@
 #!/bin/sh
-set -o errexit
+set -o errexit -o xtrace
 pacman --remove --noconfirm ack bash-completion cloc colordiff cowsay dd_rescue ddrescue dmidecode dnsutils dstat \
     ethtool figlet fortune-mod gdb glances htop hwinfo inxi lshw lsof nethogs ngrep nmap ponysay pv ranger reptyr sl \
     smem sshfs stow strace tmux yaourt zsh
