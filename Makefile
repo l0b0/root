@@ -80,6 +80,7 @@ test-deploy: \
 	test-pdf-editor \
 	test-pdf-reader \
 	test-photo-editor \
+	test-photo-metadata-editor \
 	test-printing-system \
 	test-scanner \
 	test-screen-backlight-adjuster \
@@ -223,6 +224,10 @@ test-pdf-reader: deploy $(VAGRANT)
 .PHONY: test-photo-editor
 test-photo-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'digikam --version'
+
+.PHONY: test-photo-metadata-editor
+test-photo-metadata-editor: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'jhead -V'
 
 .PHONY: test-printing-system
 test-printing-system: deploy $(VAGRANT)

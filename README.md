@@ -31,6 +31,7 @@ Automated system configuration setup:
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [OpenPGP tools](https://www.gnupg.org/)
     - [Photo editor](https://www.digikam.org/)
+    - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Printing system](https://www.cups.org/)
     - [Scanner](https://launchpad.net/simple-scan)
     - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/)
