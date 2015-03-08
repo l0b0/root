@@ -4,7 +4,8 @@ class tor {
   }->
   file { '/etc/tor/torrc':
     ensure => present,
-    source => 'puppet:///modules/tor/torrc';
+    source => 'puppet:///modules/tor/torrc',
+    mode  => '0644';
   }->
   service { 'tor':
     ensure => running,
