@@ -65,6 +65,7 @@ Dependencies:
 
 - `make`
 - `vagrant`
+- `vagrant-reload` plugin
 - `virtualbox`
 
 Install
