@@ -204,7 +204,7 @@ test-open-files-lister: deploy $(VAGRANT)
 
 .PHONY: test-openpgp-tools
 test-openpgp-tools: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command gpg --import $(gpg_public_key_fingerprint) # Import public key
+	$(VAGRANT) ssh --command 'gpg --keyserver keys.gnupg.net --recv-keys $(gpg_public_key_fingerprint)'
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'which hugin'
