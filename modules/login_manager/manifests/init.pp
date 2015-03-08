@@ -4,7 +4,7 @@ class login_manager {
   service { 'slim':
     enable => false,
   }->
-  package { ['lightdm', 'lightdm-gtk2-greeter']:
+  package { ['lightdm', 'lightdm-gtk-greeter']:
     ensure => latest,
   }->
   service { 'lightdm':
