@@ -25,6 +25,7 @@ Automated system configuration setup:
     - [Graph editor](http://www.graphviz.org/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [Media player](https://www.videolan.org/vlc/)
+    - [Network manager](https://launchpad.net/wicd)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Password manager](https://www.keepassx.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
