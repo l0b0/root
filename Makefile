@@ -71,6 +71,7 @@ test-deploy: \
 	test-login-manager \
 	test-media-player \
 	test-newline-converter \
+	test-network-manager \
 	test-ntpd \
 	test-office-suite \
 	test-open-files-lister \
@@ -189,6 +190,10 @@ test-media-player: deploy $(VAGRANT)
 .PHONY: test-newline-converter
 test-newline-converter: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'dos2unix --version'
+
+.PHONY: test-network-manager
+test-network-manager: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'wicd-cli --wireless --list-networks'
 
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
