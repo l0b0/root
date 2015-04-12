@@ -10,7 +10,7 @@ class spell_checker {
     ]:
       ensure => latest,
   }->
-  file{
+  file {
     [
       '/usr/share/hunspell',
       '/usr/share/myspell/dicts',
