@@ -17,6 +17,7 @@ class spell_checker {
     ]:
     recurse => true,
     purge   => true,
+    mode    => '0666',
     ignore  => [
       'de_CH.*',
       'de_DE.*',

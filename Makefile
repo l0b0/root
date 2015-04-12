@@ -264,8 +264,8 @@ test-shell: deploy $(VAGRANT)
 
 .PHONY: test-spell-checker
 test-spell-checker: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'aspell --version'
-	$(VAGRANT) ssh --command 'hunspell --version'
+	$(VAGRANT) ssh --command 'aspell dump dicts'
+	$(VAGRANT) ssh --command 'echo | hunspell -D'
 
 .PHONY: test-sshd
 test-sshd: deploy $(VAGRANT)
