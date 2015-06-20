@@ -21,6 +21,7 @@ include general_development_tools
 include graph_editor
 include image_viewer
 include image_viewer_cli
+include integrated_development_environment
 include locale
 include media_player
 include network_manager_gui

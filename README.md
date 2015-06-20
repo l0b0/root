@@ -51,6 +51,7 @@ Automated system configuration setup:
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
     - [Diff and merge GUI](http://meldmerge.org/)
+    - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
     - [System call tracer](http://sourceforge.net/projects/strace/)

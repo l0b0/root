@@ -5,6 +5,8 @@ SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
 VAGRANT = /usr/bin/vagrant
 
+makefile_directory := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
 gpg_public_key_fingerprint = 92126B54
 
 vm_user = vagrant
@@ -68,6 +70,7 @@ test-deploy: \
 	test-graph-editor \
 	test-image-viewer \
 	test-image-viewer-cli \
+	test-integrated-development-environment \
 	test-login-manager \
 	test-media-player \
 	test-newline-converter \
@@ -178,6 +181,10 @@ test-image-viewer: deploy $(VAGRANT)
 .PHONY: test-image-viewer-cli
 test-image-viewer-cli: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'feh --version'
+
+.PHONY: test-integrated-development-environment
+test-integrated-development-environment: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command '/opt/idea-14.1.3/idea-IU-141.1010.3/bin/inspect.sh "$(makefile_directory)" ~/.IntelliJIdea14/config/inspection/Default.xml /tmp -d "$(makefile_directory)/test/module"'
 
 .PHONY: test-login-manager
 test-login-manager: deploy $(VAGRANT)

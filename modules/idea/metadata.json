@@ -1,0 +1,14 @@
+{
+  "name": "gini-idea",
+  "version": "0.3.0",
+  "author": "Jochen Schalanda",
+  "summary": "Puppet module for installing IntelliJ IDEA Community or Ultimate Edition",
+  "license": "Apache 2.0",
+  "source": "https://github.com/gini/puppet-idea",
+  "project_page": "https://github.com/gini/puppet-idea",
+  "issues_url": "https://github.com/gini/puppet-idea/issues",
+  "description": "This module installs IntelliJ IDEA Community or Ultimate Edition from the official vendor site. Check README.md for details.",
+  "dependencies": [
+    {"name":"gini/archive","version_requirement":">=0.1.0"}
+  ]
+}
