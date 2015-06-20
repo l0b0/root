@@ -2,7 +2,10 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/modules/stdlib" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/ufw" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Puppet modules" level="application" />
@@ -12,4 +15,3 @@
     <option name="modulePath" value="/etc/puppet/modules:/usr/share/puppet/modules:/opt/puppet/share/puppet/modules" />
   </component>
 </module>
-
