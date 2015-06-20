@@ -17,6 +17,7 @@ include file_manager
 include firewall
 include flash_plugin
 include fonts
+include general_development_tools
 include graph_editor
 include image_viewer
 include image_viewer_cli
@@ -38,7 +39,6 @@ include screen_backlight_adjuster
 include screen_grabber
 include screen_locker
 include shell
-include general_development_tools
 include spell_checker
 include sshd
 include terminal
