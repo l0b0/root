@@ -5,6 +5,6 @@ class integrated_development_environment {
   class { 'archive::prerequisites': }
   ->
   class { 'idea::ultimate':
-    version => '14.1.3',
+    version => '14.1.4',
   }
 }
