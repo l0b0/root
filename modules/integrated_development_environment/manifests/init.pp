@@ -6,6 +6,7 @@ class integrated_development_environment {
   ->
   class { 'idea::ultimate':
     version => '14.1.4',
+    build   => '141.1532.4',
   }->
   file { '/usr/local/bin/idea':
     target => '/opt/idea/bin/idea.sh',
