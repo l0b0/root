@@ -66,7 +66,7 @@ class idea::base(
 
   file { $target:
     ensure  => link,
-    target  => "/opt/${build}",
+    target  => "/opt/idea-${version}/${build}",
     require => Archive["idea-${version}"],
   }
 }
