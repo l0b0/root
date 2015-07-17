@@ -1,6 +1,7 @@
 #!/bin/sh
 find /vagrant/manifests /vagrant/modules \
     \( \
+        -path /vagrant/modules/.gem -o \
         -path /vagrant/modules/archive -o \
         -path /vagrant/modules/idea -o \
         -path /vagrant/modules/stdlib -o \
