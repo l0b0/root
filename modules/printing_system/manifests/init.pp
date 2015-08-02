@@ -5,9 +5,17 @@ class printing_system {
   package { ['foomatic-db', 'foomatic-db-engine', 'hplip']:
     ensure => absent,
   }
+
+  $paper_size_file = '/etc/papersize'
+  file { $paper_size_file:
+    ensure => present,
+    source => 'puppet:///modules/printing_system/papersize',
+    mode   => '0644';
+  }
+
   service { 'org.cups.cupsd':
     ensure    => running,
     enable    => true,
-    subscribe => Package['cups'],
+    subscribe => [File[$paper_size_file], Package['cups']],
   }
 }
