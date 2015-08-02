@@ -65,6 +65,7 @@ test-deploy: \
 	test-dvcs \
 	test-file-copier \
 	test-file-manager \
+	test-file-renamer \
 	test-flash-plugin \
 	test-fonts \
 	test-graph-editor \
@@ -152,6 +153,10 @@ test-file-copier: deploy $(VAGRANT)
 .PHONY: test-file-manager
 test-file-manager: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'pcmanfm --help'
+
+.PHONY: test-file-renamer
+test-file-renamer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)

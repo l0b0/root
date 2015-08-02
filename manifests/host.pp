@@ -14,6 +14,7 @@ include diagram_editor
 include dvcs
 include file_copier
 include file_manager
+include file_renamer
 include firewall
 include flash_plugin
 include fonts

@@ -20,6 +20,7 @@ Automated system configuration setup:
     - [Distributed version control system](http://git-scm.com/)
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
+    - [File renamer](http://search.cpan.org/~pederst/rename/)
     - [Flash browser plugin](https://get.adobe.com/flashplayer/)
     - Fonts
     - [Graph editor](http://www.graphviz.org/)
