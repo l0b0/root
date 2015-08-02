@@ -6,7 +6,8 @@ class printing_system {
     ensure => absent,
   }
   service { 'org.cups.cupsd':
-    ensure => running,
-    enable => true,
+    ensure    => running,
+    enable    => true,
+    subscribe => Package['cups'],
   }
 }
