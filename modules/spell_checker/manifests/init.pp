@@ -19,11 +19,11 @@ class spell_checker {
     purge   => true,
     mode    => '0666',
     ignore  => [
-      'de_CH.*',
-      'de_DE.*',
-      'en_GB.*',
-      'en_US.*',
-      'fr_FR.*',
+      'de_CH*',
+      'de_DE*',
+      'en_GB*',
+      'en_US*',
+      'fr_FR*',
     ],
   }
 }
