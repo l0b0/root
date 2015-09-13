@@ -190,7 +190,7 @@ test-image-viewer-cli: deploy $(VAGRANT)
 
 .PHONY: test-integrated-development-environment
 test-integrated-development-environment: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command '/opt/idea-14.1.3/idea-IU-141.1010.3/bin/inspect.sh "$(makefile_directory)" ~/.IntelliJIdea14/config/inspection/Default.xml /tmp -d "$(makefile_directory)/test/module"'
+	$(VAGRANT) ssh --command '/opt/idea/bin/inspect.sh "$(makefile_directory)" ~/.IntelliJIdea14/config/inspection/Default.xml /tmp -d "$(makefile_directory)/test/module"'
 
 .PHONY: test-login-manager
 test-login-manager: deploy $(VAGRANT)
