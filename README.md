@@ -18,6 +18,7 @@ Automated system configuration setup:
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
+    - [Email reader](https://www.mozilla.org/en-GB/thunderbird/)
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
     - [File renamer](http://search.cpan.org/~pederst/rename/)

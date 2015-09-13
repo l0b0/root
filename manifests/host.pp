@@ -12,6 +12,7 @@ include cad_editor
 include calculator
 include diagram_editor
 include dvcs
+include email_reader
 include file_copier
 include file_manager
 include file_renamer

@@ -63,6 +63,7 @@ test-deploy: \
 	test-diagram-editor \
 	test-diff-gui \
 	test-dvcs \
+	test-email-reader \
 	test-file-copier \
 	test-file-manager \
 	test-file-renamer \
@@ -146,6 +147,10 @@ test-diff-gui: deploy $(VAGRANT)
 .PHONY: test-dvcs
 test-dvcs: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'git --version'
+
+.PHONY: test-email-reader
+test-email-reader: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'thunderbird --version'
 
 .PHONY: test-file-copier
 test-file-copier: deploy $(VAGRANT)
