@@ -217,7 +217,7 @@ test-newline-converter: deploy $(VAGRANT)
 
 .PHONY: test-network-manager
 test-network-manager: deploy $(VAGRANT)
-	$(VAGRANT) ssh --command 'wicd-cli --wireless --list-networks'
+	$(VAGRANT) ssh --command 'sudo wicd-cli --wireless --list-networks'
 
 .PHONY: test-ntpd
 test-ntpd: deploy $(VAGRANT)
