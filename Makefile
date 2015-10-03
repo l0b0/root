@@ -77,6 +77,7 @@ test-deploy: \
 	test-login-manager \
 	test-media-player \
 	test-newline-converter \
+	test-network-analyzer \
 	test-network-manager \
 	test-ntpd \
 	test-office-suite \
@@ -214,6 +215,10 @@ test-media-player: deploy $(VAGRANT)
 .PHONY: test-newline-converter
 test-newline-converter: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'dos2unix --version'
+
+.PHONY: test-network-analyzer
+test-network-analyzer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command '/vagrant/test/netcat.sh'
 
 .PHONY: test-network-manager
 test-network-manager: deploy $(VAGRANT)

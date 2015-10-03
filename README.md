@@ -28,6 +28,7 @@ Automated system configuration setup:
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [JSON processor](https://stedolan.github.io/jq/)
     - [Media player](https://www.videolan.org/vlc/)
+    - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://launchpad.net/wicd)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Password manager](https://www.keepassx.org/)

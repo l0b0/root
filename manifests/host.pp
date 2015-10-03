@@ -27,6 +27,7 @@ include integrated_development_environment
 include json_processor
 include locale
 include media_player
+include network_analyzer
 include network_manager_gui
 include ntpd
 include office_suite
