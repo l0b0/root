@@ -32,6 +32,7 @@ include network_manager_gui
 include ntpd
 include office_suite
 include openpgp_tools
+include packet_analyzer
 include panorama_editor
 include password_manager
 include pdf_editor

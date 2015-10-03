@@ -83,6 +83,7 @@ test-deploy: \
 	test-office-suite \
 	test-open-files-lister \
 	test-openpgp-tools \
+	test-packet-analyzer \
 	test-panorama-editor \
 	test-password-manager \
 	test-pdf-editor \
@@ -239,6 +240,11 @@ test-open-files-lister: deploy $(VAGRANT)
 .PHONY: test-openpgp-tools
 test-openpgp-tools: deploy $(VAGRANT)
 	$(VAGRANT) ssh --command 'gpg --keyserver keys.gnupg.net --recv-keys $(gpg_public_key_fingerprint)'
+
+.PHONY: test-packet-analyzer
+test-packet-analyzer: deploy $(VAGRANT)
+	$(VAGRANT) ssh --command 'wireshark -v'
+	$(VAGRANT) ssh --command 'tshark -v'
 
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy $(VAGRANT)

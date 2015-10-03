@@ -30,6 +30,7 @@ Automated system configuration setup:
     - [Media player](https://www.videolan.org/vlc/)
     - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://launchpad.net/wicd)
+    - [Packet capture (pcap) analyzer](https://www.wireshark.org/)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Password manager](https://www.keepassx.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
