@@ -8,3 +8,4 @@ export PATH="${gem_user_dir}/bin:$PATH"
 
 "${dir}/puppet-lint.sh"
 "${dir}/reek.sh"
+"${dir}/travis-lint.sh"
