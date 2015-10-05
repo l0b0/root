@@ -1,2 +1,4 @@
 language: shell
-script: make test
+script:
+  - sudo make install
+  - make vm_shell=/bin/bash test
