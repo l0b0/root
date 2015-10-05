@@ -1,3 +1,3 @@
 language: shell
-script:
-  - sudo sh -c 'gem install puppet && make install' && make vm_shell=/bin/bash test
+install: sudo make install && gem install --version 4.2.2 --no-document --user-install puppet
+script: make vm_shell=/bin/bash test
