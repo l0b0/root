@@ -2,5 +2,5 @@ language: shell
 install:
   - sudo apt-get install ruby
   - gem install --version 4.2.2 --no-document --user-install puppet
-  - sudo make install
+  - sudo make PUPPET="$(ruby -e 'print Gem.user_dir')/bin/puppet" install
 script: make vm_shell=/bin/bash test
