@@ -22,6 +22,7 @@ Automated system configuration setup:
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
+    - [File Transfer Protocol (FTP) client](https://filezilla-project.org/)
     - [Flash browser plugin](https://get.adobe.com/flashplayer/)
     - Fonts
     - [Graph editor](http://www.graphviz.org/)

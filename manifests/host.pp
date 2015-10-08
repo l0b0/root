@@ -16,6 +16,7 @@ include email_reader
 include file_copier
 include file_manager
 include file_renamer
+include file_transfer_protocol_client_gui
 include firewall
 include flash_plugin
 include fonts

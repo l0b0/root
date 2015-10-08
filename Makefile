@@ -69,6 +69,7 @@ test-deploy: \
 	test-file-copier \
 	test-file-manager \
 	test-file-renamer \
+	test-file-transfer-protocol-client-gui \
 	test-flash-plugin \
 	test-fonts \
 	test-graph-editor \
@@ -167,6 +168,11 @@ test-file-manager: deploy $(VAGRANT)
 .PHONY: test-file-renamer
 test-file-renamer: deploy $(VAGRANT)
 	$(vm_shell) 'perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
+
+.PHONY: test-file-transfer-protocol-client-gui
+test-file-transfer-protocol-client-gui: deploy $(VAGRANT)
+	# TODO: Use --version when <https://trac.filezilla-project.org/ticket/10671> is fixed
+	$(vm_shell) 'which filezilla'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
