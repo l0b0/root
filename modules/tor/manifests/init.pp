@@ -6,7 +6,7 @@ class tor {
     ensure => present,
     source => 'puppet:///modules/tor/torrc',
     mode  => '0644';
-  }->
+  }~>
   service { 'tor':
     ensure => running,
     enable => true,
