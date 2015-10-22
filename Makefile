@@ -101,6 +101,7 @@ test-deploy: \
 	test-shell \
 	test-spell-checker \
 	test-sshd \
+	test-storage-hardware-monitor \
 	test-system-call-tracer \
 	test-terminal \
 	test-text-editor \
@@ -318,6 +319,10 @@ test-sshd: deploy $(VAGRANT)
 .PHONY: test-system-call-tracer
 test-system-call-tracer: deploy $(VAGRANT)
 	$(vm_shell) 'strace -V'
+
+.PHONY: test-storage-hardware-monitor
+test-storage-hardware-monitor: deploy $(VAGRANT)
+	$(vm_shell) 'sudo smartctl --info /dev/sda'
 
 .PHONY: test-terminal
 test-terminal: deploy $(VAGRANT)

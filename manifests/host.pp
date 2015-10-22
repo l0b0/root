@@ -48,6 +48,7 @@ include screen_locker
 include shell
 include spell_checker
 include sshd
+include storage_hardware_monitor
 include terminal
 include text_editor
 include tor
