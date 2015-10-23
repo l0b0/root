@@ -5,8 +5,8 @@ class integrated_development_environment {
   class { 'archive::prerequisites': }
   ->
   class { 'idea::ultimate':
-    version => '14.1.4',
-    build   => '141.1532.4',
+    version => '14.1.5',
+    build   => '141.2735.5',
   }->
   file { '/usr/local/bin/idea':
     target => '/opt/idea/bin/idea.sh',
