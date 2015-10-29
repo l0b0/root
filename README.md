@@ -16,6 +16,7 @@ Automated system configuration setup:
     - [Browser](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/)
     - [Calculator](https://www.gnu.org/software/bc/)
+    - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/)

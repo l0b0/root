@@ -62,6 +62,7 @@ test-deploy: \
 	test-browser \
 	test-cad-editor \
 	test-calculator \
+	test-desktop-management-interface-table-decoder \
 	test-diagram-editor \
 	test-diff-gui \
 	test-dvcs \
@@ -145,6 +146,10 @@ test-calculator: deploy $(VAGRANT)
 .PHONY: test-diagram-editor
 test-diagram-editor: deploy $(VAGRANT)
 	$(vm_shell) 'dia --version'
+
+.PHONY: test-desktop-management-interface-table-decoder
+test-desktop-management-interface-table-decoder: deploy $(VAGRANT)
+	$(vm_shell) 'sudo dmidecode'
 
 .PHONY: test-diff-gui
 test-diff-gui: deploy $(VAGRANT)
