@@ -1,7 +1,7 @@
 class diff_gui {
   include window_manager
 
-  package { 'meld':
+  package { 'kdiff3':
     ensure => latest,
   }
 }

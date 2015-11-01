@@ -153,7 +153,7 @@ test-desktop-management-interface-table-decoder: deploy $(VAGRANT)
 
 .PHONY: test-diff-gui
 test-diff-gui: deploy $(VAGRANT)
-	$(vm_shell) 'which meld'
+	$(vm_shell) 'which kdiff3'
 
 .PHONY: test-dvcs
 test-dvcs: deploy $(VAGRANT)

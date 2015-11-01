@@ -58,7 +58,7 @@ Automated system configuration setup:
     - [Video downloader](https://rg3.github.io/youtube-dl/)
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
-    - [Diff and merge GUI](http://meldmerge.org/)
+    - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
