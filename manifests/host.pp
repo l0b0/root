@@ -10,6 +10,7 @@ include bittorrent_client
 include browser
 include cad_editor
 include calculator
+include process_container
 include desktop_management_interface_table_decoder
 include diagram_editor
 include dvcs

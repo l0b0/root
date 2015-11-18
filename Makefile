@@ -95,6 +95,7 @@ test-deploy: \
 	test-photo-editor \
 	test-photo-metadata-editor \
 	test-printing-system \
+	test-process-container \
 	test-scanner \
 	test-screen-backlight-adjuster \
 	test-screen-grabber \
@@ -287,6 +288,10 @@ test-photo-metadata-editor: deploy $(VAGRANT)
 .PHONY: test-printing-system
 test-printing-system: deploy $(VAGRANT)
 	$(vm_shell) 'cups-config --version'
+
+.PHONY: test-process-container
+test-process-container: deploy $(VAGRANT)
+	$(vm_shell) 'docker info'
 
 .PHONY: test-scanner
 test-scanner: deploy $(VAGRANT)
