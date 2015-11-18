@@ -5,8 +5,8 @@ class integrated_development_environment {
   class { 'archive::prerequisites': }
   ->
   class { 'idea::ultimate':
-    version => '15.0',
-    build   => '143.381.42',
+    version => '15.0.1',
+    build   => '143.382.35',
     timeout => 600,
   }->
   file { '/usr/local/bin/idea':
