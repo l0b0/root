@@ -368,7 +368,7 @@ test-window-manager: deploy $(VAGRANT)
 
 .PHONY: install
 install: $(PUPPET)
-	$(PUPPET) apply --verbose --debug --modulepath modules --detailed-exitcodes manifests/host.pp || [ $$? -eq 2 ]
+	$(PUPPET) apply --verbose --debug --modulepath modules --detailed-exitcodes --hiera_config=hieradata/hiera.yaml manifests/host.pp || [ $$? -eq 2 ]
 
 .PHONY: clean
 clean: clean-deploy
