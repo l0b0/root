@@ -3,5 +3,5 @@ rvm:
   - "2.2.3"
 install:
   - bundle install --jobs=3 --retry=3
-  - sudo bundle exec make PUPPET="${MY_RUBY_HOME}/bin/puppet" install
+  - rvm sudo bundle exec make PUPPET="${MY_RUBY_HOME}/bin/puppet" install
 script: make vm_shell=/bin/bash test
