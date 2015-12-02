@@ -85,6 +85,7 @@ test-deploy: \
 	test-network-manager \
 	test-ntpd \
 	test-office-suite \
+	test-onion-router \
 	test-open-files-lister \
 	test-openpgp-tools \
 	test-packet-analyzer \
@@ -107,7 +108,6 @@ test-deploy: \
 	test-system-call-tracer \
 	test-terminal \
 	test-text-editor \
-	test-tor \
 	test-users \
 	test-vcard-validator \
 	test-vector-image-editor \
@@ -342,8 +342,8 @@ test-terminal: deploy $(VAGRANT)
 test-text-editor: deploy $(VAGRANT)
 	$(vm_shell) 'vim --version'
 
-.PHONY: test-tor
-test-tor: deploy $(VAGRANT)
+.PHONY: test-onion-router
+test-onion-router: deploy $(VAGRANT)
 	$(vm_shell) 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-users

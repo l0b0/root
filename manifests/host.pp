@@ -34,6 +34,7 @@ include network_analyzer
 include network_manager_gui
 include ntpd
 include office_suite
+include onion_router
 include openpgp_tools
 include packet_analyzer
 include panorama_editor
@@ -53,7 +54,6 @@ include sshd
 include storage_hardware_monitor
 include terminal
 include text_editor
-include tor
 include users
 include vcard_validator
 include vector_image_editor
