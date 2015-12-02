@@ -1,6 +1,8 @@
 root
 ====
 
+[![Build Status](https://travis-ci.org/l0b0/root.svg)](https://travis-ci.org/l0b0/root)
+
 Automated system configuration setup:
 
 - [Disable the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
