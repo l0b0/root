@@ -5,6 +5,5 @@ rvm:
 install:
   - export rvmsudo_secure_path=1
   - bundle install --jobs=3 --retry=3
-  - export PUPPET="${MY_RUBY_HOME}/bin/puppet"
-  - rvmsudo bundle exec make install
+  - rvmsudo bundle exec make PUPPET="$(which puppet)" install
 script: make vm_shell=/bin/bash test
