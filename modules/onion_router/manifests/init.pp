@@ -2,7 +2,7 @@ class onion_router {
   package { 'torsocks':
     ensure => latest,
   }->
-  file { '/etc/tor/torrc':
+  file { '/etc/onion_router/torrc':
     ensure => present,
     source => 'puppet:///modules/tor/torrc',
     mode  => '0644';
