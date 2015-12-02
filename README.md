@@ -53,7 +53,7 @@ Automated system configuration setup:
     - [Office suite](http://www.libreoffice.org/)
     - [Terminal](http://invisible-island.net/xterm/)
     - [Text editor](http://www.vim.org/)
-    - [Tor](https://www.torproject.org/)
+    - [Onion router](https://www.torproject.org/)
     - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)
     - [Video downloader](https://rg3.github.io/youtube-dl/)

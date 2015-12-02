@@ -1,4 +1,4 @@
-class tor {
+class onion_router {
   package { 'torsocks':
     ensure => latest,
   }->
