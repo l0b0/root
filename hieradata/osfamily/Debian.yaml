@@ -19,3 +19,4 @@ spell_checker::packages:
   - aspell-en
   - aspell-fr
   - hunspell-fr
+sshd::service_name: ssh
