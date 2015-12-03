@@ -11,7 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifests_path = 'manifests'
     puppet.manifest_file = 'host.pp'
     puppet.module_path = 'modules'
-    puppet.options = '--detailed-exitcodes --verbose --debug'
+    puppet.options = '--detailed-exitcodes --verbose --debug --hiera_config=hieradata/hiera.yaml'
+    puppet.working_directory = '/vagrant'
     puppet.facter = {
       :test => true
     }
