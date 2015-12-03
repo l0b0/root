@@ -10,7 +10,7 @@ fonts::packages:
   - ttf-liberation
   - ttf-ubuntu-font-family
 java_development_kit::package: openjdk-7-jdk
-java_development_kit::set_default_command: /usr/sbin/update-java-alternatives --set java-7-openjdk
+java_development_kit::set_default_command: /usr/sbin/update-java-alternatives --set java-7-openjdk-amd64
 network_analyzer::package: netcat-openbsd
 ntpd::service: ntp
 printing_system::browser_service: cups-browsed
