@@ -291,7 +291,7 @@ test-printing-system: deploy $(VAGRANT)
 
 .PHONY: test-process-container
 test-process-container: deploy $(VAGRANT)
-	$(vm_shell) 'docker info'
+	$(vm_shell) 'sudo docker info'
 
 .PHONY: test-scanner
 test-scanner: deploy $(VAGRANT)
