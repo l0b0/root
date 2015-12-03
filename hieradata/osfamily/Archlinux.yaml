@@ -16,6 +16,7 @@ fonts::packages:
   - ttf-ubuntu-font-family
 java_development_kit::package: jdk8-openjdk
 java_development_kit::set_default_command: /usr/bin/archlinux-java set java-8-openjdk
+locale::generator_command: /usr/bin/locale-gen
 network_analyzer::package: gnu-netcat
 ntpd::service: ntpd
 office_suite::package: libreoffice-still

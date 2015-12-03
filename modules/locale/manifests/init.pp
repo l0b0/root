@@ -1,4 +1,6 @@
-class locale {
+class locale (
+  $generator_command,
+) {
   file {
     '/etc/locale.gen':
       ensure => present,
@@ -9,8 +11,7 @@ class locale {
       source => 'puppet:///modules/locale/locale.conf',
       mode   => '0644';
   }~>
-  exec {
-    '/usr/bin/locale-gen':
-      refreshonly => true;
+  exec { $generator_command:
+    refreshonly => true,
   }
 }

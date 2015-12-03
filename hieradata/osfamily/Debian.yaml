@@ -11,6 +11,7 @@ fonts::packages:
   - ttf-ubuntu-font-family
 java_development_kit::package: openjdk-7-jdk
 java_development_kit::set_default_command: /usr/sbin/update-java-alternatives --set java-1.7.0-openjdk-amd64
+locale::generator_command: /usr/sbin/locale-gen
 network_analyzer::package: netcat-openbsd
 ntpd::service: ntp
 printing_system::browser_service: cups-browsed
