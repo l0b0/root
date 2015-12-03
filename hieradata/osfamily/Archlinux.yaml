@@ -22,9 +22,11 @@ office_suite::package: libreoffice-still
 packet_analyzer::packages:
   - wireshark-cli
   - wireshark-gtk
+printing_system::browser_service: cups-browsed
 process_container::package: docker
 python2::package: python2-pip
 screen_backlight_adjuster::package: xorg-xbacklight
+service_discovery_system::package: avahi
 spell_checker::packages:
   - aspell-de
   - aspell-en

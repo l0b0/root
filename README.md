@@ -42,7 +42,7 @@ Automated system configuration setup:
     - [OpenPGP tools](https://www.gnupg.org/)
     - [Photo editor](https://www.digikam.org/)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
-    - [Printing system](https://www.cups.org/)
+    - [Printing system](https://www.cups.org/) with [service auto-discovery](http://avahi.org/) (the latter is Arch Linux only)
     - [Process container](https://www.docker.com/) (Arch Linux only)
     - [Scanner](https://launchpad.net/simple-scan)
     - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/) (Arch Linux only)
