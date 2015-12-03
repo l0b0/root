@@ -15,6 +15,7 @@ locale::generator_command: /usr/sbin/locale-gen
 network_analyzer::package: netcat-openbsd
 ntpd::service: ntp
 printing_system::browser_service: cups-browsed
+printing_system::print_service: cups
 spell_checker::packages:
   - aspell-de
   - aspell-en

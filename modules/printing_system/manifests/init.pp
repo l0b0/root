@@ -1,5 +1,6 @@
 class printing_system (
   $browser_service,
+  $print_service,
 ) {
   include service_discovery_system
 
@@ -18,7 +19,7 @@ class printing_system (
   }
 
   service {
-    'org.cups.cupsd':
+    $print_service:
       ensure    => running,
       enable    => true,
       subscribe => [File[$paper_size_file], Package['cups']];
