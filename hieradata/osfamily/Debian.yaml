@@ -13,7 +13,6 @@ java_development_kit::package: openjdk-7-jdk
 java_development_kit::set_default_command: /usr/sbin/update-java-alternatives --set openjdk-7-jdk
 network_analyzer::package: netcat-openbsd
 ntpd::service: ntp
-process_container::package: docker-engine
 spell_checker::packages:
   - aspell-de
   - aspell-en

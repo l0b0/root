@@ -43,7 +43,7 @@ Automated system configuration setup:
     - [Photo editor](https://www.digikam.org/)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Printing system](https://www.cups.org/)
-    - [Process container](https://www.docker.com/)
+    - [Process container](https://www.docker.com/) (Arch Linux only)
     - [Scanner](https://launchpad.net/simple-scan)
     - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/) (Arch Linux only)
     - [Screen grabber](http://freecode.com/projects/scrot)
