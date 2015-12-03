@@ -258,7 +258,7 @@ test-openpgp-tools: deploy $(VAGRANT)
 
 .PHONY: test-packet-analyzer
 test-packet-analyzer: deploy $(VAGRANT)
-	$(vm_shell) 'wireshark -v'
+	$(vm_shell) 'wireshark-gtk -v'
 	$(vm_shell) 'tshark -v'
 
 .PHONY: test-panorama-editor
