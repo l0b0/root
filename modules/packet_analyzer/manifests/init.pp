@@ -1,7 +1,11 @@
-class packet_analyzer {
-  include shell
+class packet_analyzer (
+  $packages = undef,
+) {
+  if ($packages != undef) {
+    include shell
 
-  package { ['wireshark-cli', 'wireshark-gtk']:
-    ensure => latest,
+    package { $packages:
+      ensure => latest,
+    }
   }
 }

@@ -1,7 +1,9 @@
-class file_renamer {
+class file_renamer (
+  $package = undef,
+) {
   include shell
 
-  package { 'perl-rename':
+  package { $package:
     ensure => latest,
   }
 }

@@ -1,7 +1,11 @@
-class screen_backlight_adjuster {
-  include window_manager
+class screen_backlight_adjuster (
+  $package = undef,
+) {
+  if ($package != undef) {
+    include window_manager
 
-  package { 'xorg-xbacklight':
-    ensure => latest,
+    package { $package:
+      ensure => latest,
+    }
   }
 }

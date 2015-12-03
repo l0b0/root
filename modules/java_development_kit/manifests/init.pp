@@ -1,8 +1,9 @@
-class java_development_kit {
-  package { ['jdk8-openjdk']:
+class java_development_kit (
+  $package,
+  $set_default_command,
+) {
+  package { $package:
     ensure => latest,
-  }
-  exec { '/usr/bin/archlinux-java set java-8-openjdk':
-    subscribe => Package['jdk8-openjdk'],
-  }
+  }~>
+  exec { $set_default_command: }
 }

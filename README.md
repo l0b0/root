@@ -16,12 +16,12 @@ Automated system configuration setup:
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://deluge-torrent.org/)
     - [Browser](https://www.mozilla.org/firefox)
-    - [CAD editor](http://www.openscad.org/)
+    - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
-    - [Email reader](https://www.mozilla.org/en-GB/thunderbird/)
+    - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
@@ -34,7 +34,7 @@ Automated system configuration setup:
     - [Media player](https://www.videolan.org/vlc/)
     - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://launchpad.net/wicd)
-    - [Packet capture (pcap) analyzer](https://www.wireshark.org/)
+    - [Packet capture (pcap) analyzer](https://www.wireshark.org/) (Arch Linux only)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Password manager](https://www.keepassx.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
@@ -45,14 +45,14 @@ Automated system configuration setup:
     - [Printing system](https://www.cups.org/)
     - [Process container](https://www.docker.com/)
     - [Scanner](https://launchpad.net/simple-scan)
-    - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/)
+    - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/) (Arch Linux only)
     - [Screen grabber](http://freecode.com/projects/scrot)
     - [Screen locker](http://tools.suckless.org/slock/)
     - [Shell](https://www.gnu.org/software/bash/)
     - Spell checkers for English, French and German
     - [SSH daemon](http://www.openssh.com/)
     - [Storage hardware monitor](https://www.smartmontools.org/)
-    - [Office suite](http://www.libreoffice.org/)
+    - [Office suite](http://www.libreoffice.org/) (Arch Linux only)
     - [Terminal](http://invisible-island.net/xterm/)
     - [Text editor](http://www.vim.org/)
     - [Onion router](https://www.torproject.org/)
@@ -91,6 +91,12 @@ Dependencies:
 - `make`
 - `puppet`
 - [`ruby-shadow`](https://unix.stackexchange.com/questions/165333/how-to-get-non-zero-exit-code-from-puppet-when-configuration-cannot-be-applied)
+
+Platforms
+---------
+
+- Arch Linux
+- Ubuntu (partial support)
 
 Bugs
 ----

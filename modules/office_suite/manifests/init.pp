@@ -1,7 +1,9 @@
-class office_suite {
+class office_suite (
+  $package = undef,
+) {
   include window_manager
 
-  package { 'libreoffice-still':
+  package { $package:
     ensure => latest,
   }
 }

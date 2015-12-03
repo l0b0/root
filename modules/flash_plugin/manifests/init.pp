@@ -1,7 +1,9 @@
-class flash_plugin {
+class flash_plugin (
+  $package,
+) {
   include browser
 
-  package { 'flashplugin':
+  package { $package:
     ensure => latest,
   }
 }

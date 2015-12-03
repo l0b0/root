@@ -1,7 +1,9 @@
-class process_container {
+class process_container (
+  $package,
+) {
   include shell
 
-  package { 'docker':
+  package { $package:
     ensure => latest,
   }~>
   service { 'docker':

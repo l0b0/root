@@ -1,5 +1,9 @@
-class python2 {
-  package { 'python2-pip':
-    ensure => latest,
+class python2 (
+  $package = undef,
+) {
+  if ($package != undef) {
+    package { $package:
+      ensure => latest,
+    }
   }
 }

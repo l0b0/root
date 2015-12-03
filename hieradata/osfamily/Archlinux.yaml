@@ -1,1 +1,35 @@
+cad_editor::package: openscad
 display_server::package: xorg-server
+email_reader::package: thunderbird-i18n-en-gb
+file_renamer::package: perl-rename
+flash_plugin::package: flashplugin
+fonts::packages:
+  - adobe-source-code-pro-fonts
+  - adobe-source-sans-pro-fonts
+  - adobe-source-serif-pro-fonts
+  - ttf-bitstream-vera
+  - ttf-dejavu
+  - ttf-droid
+  - ttf-freefont
+  - ttf-inconsolata
+  - ttf-liberation
+  - ttf-ubuntu-font-family
+java_development_kit::package: jdk8-openjdk
+java_development_kit::set_default_command: /usr/bin/archlinux-java set java-8-openjdk
+network_analyzer::package: gnu-netcat
+ntpd::service: ntpd
+office_suite::package: libreoffice-still
+packet_analyzer::packages:
+  - wireshark-cli
+  - wireshark-gtk
+process_container::package: docker
+python2::package: python2-pip
+screen_backlight_adjuster::package: xorg-xbacklight
+spell_checker::packages:
+  - aspell-de
+  - aspell-en
+  - aspell-fr
+  - hunspell-de
+  - hunspell-en
+  - hunspell-fr
+users::package_ensure: present
