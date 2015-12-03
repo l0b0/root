@@ -4,6 +4,12 @@ File {
   mode  => '0600',
 }
 
+if versioncmp($::puppetversion,'3.6.1') >= 0 {
+  Package {
+    allow_virtual => false,
+  }
+}
+
 include battery_indicator
 include bitmap_image_editor
 include bittorrent_client
