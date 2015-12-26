@@ -108,6 +108,7 @@ test-deploy: \
 	test-system-call-tracer \
 	test-terminal \
 	test-text-editor \
+	test-undelete-utility \
 	test-users \
 	test-vcard-validator \
 	test-vector-image-editor \
@@ -345,6 +346,10 @@ test-text-editor: deploy $(VAGRANT)
 .PHONY: test-onion-router
 test-onion-router: deploy $(VAGRANT)
 	$(vm_shell) 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
+
+.PHONY: test-undelete-utility
+test-undelete-utility: deploy $(VAGRANT)
+	$(vm_shell) 'extundelete --help'
 
 .PHONY: test-users
 test-users: deploy $(VAGRANT)

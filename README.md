@@ -24,6 +24,7 @@ Automated system configuration setup:
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
+    - [File recovery utility](http://extundelete.sourceforge.net/)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
     - [File Transfer Protocol (FTP) client](https://filezilla-project.org/)
     - [Flash browser plugin](https://get.adobe.com/flashplayer/)
