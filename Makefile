@@ -33,7 +33,7 @@ do
     then
         break
     else
-        sleep 1s
+        $(SLEEP) 1s
         let --tries
     fi
 done
