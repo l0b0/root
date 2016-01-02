@@ -5,6 +5,7 @@ SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
 SUDO = /usr/bin/sudo
 VAGRANT = /usr/bin/vagrant
+WHICH = /usr/bin/which
 
 vm_shell = $(VAGRANT) ssh --command
 
@@ -147,7 +148,7 @@ test-browser: deploy
 .PHONY: test-cad-editor
 test-cad-editor: deploy
 	# TODO: Use --version after <https://github.com/openscad/openscad/issues/1028> is fixed
-	$(vm_shell) 'which openscad'
+	$(vm_shell) '$(WHICH) openscad'
 
 .PHONY: test-calculator
 test-calculator: deploy
@@ -163,7 +164,7 @@ test-desktop-management-interface-table-decoder: deploy
 
 .PHONY: test-diff-gui
 test-diff-gui: deploy
-	$(vm_shell) 'which kdiff3'
+	$(vm_shell) '$(WHICH) kdiff3'
 
 .PHONY: test-dvcs
 test-dvcs: deploy
@@ -188,7 +189,7 @@ test-file-renamer: deploy
 .PHONY: test-file-transfer-protocol-client-gui
 test-file-transfer-protocol-client-gui: deploy
 	# TODO: Use --version when <https://trac.filezilla-project.org/ticket/10671> is fixed
-	$(vm_shell) 'which filezilla'
+	$(vm_shell) '$(WHICH) filezilla'
 
 .PHONY: test-firewall
 test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
@@ -201,7 +202,7 @@ test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 
 .PHONY: test-flash-plugin
 test-flash-plugin: deploy
-	$(vm_shell) 'which flash-player-properties'
+	$(vm_shell) '$(WHICH) flash-player-properties'
 
 .PHONY: test-fonts
 test-fonts: deploy
@@ -276,15 +277,15 @@ test-packet-analyzer: deploy
 
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy
-	$(vm_shell) 'which hugin'
+	$(vm_shell) '$(WHICH) hugin'
 
 .PHONY: test-password-manager
 test-password-manager: deploy
-	$(vm_shell) 'which keepassx'
+	$(vm_shell) '$(WHICH) keepassx'
 
 .PHONY: test-pdf-editor
 test-pdf-editor: deploy
-	$(vm_shell) 'which xournal'
+	$(vm_shell) '$(WHICH) xournal'
 
 .PHONY: test-pdf-reader
 test-pdf-reader: deploy
@@ -317,13 +318,13 @@ test-ruby-linter: deploy
 .PHONY: test-scanner
 test-scanner: deploy
 	# TODO: Use --version after <https://bugs.launchpad.net/simple-scan/+bug/1394385> is fixed
-	$(vm_shell) 'which simple-scan'
+	$(vm_shell) '$(WHICH) simple-scan'
 
 .PHONY: test-screen-backlight-adjuster
 test-screen-backlight-adjuster: deploy
 	# TODO: Use -help after <https://bugs.freedesktop.org/show_bug.cgi?id=89358> is fixed,
 	# or -version after <https://bugs.freedesktop.org/show_bug.cgi?id=89359> is fixed
-	$(vm_shell) 'which xbacklight'
+	$(vm_shell) '$(WHICH) xbacklight'
 
 .PHONY: test-screen-grabber
 test-screen-grabber: deploy
@@ -332,7 +333,7 @@ test-screen-grabber: deploy
 .PHONY: test-screen-locker
 test-screen-locker: deploy
 	# TODO: Use -v once it returns exit code 0
-	$(vm_shell) 'which slock'
+	$(vm_shell) '$(WHICH) slock'
 
 .PHONY: test-shell
 test-shell: deploy
@@ -365,7 +366,7 @@ test-text-editor: deploy
 
 .PHONY: test-travis-linter
 test-travis-linter: deploy
-	$(vm_shell) 'which travis-lint'
+	$(vm_shell) '$(WHICH) travis-lint'
 
 .PHONY: test-undelete-utility
 test-undelete-utility: deploy
