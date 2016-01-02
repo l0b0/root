@@ -105,6 +105,8 @@ test-deploy: \
 	test-photo-metadata-editor \
 	test-printing-system \
 	test-process-container \
+	test-puppet-linter \
+	test-ruby-linter \
 	test-scanner \
 	test-screen-backlight-adjuster \
 	test-screen-grabber \
@@ -116,6 +118,7 @@ test-deploy: \
 	test-system-call-tracer \
 	test-terminal \
 	test-text-editor \
+	test-travis-linter \
 	test-undelete-utility \
 	test-users \
 	test-vcard-validator \
@@ -302,6 +305,14 @@ test-printing-system: deploy
 test-process-container: deploy
 	$(vm_shell) 'sudo docker info'
 
+.PHONY: test-puppet-linter
+test-puppet-linter: deploy
+	$(vm_shell) 'puppet-lint --help'
+
+.PHONY: test-ruby-linter
+test-ruby-linter: deploy
+	$(vm_shell) 'reek --help'
+
 .PHONY: test-scanner
 test-scanner: deploy
 	# TODO: Use --version after <https://bugs.launchpad.net/simple-scan/+bug/1394385> is fixed
@@ -350,6 +361,10 @@ test-terminal: deploy
 .PHONY: test-text-editor
 test-text-editor: deploy
 	$(vm_shell) 'vim --version'
+
+.PHONY: test-travis-linter
+test-travis-linter: deploy
+	$(vm_shell) 'which travis-lint'
 
 .PHONY: test-onion-router
 test-onion-router: deploy
