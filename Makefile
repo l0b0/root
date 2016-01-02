@@ -204,7 +204,7 @@ test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 
 .PHONY: test-flash-plugin
 test-flash-plugin: deploy
-	$(vm_shell) '$(WHICH) flash-player-properties'
+	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) flash-player-properties'
 
 .PHONY: test-fonts
 test-fonts: deploy

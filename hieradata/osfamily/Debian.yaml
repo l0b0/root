@@ -1,6 +1,5 @@
 display_server::package: xorg
 file_renamer::package: perl
-flash_plugin::package: flashplugin-installer
 fonts::packages:
   - ttf-bitstream-vera
   - ttf-dejavu
