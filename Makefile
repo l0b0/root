@@ -186,7 +186,7 @@ test-file-manager: deploy
 
 .PHONY: test-file-renamer
 test-file-renamer: deploy
-	$(vm_shell) 'perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
+	$(vm_shell) '$(is_travis_ci_command) || perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
 
 .PHONY: test-file-transfer-protocol-client-gui
 test-file-transfer-protocol-client-gui: deploy
