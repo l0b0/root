@@ -50,11 +50,9 @@ test: lint test-deploy
 
 .PHONY: deploy
 deploy:
-	# Vagrant or Travis CI
+	# Vagrant only
 	if [ -e $(VAGRANT) ]; then \
 		$(VAGRANT) up || [ $$? -eq 2 ]; \
-	else \
-		$(SUDO) $(MAKE) install || exit $$?; \
 	fi
 
 
