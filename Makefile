@@ -1,8 +1,10 @@
 GREP = /usr/bin/grep
+MAKE = /usr/bin/make
 PING = /usr/bin/ping
 PUPPET = /usr/bin/puppet
 SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
+SUDO = /usr/bin/sudo
 VAGRANT = /usr/bin/vagrant
 
 vm_shell = $(VAGRANT) ssh --command
@@ -47,11 +49,17 @@ all: test
 test: lint test-deploy
 
 .PHONY: deploy
-deploy: $(VAGRANT)
-	$(VAGRANT) up || [ $$? -eq 2 ]
+deploy:
+	# Vagrant or Travis CI
+	if [ -e $(VAGRANT) ]; then \
+		$(VAGRANT) up || [ $$? -eq 2 ]; \
+	else \
+		$(SUDO) $(MAKE) install || exit $$?; \
+	fi
+
 
 .PHONY: lint
-lint: deploy $(VAGRANT)
+lint: deploy
 	$(vm_shell) '/vagrant/test/lint.sh'
 
 .PHONY: test-deploy
@@ -118,67 +126,67 @@ test-deploy: \
 	test-firewall
 
 .PHONY: test-battery-indicator
-test-battery-indicator: deploy $(GREP) $(VAGRANT)
+test-battery-indicator: deploy $(GREP)
 	# Change to `--version` when <https://github.com/valr/cbatticon/issues/17> is fixed
 	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
 		$(vm_shell) 'cbatticon --help'; \
 	fi
 
 .PHONY: test-bitmap-image-editor
-test-bitmap-image-editor: deploy $(VAGRANT)
+test-bitmap-image-editor: deploy
 	$(vm_shell) 'gimp --version'
 
 .PHONY: test-bittorrent-client
-test-bittorrent-client: deploy $(VAGRANT)
+test-bittorrent-client: deploy
 	$(vm_shell) 'deluge --version'
 
 .PHONY: test-browser
-test-browser: deploy $(VAGRANT)
+test-browser: deploy
 	$(vm_shell) 'firefox --version'
 
 .PHONY: test-cad-editor
-test-cad-editor: deploy $(VAGRANT)
+test-cad-editor: deploy
 	# TODO: Use --version after <https://github.com/openscad/openscad/issues/1028> is fixed
 	$(vm_shell) 'which openscad'
 
 .PHONY: test-calculator
-test-calculator: deploy $(VAGRANT)
+test-calculator: deploy
 	$(vm_shell) 'test "$$(echo 2+2 | bc)" -eq 4'
 
 .PHONY: test-diagram-editor
-test-diagram-editor: deploy $(VAGRANT)
+test-diagram-editor: deploy
 	$(vm_shell) 'dia --version'
 
 .PHONY: test-desktop-management-interface-table-decoder
-test-desktop-management-interface-table-decoder: deploy $(VAGRANT)
+test-desktop-management-interface-table-decoder: deploy
 	$(vm_shell) 'sudo dmidecode'
 
 .PHONY: test-diff-gui
-test-diff-gui: deploy $(VAGRANT)
+test-diff-gui: deploy
 	$(vm_shell) 'which kdiff3'
 
 .PHONY: test-dvcs
-test-dvcs: deploy $(VAGRANT)
+test-dvcs: deploy
 	$(vm_shell) 'git --version'
 
 .PHONY: test-email-reader
-test-email-reader: deploy $(VAGRANT)
+test-email-reader: deploy
 	$(vm_shell) 'thunderbird --version'
 
 .PHONY: test-file-copier
-test-file-copier: deploy $(VAGRANT)
+test-file-copier: deploy
 	$(vm_shell) 'rsync --version'
 
 .PHONY: test-file-manager
-test-file-manager: deploy $(VAGRANT)
+test-file-manager: deploy
 	$(vm_shell) 'pcmanfm --help'
 
 .PHONY: test-file-renamer
-test-file-renamer: deploy $(VAGRANT)
+test-file-renamer: deploy
 	$(vm_shell) 'perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
 
 .PHONY: test-file-transfer-protocol-client-gui
-test-file-transfer-protocol-client-gui: deploy $(VAGRANT)
+test-file-transfer-protocol-client-gui: deploy
 	# TODO: Use --version when <https://trac.filezilla-project.org/ticket/10671> is fixed
 	$(vm_shell) 'which filezilla'
 
@@ -192,183 +200,183 @@ test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
 	$(vm_shell) 'exit'
 
 .PHONY: test-flash-plugin
-test-flash-plugin: deploy $(VAGRANT)
+test-flash-plugin: deploy
 	$(vm_shell) 'which flash-player-properties'
 
 .PHONY: test-fonts
-test-fonts: deploy $(VAGRANT)
+test-fonts: deploy
 	$(vm_shell) 'fc-list : family | grep "Liberation"'
 
 .PHONY: test-graph-editor
-test-graph-editor: deploy $(VAGRANT)
+test-graph-editor: deploy
 	$(vm_shell) 'dot -V'
 
 .PHONY: test-image-viewer
-test-image-viewer: deploy $(VAGRANT)
+test-image-viewer: deploy
 	$(vm_shell) 'eog --version'
 
 .PHONY: test-image-viewer-cli
-test-image-viewer-cli: deploy $(VAGRANT)
+test-image-viewer-cli: deploy
 	$(vm_shell) 'feh --version'
 
 .PHONY: test-integrated-development-environment
-test-integrated-development-environment: deploy $(VAGRANT)
+test-integrated-development-environment: deploy
 	# TODO: Find a better test
 	# <https://unix.stackexchange.com/questions/229429/how-to-verify-idea-installation-success-with-cli-on-a-vm>
 	$(vm_shell) 'ls /opt/idea/bin/inspect.sh'
 
 .PHONY: test-login-manager
-test-login-manager: deploy $(VAGRANT)
+test-login-manager: deploy
 	$(vm_shell) 'systemctl status display-manager.service | grep lightdm.service'
 
 .PHONY: test-json-processor
-test-json-processor: deploy $(VAGRANT)
+test-json-processor: deploy
 	$(vm_shell) 'jq --version'
 
 .PHONY: test-media-player
-test-media-player: deploy $(VAGRANT)
+test-media-player: deploy
 	$(vm_shell) 'vlc --version'
 
 .PHONY: test-newline-converter
-test-newline-converter: deploy $(VAGRANT)
+test-newline-converter: deploy
 	$(vm_shell) 'dos2unix --version'
 
 .PHONY: test-network-analyzer
-test-network-analyzer: deploy $(VAGRANT)
+test-network-analyzer: deploy
 	$(vm_shell) '/vagrant/test/netcat.sh'
 
 .PHONY: test-network-manager
-test-network-manager: deploy $(VAGRANT)
+test-network-manager: deploy
 	$(vm_shell) 'sudo wicd-cli --wireless --list-networks'
 
 .PHONY: test-ntpd
-test-ntpd: deploy $(VAGRANT)
+test-ntpd: deploy
 	$(VAGRANT) ssh <<< "$$ntpd_test"
 
 .PHONY: test-office-suite
-test-office-suite: deploy $(VAGRANT)
+test-office-suite: deploy
 	$(vm_shell) 'libreoffice --version'
 
 .PHONY: test-open-files-lister
-test-open-files-lister: deploy $(VAGRANT)
+test-open-files-lister: deploy
 	$(vm_shell) 'lsof -v'
 
 .PHONY: test-openpgp-tools
-test-openpgp-tools: deploy $(VAGRANT)
+test-openpgp-tools: deploy
 	$(vm_shell) 'gpg --keyserver keys.gnupg.net --recv-keys $(gpg_public_key_fingerprint)'
 
 .PHONY: test-packet-analyzer
-test-packet-analyzer: deploy $(VAGRANT)
+test-packet-analyzer: deploy
 	$(vm_shell) 'wireshark-gtk -v'
 	$(vm_shell) 'tshark -v'
 
 .PHONY: test-panorama-editor
-test-panorama-editor: deploy $(VAGRANT)
+test-panorama-editor: deploy
 	$(vm_shell) 'which hugin'
 
 .PHONY: test-password-manager
-test-password-manager: deploy $(VAGRANT)
+test-password-manager: deploy
 	$(vm_shell) 'which keepassx'
 
 .PHONY: test-pdf-editor
-test-pdf-editor: deploy $(VAGRANT)
+test-pdf-editor: deploy
 	$(vm_shell) 'which xournal'
 
 .PHONY: test-pdf-reader
-test-pdf-reader: deploy $(VAGRANT)
+test-pdf-reader: deploy
 	$(vm_shell) 'evince --version'
 
 .PHONY: test-photo-editor
-test-photo-editor: deploy $(VAGRANT)
+test-photo-editor: deploy
 	$(vm_shell) 'digikam --version'
 
 .PHONY: test-photo-metadata-editor
-test-photo-metadata-editor: deploy $(VAGRANT)
+test-photo-metadata-editor: deploy
 	$(vm_shell) 'jhead -V'
 
 .PHONY: test-printing-system
-test-printing-system: deploy $(VAGRANT)
+test-printing-system: deploy
 	$(vm_shell) 'cups-config --version'
 
 .PHONY: test-process-container
-test-process-container: deploy $(VAGRANT)
+test-process-container: deploy
 	$(vm_shell) 'sudo docker info'
 
 .PHONY: test-scanner
-test-scanner: deploy $(VAGRANT)
+test-scanner: deploy
 	# TODO: Use --version after <https://bugs.launchpad.net/simple-scan/+bug/1394385> is fixed
 	$(vm_shell) 'which simple-scan'
 
 .PHONY: test-screen-backlight-adjuster
-test-screen-backlight-adjuster: deploy $(VAGRANT)
+test-screen-backlight-adjuster: deploy
 	# TODO: Use -help after <https://bugs.freedesktop.org/show_bug.cgi?id=89358> is fixed,
 	# or -version after <https://bugs.freedesktop.org/show_bug.cgi?id=89359> is fixed
 	$(vm_shell) 'which xbacklight'
 
 .PHONY: test-screen-grabber
-test-screen-grabber: deploy $(VAGRANT)
+test-screen-grabber: deploy
 	$(vm_shell) 'scrot --version'
 
 .PHONY: test-screen-locker
-test-screen-locker: deploy $(VAGRANT)
+test-screen-locker: deploy
 	# TODO: Use -v once it returns exit code 0
 	$(vm_shell) 'which slock'
 
 .PHONY: test-shell
-test-shell: deploy $(VAGRANT)
+test-shell: deploy
 	$(vm_shell) 'bash --version'
 
 .PHONY: test-spell-checker
-test-spell-checker: deploy $(VAGRANT)
+test-spell-checker: deploy
 	$(vm_shell) 'aspell dump dicts'
 	$(vm_shell) 'echo | hunspell -D'
 
 .PHONY: test-sshd
-test-sshd: deploy $(VAGRANT)
+test-sshd: deploy
 	$(vm_shell) 'systemctl status sshd'
 
 .PHONY: test-system-call-tracer
-test-system-call-tracer: deploy $(VAGRANT)
+test-system-call-tracer: deploy
 	$(vm_shell) 'strace -V'
 
 .PHONY: test-storage-hardware-monitor
-test-storage-hardware-monitor: deploy $(VAGRANT)
+test-storage-hardware-monitor: deploy
 	$(vm_shell) 'sudo smartctl --info /dev/sda'
 
 .PHONY: test-terminal
-test-terminal: deploy $(VAGRANT)
+test-terminal: deploy
 	$(vm_shell) 'xterm -version'
 
 .PHONY: test-text-editor
-test-text-editor: deploy $(VAGRANT)
+test-text-editor: deploy
 	$(vm_shell) 'vim --version'
 
 .PHONY: test-onion-router
-test-onion-router: deploy $(VAGRANT)
+test-onion-router: deploy
 	$(vm_shell) 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-undelete-utility
-test-undelete-utility: deploy $(VAGRANT)
+test-undelete-utility: deploy
 	$(vm_shell) 'extundelete --help'
 
 .PHONY: test-users
-test-users: deploy $(VAGRANT)
+test-users: deploy
 	$(vm_shell) '[[ "$$(sudo passwd --status root)" =~ ^root\ L\ .*$$ ]]'
 
 .PHONY: test-vcard-validator
-test-vcard-validator: deploy $(VAGRANT)
+test-vcard-validator: deploy
 	$(vm_shell) 'vcard --help'
 
 .PHONY: test-vector-image-editor
-test-vector-image-editor: deploy $(VAGRANT)
+test-vector-image-editor: deploy
 	$(vm_shell) 'inkscape --version'
 
 .PHONY: test-video-downloader
-test-video-downloader: deploy $(VAGRANT)
+test-video-downloader: deploy
 	$(vm_shell) 'youtube-dl --version'
 
 .PHONY: test-window-manager
-test-window-manager: deploy $(VAGRANT)
+test-window-manager: deploy
 	$(vm_shell) 'awesome --version'
 
 .PHONY: install
