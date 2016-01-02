@@ -13,6 +13,8 @@ makefile_directory := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 gpg_public_key_fingerprint = 92126B54
 
+is_travis_ci_command := test "$$(facter osfamily)" = Debian
+
 vm_user = vagrant
 vm_ip = 127.0.0.1
 vm_port = 2222
@@ -148,7 +150,7 @@ test-browser: deploy
 .PHONY: test-cad-editor
 test-cad-editor: deploy
 	# TODO: Use --version after <https://github.com/openscad/openscad/issues/1028> is fixed
-	$(vm_shell) '$(WHICH) openscad'
+	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) openscad'
 
 .PHONY: test-calculator
 test-calculator: deploy
@@ -172,7 +174,7 @@ test-dvcs: deploy
 
 .PHONY: test-email-reader
 test-email-reader: deploy
-	$(vm_shell) 'thunderbird --version'
+	$(vm_shell) '$(is_travis_ci_command) || thunderbird --version'
 
 .PHONY: test-file-copier
 test-file-copier: deploy
@@ -256,7 +258,7 @@ test-ntpd: deploy
 
 .PHONY: test-office-suite
 test-office-suite: deploy
-	$(vm_shell) 'libreoffice --version'
+	$(vm_shell) '$(is_travis_ci_command) || libreoffice --version'
 
 .PHONY: test-onion-router
 test-onion-router: deploy
@@ -272,8 +274,8 @@ test-openpgp-tools: deploy
 
 .PHONY: test-packet-analyzer
 test-packet-analyzer: deploy
-	$(vm_shell) 'wireshark-gtk -v'
-	$(vm_shell) 'tshark -v'
+	$(vm_shell) '$(is_travis_ci_command) || wireshark-gtk -v'
+	$(vm_shell) '$(is_travis_ci_command) || tshark -v'
 
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy
@@ -305,7 +307,7 @@ test-printing-system: deploy
 
 .PHONY: test-process-container
 test-process-container: deploy
-	$(vm_shell) 'sudo docker info'
+	$(vm_shell) '$(is_travis_ci_command) || sudo docker info'
 
 .PHONY: test-puppet-linter
 test-puppet-linter: deploy
@@ -324,7 +326,7 @@ test-scanner: deploy
 test-screen-backlight-adjuster: deploy
 	# TODO: Use -help after <https://bugs.freedesktop.org/show_bug.cgi?id=89358> is fixed,
 	# or -version after <https://bugs.freedesktop.org/show_bug.cgi?id=89359> is fixed
-	$(vm_shell) '$(WHICH) xbacklight'
+	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) xbacklight'
 
 .PHONY: test-screen-grabber
 test-screen-grabber: deploy
