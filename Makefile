@@ -257,6 +257,10 @@ test-ntpd: deploy
 test-office-suite: deploy
 	$(vm_shell) 'libreoffice --version'
 
+.PHONY: test-onion-router
+test-onion-router: deploy
+	$(vm_shell) 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
+
 .PHONY: test-open-files-lister
 test-open-files-lister: deploy
 	$(vm_shell) 'lsof -v'
@@ -362,10 +366,6 @@ test-text-editor: deploy
 .PHONY: test-travis-linter
 test-travis-linter: deploy
 	$(vm_shell) 'which travis-lint'
-
-.PHONY: test-onion-router
-test-onion-router: deploy
-	$(vm_shell) 'torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor."'
 
 .PHONY: test-undelete-utility
 test-undelete-utility: deploy
