@@ -9,4 +9,4 @@ install:
   - bundle install --jobs=3 --retry=3
   - rvmsudo bundle exec make PUPPET="$(which puppet)" install
   - sudo ln --symbolic "$PWD" /vagrant
-script: make vm_shell=/bin/bash test
+script: make GREP=/bin/grep SLEEP=/bin/sleep vm_shell=/bin/bash test
