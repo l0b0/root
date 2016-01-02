@@ -1,6 +1,5 @@
 GREP = /usr/bin/grep
 MAKE = /usr/bin/make
-PING = /usr/bin/ping
 PUPPET = /usr/bin/puppet
 SLEEP = /usr/bin/sleep
 SSH = /usr/bin/ssh
