@@ -1,4 +1,6 @@
-class network_manager {
+class network_manager (
+  $packages,
+) {
   include shell
 
   $service_name = 'wicd'
@@ -9,7 +11,7 @@ class network_manager {
     ],
     ' ')
 
-  package { 'wicd':
+  package { $packages:
     ensure => latest,
   }->
   service { $service_name:
