@@ -31,7 +31,7 @@ then
     sudo timedatectl set-timezone UTC
     sudo timedatectl set-time $$vm_test_date
 else
-    sudo service ntpd stop
+    sudo service ntp stop
     sudo ln --symbolic --force /usr/share/zoneinfo/UTC /etc/localtime
     sudo date $$vm_test_date
 fi
@@ -40,7 +40,7 @@ if $(has_systemd_command)
 then
     sudo systemctl start ntpd.service
 else
-    sudo service ntpd start
+    sudo service ntp start
 fi
 tries=30
 while true
