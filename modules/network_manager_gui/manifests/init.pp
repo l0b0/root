@@ -1,8 +1,10 @@
-class network_manager_gui {
+class network_manager_gui (
+  $packages,
+) {
   include network_manager
   include window_manager
 
-  package { 'wicd-gtk':
+  package { $packages:
     ensure => latest,
   }
 }
