@@ -210,7 +210,7 @@ test-file-transfer-protocol-client-gui: deploy
 	$(vm_shell) '$(WHICH) filezilla'
 
 .PHONY: test-firewall
-test-firewall: deploy $(SLEEP) $(SSH) $(VAGRANT)
+test-firewall: deploy $(SLEEP) $(SSH)
 	for i in 1 2 3 4 5 6; do \
 		! $(SSH) -p $(vm_port) -o ConnectTimeout=1 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PasswordAuthentication=no $(vm_user)@$(vm_ip) || exit 1; \
 	done
