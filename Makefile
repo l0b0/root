@@ -33,7 +33,7 @@ then
 else
     sudo service ntp stop
     sudo ln --symbolic --force /usr/share/zoneinfo/UTC /etc/localtime
-    sudo date $$vm_test_date
+    sudo date --set=$$vm_test_date
 fi
 [ "$$(date --utc +$(vm_test_date_format))" = "$$vm_test_date" ]
 if $(has_systemd_command)
