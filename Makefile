@@ -14,6 +14,7 @@ makefile_directory := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 gpg_public_key_fingerprint = 92126B54
 
 is_travis_ci_command := test "$$(facter osfamily)" = Debian
+has_systemd_command := which systemctl timedatectl
 
 vm_user = vagrant
 vm_ip = 127.0.0.1
@@ -23,12 +24,24 @@ vm_test_date_format = %Y-%m-%d
 define ntpd_test
 set -o errexit -o noclobber -o nounset -o xtrace
 vm_test_date=2000-01-01
-sudo systemctl stop ntpd.service
-sudo systemctl stop vboxservice.service
-sudo timedatectl set-timezone UTC
-sudo timedatectl set-time $$vm_test_date
+if $(has_systemd_command)
+then
+    sudo systemctl stop ntpd.service
+    sudo systemctl stop vboxservice.service
+    sudo timedatectl set-timezone UTC
+    sudo timedatectl set-time $$vm_test_date
+else
+    sudo service ntpd stop
+    sudo ln --symbolic --force /usr/share/zoneinfo/UTC /etc/localtime
+    sudo date $$vm_test_date
+fi
 [ "$$(date --utc +$(vm_test_date_format))" = "$$vm_test_date" ]
-sudo systemctl start ntpd.service
+if $(has_systemd_command)
+then
+    sudo systemctl start ntpd.service
+else
+    sudo service ntpd start
+fi
 tries=30
 while true
 do
@@ -40,7 +53,10 @@ do
         let --tries
     fi
 done
-sudo systemctl start vboxservice.service
+if $(has_systemd_command)
+then
+    sudo systemctl start vboxservice.service
+fi
 endef
 export ntpd_test
 
