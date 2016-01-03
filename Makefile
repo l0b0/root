@@ -270,7 +270,7 @@ test-network-manager: deploy
 
 .PHONY: test-ntpd
 test-ntpd: deploy
-	$(VAGRANT) ssh <<< "$$ntpd_test"
+	printf '%s\n' "$$ntpd_test" | $(VAGRANT) ssh
 
 .PHONY: test-office-suite
 test-office-suite: deploy
