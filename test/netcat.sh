@@ -5,13 +5,14 @@ set -o errexit -o xtrace
 port='9999'
 log='netcat.log'
 expected_value='foo'
+netcat="$(which nc.traditional netcat | head --lines=1)"
 
 trap 'kill $server_pid $client_pid' EXIT
 
-netcat -l -p "$port" > "$log" &
+"$netcat" -l -p "$port" > "$log" &
 server_pid=$!
 
-printf "$expected_value" | netcat 127.0.0.1 "$port" &
+printf "$expected_value" | "$netcat" 127.0.0.1 "$port" &
 client_pid=$!
 
 timeout="$(date --date='10 seconds' +%s)"
