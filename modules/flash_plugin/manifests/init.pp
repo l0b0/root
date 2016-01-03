@@ -1,9 +1,11 @@
-class flash_plugin (
-  $package,
+class flash_plugin(
+  $package = undef,
 ) {
-  include browser
+  if ($package != undef) {
+    include browser
 
-  package { $package:
-    ensure => latest,
+    package { $package:
+      ensure => latest,
+    }
   }
 }
