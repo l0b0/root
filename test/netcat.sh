@@ -12,7 +12,15 @@ trap 'kill $server_pid $client_pid' EXIT
 "$netcat" -l -p "$port" > "$log" &
 server_pid=$!
 
-sleep 1
+startup_timeout="$(date --date='5 seconds' +%s)"
+while [ "$(date +%s)" -le "$timeout" ]
+do
+    if "$netcat" 127.0.0.1 "$port" < /dev/null
+    then
+        break
+    fi
+    sleep 1
+done
 
 printf "$expected_value" | "$netcat" 127.0.0.1 "$port" &
 client_pid=$!
