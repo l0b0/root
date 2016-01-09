@@ -14,7 +14,7 @@ Automated system configuration setup:
 - Install latest version of packages:
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Bitmap image editor](http://www.gimp.org/)
-    - [BitTorrent client](http://deluge-torrent.org/)
+    - [BitTorrent client](http://www.transmissionbt.com/)
     - [Browser](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Calculator](https://www.gnu.org/software/bc/)

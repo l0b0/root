@@ -1,7 +1,10 @@
 class bittorrent_client {
   include window_manager
 
-  package { 'deluge':
+  package { 'transmission-gtk':
     ensure => latest,
+  }
+  package { 'deluge':
+    ensure => absent,
   }
 }

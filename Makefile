@@ -157,7 +157,7 @@ test-bitmap-image-editor: deploy
 
 .PHONY: test-bittorrent-client
 test-bittorrent-client: deploy
-	$(vm_shell) 'deluge --version'
+	$(vm_shell) 'which transmission-gtk'
 
 .PHONY: test-browser
 test-browser: deploy
