@@ -80,6 +80,7 @@ lint: deploy
 
 .PHONY: test-deploy
 test-deploy: \
+	test-antivirus \
 	test-battery-indicator \
 	test-bitmap-image-editor \
 	test-bittorrent-client \
@@ -150,6 +151,11 @@ test-battery-indicator: deploy $(GREP)
 	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
 		$(vm_shell) 'cbatticon --help'; \
 	fi
+
+.PHONY: test-antivirus
+test-antivirus: deploy
+	$(vm_shell) 'sudo freshclam'
+	$(vm_shell) 'sudo clamscan --quiet /usr/bin'
 
 .PHONY: test-bitmap-image-editor
 test-bitmap-image-editor: deploy
