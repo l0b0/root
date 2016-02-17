@@ -52,8 +52,6 @@ include pdf_reader
 include photo_editor
 include photo_metadata_editor
 include printing_system
-include puppet_linter
-include ruby_linter
 include scanner
 include screen_backlight_adjuster
 include screen_grabber
@@ -64,7 +62,6 @@ include sshd
 include storage_hardware_monitor
 include terminal
 include text_editor
-include travis_linter
 include users
 include vcard_validator
 include vector_image_editor

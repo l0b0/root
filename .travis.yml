@@ -5,8 +5,6 @@ rvm:
 before_install:
   - sudo apt-get update -qq
 install:
-  - export rvmsudo_secure_path=1
-  - bundle install --jobs=3 --retry=3
-  - rvmsudo bundle exec make PUPPET="$(which puppet)" install
+  - sudo make PUPPET="$(which puppet)" install
   - sudo ln --symbolic "$PWD" /vagrant
 script: make GREP=/bin/grep SLEEP=/bin/sleep vm_shell='/bin/bash -c' vm_port=22 vm_user=travis test
