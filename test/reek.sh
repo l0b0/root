@@ -7,5 +7,5 @@ find /vagrant \
     \) -prune -o \
     \( \
         -type f \( -name '*.rb' -o -name Vagrantfile \) \
-        -exec reek --verbose {} + \
+        -exec reek {} + \
     \)
