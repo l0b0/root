@@ -13,7 +13,7 @@ makefile_directory := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 gpg_public_key_fingerprint = 92126B54
 
-is_travis_ci_command := test "$$(facter osfamily)" = Debian
+is_debian_command := test "$$(facter osfamily)" = Debian
 has_systemd_command := which systemctl timedatectl
 
 vm_user = vagrant
@@ -172,7 +172,7 @@ test-browser: deploy
 .PHONY: test-cad-editor
 test-cad-editor: deploy
 	# TODO: Use --version after <https://github.com/openscad/openscad/issues/1028> is fixed
-	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) openscad'
+	$(vm_shell) '$(is_debian_command) || $(WHICH) openscad'
 
 .PHONY: test-calculator
 test-calculator: deploy
@@ -196,7 +196,7 @@ test-dvcs: deploy
 
 .PHONY: test-email-reader
 test-email-reader: deploy
-	$(vm_shell) '$(is_travis_ci_command) || thunderbird --version'
+	$(vm_shell) '$(is_debian_command) || thunderbird --version'
 
 .PHONY: test-file-copier
 test-file-copier: deploy
@@ -208,7 +208,7 @@ test-file-manager: deploy
 
 .PHONY: test-file-renamer
 test-file-renamer: deploy
-	$(vm_shell) '$(is_travis_ci_command) || perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
+	$(vm_shell) '$(is_debian_command) || perl-rename --dry-run --verbose "s/md/txt/" /vagrant/README.md'
 
 .PHONY: test-file-transfer-protocol-client-gui
 test-file-transfer-protocol-client-gui: deploy
@@ -226,7 +226,7 @@ test-firewall: deploy $(SLEEP) $(SSH)
 
 .PHONY: test-flash-plugin
 test-flash-plugin: deploy
-	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) flash-player-properties'
+	$(vm_shell) '$(is_debian_command) || $(WHICH) flash-player-properties'
 
 .PHONY: test-fonts
 test-fonts: deploy
@@ -280,7 +280,7 @@ test-ntpd: deploy
 
 .PHONY: test-office-suite
 test-office-suite: deploy
-	$(vm_shell) '$(is_travis_ci_command) || libreoffice --version'
+	$(vm_shell) '$(is_debian_command) || libreoffice --version'
 
 .PHONY: test-onion-router
 test-onion-router: deploy
@@ -296,8 +296,8 @@ test-openpgp-tools: deploy
 
 .PHONY: test-packet-analyzer
 test-packet-analyzer: deploy
-	$(vm_shell) '$(is_travis_ci_command) || wireshark-gtk -v'
-	$(vm_shell) '$(is_travis_ci_command) || tshark -v'
+	$(vm_shell) '$(is_debian_command) || wireshark-gtk -v'
+	$(vm_shell) '$(is_debian_command) || tshark -v'
 
 .PHONY: test-panorama-editor
 test-panorama-editor: deploy
@@ -329,7 +329,7 @@ test-printing-system: deploy
 
 .PHONY: test-process-container
 test-process-container: deploy
-	$(vm_shell) '$(is_travis_ci_command) || sudo docker info'
+	$(vm_shell) '$(is_debian_command) || sudo docker info'
 
 .PHONY: test-puppet-linter
 test-puppet-linter: deploy
@@ -348,7 +348,7 @@ test-scanner: deploy
 test-screen-backlight-adjuster: deploy
 	# TODO: Use -help after <https://bugs.freedesktop.org/show_bug.cgi?id=89358> is fixed,
 	# or -version after <https://bugs.freedesktop.org/show_bug.cgi?id=89359> is fixed
-	$(vm_shell) '$(is_travis_ci_command) || $(WHICH) xbacklight'
+	$(vm_shell) '$(is_debian_command) || $(WHICH) xbacklight'
 
 .PHONY: test-screen-grabber
 test-screen-grabber: deploy
