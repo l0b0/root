@@ -1,5 +1,5 @@
 #!/bin/sh
-set -o errexit -o noclobber -o nounset
+set -o errexit -o noclobber -o nounset -o xtrace
 
 dir=/vagrant/test
 gem_user_dir="$(ruby -e 'print Gem.user_dir')"
