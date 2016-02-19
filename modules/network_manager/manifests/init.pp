@@ -1,6 +1,6 @@
 class network_manager (
-  $packages,
-  $old_packages,
+  $packages     = undef,
+  $old_packages = undef,
 ) {
   if ($packages != undef) {
     include shell
