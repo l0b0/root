@@ -35,7 +35,7 @@ Automated system configuration setup:
     - [JSON processor](https://stedolan.github.io/jq/)
     - [Media player](https://www.videolan.org/vlc/)
     - [Network analyzer](http://netcat.sourceforge.net/)
-    - [Network manager](https://wiki.archlinux.org/index.php/Netctl)
+    - [Network manager](https://wiki.archlinux.org/index.php/Netctl) (Arch Linux only)
     - [Packet capture (pcap) analyzer](https://www.wireshark.org/) (Arch Linux only)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Password manager](https://www.keepassx.org/)
