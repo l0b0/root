@@ -18,5 +18,6 @@ spell_checker::packages:
   - aspell-de
   - aspell-en
   - aspell-fr
+  - hunspell
   - hunspell-fr
 sshd::service_name: ssh
