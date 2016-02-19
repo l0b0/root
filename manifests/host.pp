@@ -39,7 +39,7 @@ include json_processor
 include locale
 include media_player
 include network_analyzer
-include network_manager_gui
+include network_manager
 include ntpd
 include office_suite
 include onion_router

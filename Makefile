@@ -270,7 +270,7 @@ test-network-analyzer: deploy
 
 .PHONY: test-network-manager
 test-network-manager: deploy
-	$(vm_shell) 'sudo wicd-cli --wireless --list-networks'
+	$(vm_shell) 'systemctl status netctl-auto@wlp1s0.service'
 
 .PHONY: test-ntpd
 test-ntpd: deploy
