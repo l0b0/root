@@ -363,7 +363,7 @@ test-spell-checker: deploy
 
 .PHONY: test-sshd
 test-sshd: deploy
-	$(vm_shell) 'systemctl status --no-pager sshd || service sshd status'
+	$(vm_shell) 'systemctl status --no-pager sshd || service ssh status'
 
 .PHONY: test-system-call-tracer
 test-system-call-tracer: deploy
