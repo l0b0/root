@@ -250,7 +250,7 @@ test-integrated-development-environment: deploy
 
 .PHONY: test-login-manager
 test-login-manager: deploy
-	$(vm_shell) 'systemctl status display-manager.service | grep lightdm.service || service lightdm status'
+	$(vm_shell) 'systemctl status --no-pager display-manager.service | grep lightdm.service || service lightdm status'
 
 .PHONY: test-json-processor
 test-json-processor: deploy
@@ -363,7 +363,7 @@ test-spell-checker: deploy
 
 .PHONY: test-sshd
 test-sshd: deploy
-	$(vm_shell) 'systemctl status sshd || service sshd status'
+	$(vm_shell) 'systemctl status --no-pager sshd || service sshd status'
 
 .PHONY: test-system-call-tracer
 test-system-call-tracer: deploy
