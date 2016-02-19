@@ -284,7 +284,7 @@ test-office-suite: deploy
 test-onion-router: deploy
 	$(vm_shell) '$(is_debian_command) || (torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor.")'
 	$(vm_shell) 'if $(is_debian_command); then \
-		torsocks --help; \
+		which torsocks; \
 	fi'
 
 .PHONY: test-open-files-lister
