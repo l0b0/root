@@ -283,7 +283,7 @@ test-office-suite: deploy
 .PHONY: test-onion-router
 test-onion-router: deploy
 	$(vm_shell) '$(is_debian_command) || (torify curl https://check.torproject.org/ | grep -F "Congratulations. This browser is configured to use Tor.")'
-	$(vm_shell) 'if $(is_debian_command); then torify --version'; fi
+	$(vm_shell) 'if $(is_debian_command); then torify --version; fi'
 
 .PHONY: test-open-files-lister
 test-open-files-lister: deploy
