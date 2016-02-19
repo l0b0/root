@@ -270,7 +270,7 @@ test-network-analyzer: deploy
 
 .PHONY: test-network-manager
 test-network-manager: deploy
-	$(vm_shell) '$(is_debian_command) || systemctl status netctl-auto@wlp1s0.service'
+	$(vm_shell) '$(is_debian_command) || netctl --version
 
 .PHONY: test-ntpd
 test-ntpd: deploy
