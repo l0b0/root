@@ -323,7 +323,7 @@ test-photo-metadata-editor: deploy
 
 .PHONY: test-printing-system
 test-printing-system: deploy
-	$(vm_shell) 'cups-config --version'
+	$(vm_shell) 'lpstat'
 
 .PHONY: test-process-container
 test-process-container: deploy
