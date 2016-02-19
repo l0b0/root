@@ -1,5 +1,7 @@
-class onion_router {
-  package { 'torsocks':
+class onion_router (
+  $packages,
+) {
+  package { $packages:
     ensure => latest,
   }->
   file { '/etc/tor/torrc':

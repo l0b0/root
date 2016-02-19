@@ -26,6 +26,8 @@ network_manager::old_packages:
   - wicd
 ntpd::service: ntpd
 office_suite::package: libreoffice-still
+onion_router::packages:
+  - torsocks
 packet_analyzer::packages:
   - wireshark-cli
   - wireshark-gtk

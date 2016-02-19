@@ -13,6 +13,9 @@ java_development_kit::set_default_command: /usr/sbin/update-java-alternatives --
 locale::generator_command: /usr/sbin/locale-gen
 network_analyzer::package: netcat-traditional
 ntpd::service: ntp
+onion_router::packages:
+  - tor
+  - torsocks
 printing_system::print_service: cups
 spell_checker::packages:
   - aspell-de
