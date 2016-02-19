@@ -19,7 +19,6 @@ java_development_kit::set_default_command: /usr/bin/archlinux-java set java-8-op
 locale::generator_command: /usr/bin/locale-gen
 network_analyzer::package: gnu-netcat
 network_manager::packages:
-  - netctl
   - wpa_actiond
 network_manager::old_packages:
   - wicd-gtk
