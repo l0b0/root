@@ -1,3 +1,4 @@
+GEM = /usr/bin/gem
 GREP = /usr/bin/grep
 MAKE = /usr/bin/make
 PUPPET = /usr/bin/puppet
@@ -76,7 +77,7 @@ deploy:
 
 .PHONY: lint
 lint: deploy
-	$(vm_shell) 'gem install --no-document --user-install puppet-lint reek travis-lint'
+	$(vm_shell) '$(GEM) install --no-document --user-install puppet-lint reek travis-lint'
 	$(vm_shell) '/vagrant/test/lint.sh'
 
 .PHONY: test-deploy
