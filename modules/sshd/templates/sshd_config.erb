@@ -1,4 +1,4 @@
-<% if @test %>AllowUsers vagrant<% else %>AllowGroups users<% end %>
+<% if @test %>AllowUsers vagrant travis<% else %>AllowGroups users<% end %>
 AuthorizedKeysFile .ssh/authorized_keys
 ChallengeResponseAuthentication no
 PasswordAuthentication no
