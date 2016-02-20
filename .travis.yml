@@ -1,4 +1,8 @@
 language: ruby
+branches:
+  only:
+    - master
+    - travis-ci
 sudo: true
 rvm:
   - "2.2.3"
