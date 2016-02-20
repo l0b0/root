@@ -82,65 +82,7 @@ lint: deploy
 
 .PHONY: test-deploy
 test-deploy: \
-	test-antivirus \
-	test-battery-indicator \
-	test-bitmap-image-editor \
-	test-bittorrent-client \
-	test-browser \
-	test-cad-editor \
-	test-calculator \
-	test-desktop-management-interface-table-decoder \
-	test-diagram-editor \
-	test-diff-gui \
 	test-dvcs \
-	test-email-reader \
-	test-file-copier \
-	test-file-manager \
-	test-file-renamer \
-	test-file-transfer-protocol-client-gui \
-	test-flash-plugin \
-	test-fonts \
-	test-graph-editor \
-	test-image-viewer \
-	test-image-viewer-cli \
-	test-integrated-development-environment \
-	test-json-processor \
-	test-login-manager \
-	test-media-player \
-	test-newline-converter \
-	test-network-analyzer \
-	test-network-manager \
-	test-ntpd \
-	test-office-suite \
-	test-onion-router \
-	test-open-files-lister \
-	test-openpgp-tools \
-	test-packet-analyzer \
-	test-panorama-editor \
-	test-password-manager \
-	test-pdf-editor \
-	test-pdf-reader \
-	test-photo-editor \
-	test-photo-metadata-editor \
-	test-printing-system \
-	test-process-container \
-	test-scanner \
-	test-screen-backlight-adjuster \
-	test-screen-grabber \
-	test-screen-locker \
-	test-shell \
-	test-spell-checker \
-	test-sshd \
-	test-storage-hardware-monitor \
-	test-system-call-tracer \
-	test-terminal \
-	test-text-editor \
-	test-undelete-utility \
-	test-users \
-	test-vcard-validator \
-	test-vector-image-editor \
-	test-video-downloader \
-	test-window-manager \
 	| \
 	test-firewall
 
