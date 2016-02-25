@@ -5,9 +5,10 @@ class integrated_development_environment {
   class { 'archive::prerequisites': }
   ->
   class { 'idea::ultimate':
-    version => '15.0.4',
-    build   => '143.2287.1',
-    timeout => 600,
+    version  => '15.0.4',
+    build    => '143.2287.1',
+    base_url => 'https://download.jetbrains.com/idea',
+    timeout  => 600,
   }->
   file { '/usr/local/bin/idea':
     target => '/opt/idea/bin/idea.sh',
