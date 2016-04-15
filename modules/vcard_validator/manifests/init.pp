@@ -4,6 +4,6 @@ class vcard_validator {
 
   package { 'vcard':
     ensure   => latest,
-    provider => pip2,
+    provider => pip,
   }
 }
