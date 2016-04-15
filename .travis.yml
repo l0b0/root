@@ -15,4 +15,4 @@ install:
   - bundle install --jobs=3 --retry=3
   - rvmsudo bundle exec make PUPPET="$(which puppet)" install
   - sudo ln --symbolic "$PWD" /vagrant
-script: make GEM="$(which rvm) $(which gem)" GREP=/bin/grep SLEEP=/bin/sleep vm_shell='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 127.0.0.1' vm_port=22 vm_user=travis test
+script: make GEM="/home/travis/.rvm/rubies/ruby-2.2.0/bin/gem" GREP=/bin/grep SLEEP=/bin/sleep vm_shell='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no 127.0.0.1' vm_port=22 vm_user=travis test
