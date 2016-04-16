@@ -34,7 +34,6 @@ packet_analyzer::packages:
 printing_system::browser_service: cups-browsed
 printing_system::print_service: org.cups.cupsd
 process_container::package: docker
-python2::package: python2-pip
 screen_backlight_adjuster::package: xorg-xbacklight
 service_discovery_system::package: avahi
 spell_checker::packages:

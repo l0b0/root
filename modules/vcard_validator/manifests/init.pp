@@ -1,5 +1,5 @@
 class vcard_validator {
-  require python2
+  include python_installer
   include shell
 
   package { 'vcard':
