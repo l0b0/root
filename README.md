@@ -42,6 +42,7 @@ Automated system configuration setup:
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [OpenPGP tools](https://www.gnupg.org/)
+    - [Open Document Text (ODT) to plain text converter](https://github.com/dstosberg/odt2txt/)
     - [Photo editor](https://www.digikam.org/)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Printing system](https://www.cups.org/) with [service auto-discovery](http://avahi.org/) (the latter is Arch Linux only)

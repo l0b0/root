@@ -114,6 +114,7 @@ test-deploy: \
 	test-office-suite \
 	test-onion-router \
 	test-open-files-lister \
+	test-open-document-text-to-plain-text-converter \
 	test-openpgp-tools \
 	test-packet-analyzer \
 	test-panorama-editor \
@@ -291,6 +292,10 @@ test-onion-router: deploy
 .PHONY: test-open-files-lister
 test-open-files-lister: deploy
 	$(vm_shell) 'lsof -v'
+
+.PHONY: test-open-document-text-to-plain-text-converter
+test-open-document-text-to-plain-text-converter: deploy
+	$(vm_shell) 'odt2txt --version'
 
 .PHONY: test-openpgp-tools
 test-openpgp-tools: deploy

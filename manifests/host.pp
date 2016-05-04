@@ -43,6 +43,7 @@ include network_manager
 include ntpd
 include office_suite
 include onion_router
+include open_document_text_to_plain_text_converter
 include openpgp_tools
 include packet_analyzer
 include panorama_editor
