@@ -58,6 +58,7 @@ include screen_backlight_adjuster
 include screen_grabber
 include screen_locker
 include shell
+include shell_code_checker
 include spell_checker
 include sshd
 include storage_hardware_monitor

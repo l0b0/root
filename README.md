@@ -68,6 +68,7 @@ Automated system configuration setup:
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
+    - [Shell script static analysis tool](http://www.shellcheck.net/)
     - [System call tracer](http://sourceforge.net/projects/strace/)
 
 Any of these can be disabled by removing the appropriate line in [`manifests/host.pp`](manifests/host.pp). Some of them are grouped as a single entry in that file, but it should be self-explanatory.

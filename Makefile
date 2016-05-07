@@ -130,6 +130,7 @@ test-deploy: \
 	test-screen-grabber \
 	test-screen-locker \
 	test-shell \
+	test-shell-code-checker \
 	test-spell-checker \
 	test-sshd \
 	test-storage-hardware-monitor \
@@ -361,6 +362,10 @@ test-screen-locker: deploy
 .PHONY: test-shell
 test-shell: deploy
 	$(vm_shell) 'bash --version'
+
+.PHONY: test-shell-code-checker
+test-shell-code-checker: deploy
+	$(vm_shell) 'shellcheck /vagrant/test/*.sh'
 
 .PHONY: test-spell-checker
 test-spell-checker: deploy
