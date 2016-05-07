@@ -13,7 +13,7 @@ trap 'kill $server_pid $client_pid' EXIT
 server_pid=$!
 
 startup_timeout="$(date --date='5 seconds' +%s)"
-while [ "$(date +%s)" -le "$timeout" ]
+while [ "$(date +%s)" -le "$startup_timeout" ]
 do
     if "$netcat" 127.0.0.1 "$port" < /dev/null
     then
@@ -22,7 +22,7 @@ do
     sleep 1
 done
 
-printf "$expected_value" | "$netcat" 127.0.0.1 "$port" &
+printf '%s' "$expected_value" | "$netcat" 127.0.0.1 "$port" &
 client_pid=$!
 
 timeout="$(date --date='10 seconds' +%s)"
