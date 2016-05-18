@@ -1,5 +1,9 @@
-class shell_code_checker {
-  package { ['shellcheck']:
-    ensure => latest,
+class shell_code_checker (
+  $package = undef,
+) {
+  if ($package != undef) {
+    package { $package:
+      ensure => latest,
+    }
   }
 }

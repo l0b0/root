@@ -36,6 +36,7 @@ printing_system::print_service: org.cups.cupsd
 process_container::package: docker
 screen_backlight_adjuster::package: xorg-xbacklight
 service_discovery_system::package: avahi
+shell_code_checker::package: shellcheck
 spell_checker::packages:
   - aspell-de
   - aspell-en
