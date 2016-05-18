@@ -13,6 +13,7 @@ Automated system configuration setup:
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Install latest version of packages:
     - [Antivirus](http://www.clamav.net/)
+    - [Automated Certificate Management Environment (ACME) client](https://letsencrypt.org/)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://www.transmissionbt.com/)

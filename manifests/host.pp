@@ -11,6 +11,7 @@ if versioncmp($::puppetversion,'3.6.1') >= 0 {
 }
 
 include antivirus
+include automated_certificate_management_environment_client
 include battery_indicator
 include bitmap_image_editor
 include bittorrent_client

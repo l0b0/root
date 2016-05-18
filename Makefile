@@ -83,6 +83,7 @@ lint: deploy
 .PHONY: test-deploy
 test-deploy: \
 	test-antivirus \
+	test-automated-certificate-management-environment-client \
 	test-battery-indicator \
 	test-bitmap-image-editor \
 	test-bittorrent-client \
@@ -157,6 +158,10 @@ test-battery-indicator: deploy $(GREP)
 test-antivirus: deploy
 	$(vm_shell) 'sudo freshclam'
 	$(vm_shell) 'sudo clamscan --quiet /usr/bin'
+
+.PHONY: test-automated-certificate-management-environment-client
+test-automated-certificate-management-environment-client: deploy
+	$(vm_shell) 'shellcheck /vagrant/test/*.sh'
 
 .PHONY: test-bitmap-image-editor
 test-bitmap-image-editor: deploy
