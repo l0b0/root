@@ -2,10 +2,9 @@
 set -o errexit -o noclobber -o nounset -o xtrace
 
 dir=/vagrant/test
-GEM_PATH="$(gem env gempath | tr ':' '\n' | sed 's#$#/bin#' | tr '\n' ':')"
-PATH="${GEM_PATH}/bin:$PATH"
+PATH="$(gem env gempath | tr ':' '\n' | sed 's#$#/bin#' | tr '\n' ':')/bin:$PATH"
 
-export GEM_PATH PATH
+export PATH
 
 "${dir}/puppet-lint.sh"
 "${dir}/reek.sh"
