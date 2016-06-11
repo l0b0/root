@@ -1,3 +1,4 @@
+automated_certificate_management_environment_client::package: certbot
 cad_editor::package: openscad
 display_server::package: xorg-server
 email_reader::package: thunderbird-i18n-en-gb
