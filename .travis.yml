@@ -1,7 +1,7 @@
 language: ruby
 sudo: true
 rvm:
-  - "2.2.0"
+  - "2.3.0"
 before_install:
   - sudo apt-get update -qq
 install:
