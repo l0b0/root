@@ -81,10 +81,8 @@ Test
 
 Dependencies:
 
+- Docker
 - `make`
-- `vagrant`
-- `vagrant-reload` plugin
-- `virtualbox`
 
 Install
 -------
