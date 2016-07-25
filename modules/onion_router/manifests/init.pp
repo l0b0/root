@@ -7,7 +7,7 @@ class onion_router (
   file { '/etc/tor/torrc':
     ensure => present,
     source => 'puppet:///modules/onion_router/torrc',
-    mode  => '0644';
+    mode   => '0644';
   }~>
   service { 'tor':
     ensure => running,
