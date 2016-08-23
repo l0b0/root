@@ -14,13 +14,19 @@ test: deploy
 .PHONY: deploy
 deploy:
 	$(DOCKER) build --tag=$(docker_tag) .
-	$(DOCKER) run --workdir=$(docker_root) $(docker_tag) $(PUPPET) apply \
-		--verbose \
-		--debug \
-		--modulepath=modules \
-		--detailed-exitcodes \
-		--hiera_config=hieradata/hiera.yaml \
-		manifests/host.pp || [ $$? -eq 2 ]
+	$(DOCKER) run \
+		--cap-add=SYS_ADMIN \
+		--security-opt=seccomp:unconfined \
+		--volume=/sys/fs/cgroup:/sys/fs/cgroup:ro \
+		--workdir=$(docker_root) \
+		$(docker_tag) \
+		$(PUPPET) apply \
+			--verbose \
+			--debug \
+			--modulepath=modules \
+			--detailed-exitcodes \
+			--hiera_config=hieradata/hiera.yaml \
+			manifests/host.pp || [ $$? -eq 2 ]
 
 .PHONY: install
 install: $(PUPPET)
