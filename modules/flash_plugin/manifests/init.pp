@@ -5,7 +5,7 @@ class flash_plugin(
     include browser
 
     package { $package:
-      ensure => latest,
+      ensure => absent,
     }
   }
 }

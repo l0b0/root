@@ -99,7 +99,6 @@ test-deploy: \
 	test-file-manager \
 	test-file-renamer \
 	test-file-transfer-protocol-client-gui \
-	test-flash-plugin \
 	test-fonts \
 	test-graph-editor \
 	test-image-viewer \
@@ -229,10 +228,6 @@ test-firewall: deploy $(SLEEP) $(SSH)
 	! $(vm_shell) 'exit'
 	$(SLEEP) 31s
 	$(vm_shell) 'exit'
-
-.PHONY: test-flash-plugin
-test-flash-plugin: deploy
-	$(vm_shell) '$(is_debian_command) || $(WHICH) flash-player-properties'
 
 .PHONY: test-fonts
 test-fonts: deploy
