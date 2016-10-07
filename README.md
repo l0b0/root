@@ -60,7 +60,7 @@ Automated system configuration setup:
     - [Onion router](https://www.torproject.org/)
     - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)
-    - [Video downloader](https://rg3.github.io/youtube-dl/)
+    - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
