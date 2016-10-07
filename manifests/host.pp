@@ -63,6 +63,7 @@ include screen_grabber
 include screen_locker
 include shell
 include shell_code_checker
+include sound_system
 include spell_checker
 include ssh_client
 include ssh_server

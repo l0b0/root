@@ -52,6 +52,7 @@ Automated system configuration setup:
     - [Screen grabber](http://freecode.com/projects/scrot)
     - [Screen locker](http://tools.suckless.org/slock/)
     - [Shell](https://www.gnu.org/software/bash/)
+    - [Sound system](https://www.freedesktop.org/wiki/Software/PulseAudio/)
     - Spell checkers for English, French and German
     - [SSH client and server](http://www.openssh.com/)
     - [Storage hardware monitor](https://www.smartmontools.org/)
