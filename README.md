@@ -32,6 +32,7 @@ Automated system configuration setup:
     - [Graph editor](http://www.graphviz.org/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [JSON processor](https://stedolan.github.io/jq/)
+    - [Keyring daemon](https://wiki.gnome.org/Projects/GnomeKeyring)
     - [Media player](https://www.videolan.org/vlc/)
     - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://wiki.archlinux.org/index.php/Netctl) (Arch Linux only)
