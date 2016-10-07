@@ -63,6 +63,7 @@ include screen_locker
 include shell
 include shell_code_checker
 include spell_checker
+include ssh_client
 include ssh_server
 include storage_hardware_monitor
 include terminal

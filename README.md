@@ -52,7 +52,7 @@ Automated system configuration setup:
     - [Screen locker](http://tools.suckless.org/slock/)
     - [Shell](https://www.gnu.org/software/bash/)
     - Spell checkers for English, French and German
-    - [SSH daemon](http://www.openssh.com/)
+    - [SSH client and server](http://www.openssh.com/)
     - [Storage hardware monitor](https://www.smartmontools.org/)
     - [Office suite](http://www.libreoffice.org/) (Arch Linux only)
     - [Terminal](http://invisible-island.net/xterm/)

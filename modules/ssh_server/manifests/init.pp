@@ -1,6 +1,8 @@
 class ssh_server (
   $service_name,
 ) {
+  require openssh
+
   file {
     '/etc/ssh/sshd_config':
       ensure  => present,
