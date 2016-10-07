@@ -8,7 +8,7 @@ Automated system configuration setup:
 - [Disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
 - Enable SSH login only for members of the ‘users’ group
 - [Enable Tor](https://wiki.archlinux.org/index.php/tor)
-- Set up non-default keyboard layout (change/remove in `modules/keyboard_layout/files/vconsole.conf`)
+- Set up non-default keyboard layout (change/remove in `modules/keyboard_layout`)
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Install latest version of packages:
     - [Antivirus](http://www.clamav.net/)
