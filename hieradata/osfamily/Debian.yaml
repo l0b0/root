@@ -23,4 +23,4 @@ spell_checker::packages:
   - aspell-fr
   - hunspell
   - hunspell-fr
-sshd::service_name: ssh
+ssh_server::service_name: ssh

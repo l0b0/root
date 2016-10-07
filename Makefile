@@ -132,7 +132,7 @@ test-deploy: \
 	test-shell \
 	test-shell-code-checker \
 	test-spell-checker \
-	test-sshd \
+	test-ssh-server \
 	test-storage-hardware-monitor \
 	test-system-call-tracer \
 	test-terminal \
@@ -372,8 +372,8 @@ test-spell-checker: deploy
 	$(vm_shell) 'aspell dump dicts'
 	$(vm_shell) 'echo | hunspell -D'
 
-.PHONY: test-sshd
-test-sshd: deploy
+.PHONY: test-ssh-server
+test-ssh-server: deploy
 	$(vm_shell) 'systemctl status --no-pager sshd || service ssh status'
 
 .PHONY: test-system-call-tracer

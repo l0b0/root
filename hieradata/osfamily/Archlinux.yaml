@@ -45,5 +45,5 @@ spell_checker::packages:
   - hunspell-de
   - hunspell-en
   - hunspell-fr
-sshd::service_name: sshd
+ssh_server::service_name: sshd
 users::package_ensure: present

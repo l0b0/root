@@ -1,6 +1,6 @@
 class firewall {
   include ufw
-  include sshd
+  include ssh_server
 
   ufw::limit { 'ssh': }
 }
