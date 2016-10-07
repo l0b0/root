@@ -9,4 +9,8 @@ class keyboard_layout {
       source => 'puppet:///modules/keyboard_layout/00-keyboard.conf',
       mode   => '0644';
   }
+
+  package { 'xorg-setxkbmap':
+    ensure => latest,
+  }
 }
