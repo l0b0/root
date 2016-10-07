@@ -74,3 +74,4 @@ include vector_image_editor
 include video_downloader
 include web_downloader
 include window_manager
+include x_server_resource_database_utility
