@@ -38,6 +38,7 @@ include image_viewer
 include image_viewer_cli
 include integrated_development_environment
 include json_processor
+include keyboard_layout
 include locale
 include media_player
 include network_analyzer
