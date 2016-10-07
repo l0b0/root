@@ -4,7 +4,7 @@ class printing_system (
 ) {
   include service_discovery_system
 
-  package { ['cups', 'cups-filters']:
+  package { ['cups', 'cups-filters', 'gutenprint']:
     ensure => latest,
   }->
   package { ['foomatic-db', 'foomatic-db-engine', 'hplip']:
