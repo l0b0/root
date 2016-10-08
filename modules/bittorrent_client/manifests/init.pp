@@ -4,7 +4,4 @@ class bittorrent_client {
   package { 'transmission-gtk':
     ensure => latest,
   }
-  package { 'deluge':
-    ensure => absent,
-  }
 }

@@ -6,9 +6,6 @@ class printing_system (
 
   package { ['cups', 'cups-filters', 'gutenprint']:
     ensure => latest,
-  }->
-  package { ['foomatic-db', 'foomatic-db-engine', 'hplip']:
-    ensure => absent,
   }
 
   $paper_size_file = '/etc/papersize'

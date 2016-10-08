@@ -3,7 +3,6 @@ cad_editor::package: openscad
 display_server::package: xorg-server
 email_reader::package: thunderbird-i18n-en-gb
 file_renamer::package: perl-rename
-flash_plugin::package: flashplugin
 fonts::packages:
   - adobe-source-code-pro-fonts
   - adobe-source-sans-pro-fonts
@@ -22,9 +21,6 @@ network_analyzer::package: gnu-netcat
 network_manager::packages:
   - ifplugd
   - wpa_actiond
-network_manager::old_packages:
-  - wicd-gtk
-  - wicd
 ntpd::service: ntpd
 office_suite::package: libreoffice-still
 onion_router::packages:

@@ -31,7 +31,6 @@ include file_recovery_utility
 include file_renamer
 include file_transfer_protocol_client_gui
 include firewall
-include flash_plugin
 include fonts
 include general_development_tools
 include graph_editor
