@@ -63,6 +63,7 @@ Automated system configuration setup:
     - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)
     - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
+    - [Web video streamer](http://livestreamer.io/)
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
