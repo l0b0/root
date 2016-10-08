@@ -4,4 +4,4 @@
 :yaml:
   :datadir: hieradata
 :hierarchy:
-  - "osfamily/%{::osfamily}"
+  - "chassis/type/%{::chassistype}"

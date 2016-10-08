@@ -1,10 +1,7 @@
-class battery_indicator {
+class battery_indicator (
+  $ensure = absent,
+) {
   include window_manager
-
-  $ensure = str2bool($::has_battery) ? {
-    true    => latest,
-    default => absent,
-  }
 
   package { 'cbatticon':
     ensure => $ensure
