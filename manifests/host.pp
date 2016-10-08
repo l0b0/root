@@ -57,6 +57,7 @@ include pdf_reader
 include photo_editor
 include photo_metadata_editor
 include printing_system
+include random_access_file_generator
 include scanner
 include screen_backlight_adjuster
 include screen_grabber
