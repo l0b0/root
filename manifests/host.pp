@@ -23,6 +23,7 @@ include desktop_management_interface_table_decoder
 include development_tools
 include diagram_editor
 include dvcs
+include dvcs_gui
 include email_reader
 include file_copier
 include file_manager
