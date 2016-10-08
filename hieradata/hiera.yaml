@@ -5,3 +5,4 @@
   :datadir: hieradata
 :hierarchy:
   - "chassis/type/%{::chassistype}"
+  - "manufacturer/%{::manufacturer}/product/%{::productname}"
