@@ -3,7 +3,7 @@ class vcard_validator {
   include shell
 
   package { 'vcard':
-    ensure   => latest,
+    ensure   => '0.10.1',
     provider => pip,
   }
 }
