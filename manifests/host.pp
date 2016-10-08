@@ -75,6 +75,7 @@ include users
 include vcard_validator
 include vector_image_editor
 include video_downloader
+include virtual_machine_manager
 include web_downloader
 include web_video_streamer
 include window_manager
