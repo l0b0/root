@@ -8,4 +8,3 @@ export PATH
 
 "${dir}/puppet-lint.sh"
 "${dir}/reek.sh"
-"${dir}/travis-lint.sh"

@@ -77,7 +77,7 @@ deploy:
 
 .PHONY: lint
 lint: deploy
-	$(vm_shell) '$(GEM) install --no-document --user-install puppet-lint reek travis-lint'
+	$(vm_shell) '$(GEM) install --no-document --user-install puppet-lint reek'
 	$(vm_shell) 'GEM="$(GEM)" /vagrant/test/lint.sh'
 
 .PHONY: test-deploy
