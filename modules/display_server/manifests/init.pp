@@ -1,7 +1,5 @@
-class display_server (
-  $package,
-) {
-  package { $package:
+class display_server {
+  package { 'xorg-server':
     ensure => latest,
   }
 }

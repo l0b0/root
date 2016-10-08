@@ -1,11 +1,7 @@
-class email_reader (
-  $package = undef,
-) {
-  if ($package != undef) {
-    include window_manager
+class email_reader {
+  include window_manager
 
-    package { $package:
-      ensure => latest,
-    }
+  package { 'thunderbird-i18n-en-gb':
+    ensure => latest,
   }
 }

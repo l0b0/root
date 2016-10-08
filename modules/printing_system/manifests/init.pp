@@ -1,8 +1,5 @@
-class printing_system (
-  $print_service,
-  $browser_service = undef,
-) {
-  include service_discovery_system
+class printing_system {
+  $browser_service = 'cups-browsed'
 
   package { ['cups', 'cups-filters', 'gutenprint']:
     ensure => latest,
@@ -16,18 +13,16 @@ class printing_system (
   }
 
   service {
-    $print_service:
+    'org.cups.cupsd':
       ensure    => running,
       enable    => true,
       subscribe => [File[$paper_size_file], Package['cups']];
   }
 
-  if ($browser_service != undef) {
-    service {
-      $browser_service:
-        ensure    => running,
-        enable    => true,
-        subscribe => Package['cups'];
-    }
+  service {
+    $browser_service:
+      ensure    => running,
+      enable    => true,
+      subscribe => Package['cups'];
   }
 }

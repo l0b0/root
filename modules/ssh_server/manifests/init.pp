@@ -1,6 +1,4 @@
-class ssh_server (
-  $service_name,
-) {
+class ssh_server {
   require openssh
 
   file {
@@ -11,7 +9,7 @@ class ssh_server (
       ensure => present,
       source => 'puppet:///modules/ssh_server/ssh_config'
   }~>
-  service { $service_name:
+  service { 'sshd':
     ensure => running,
     enable => true,
   }

@@ -1,11 +1,7 @@
-class cad_editor (
-  $package = undef,
-) {
-  if ($package != undef) {
-    include window_manager
+class cad_editor {
+  include window_manager
 
-    package { $package:
-      ensure => latest,
-    }
+  package { 'openscad':
+    ensure => latest,
   }
 }

@@ -1,10 +1,8 @@
-class ntpd (
-  $service,
-) {
+class ntpd {
   package { 'ntp':
     ensure => latest,
   }~>
-  service { $service:
+  service { 'ntpd':
     ensure => running,
     enable => true,
   }

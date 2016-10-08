@@ -1,8 +1,6 @@
-class users (
-  $package_ensure = absent,
-) {
+class users {
   package { 'ruby-shadow':
-    ensure => $package_ensure,
+    ensure => present,
   }
 
   user { 'root':

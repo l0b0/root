@@ -1,11 +1,7 @@
-class automated_certificate_management_environment_client (
-  $package = undef,
-) {
-  if ($package != undef) {
-    include shell
+class automated_certificate_management_environment_client {
+  include shell
 
-    package { $package:
-      ensure => latest,
-    }
+  package { 'certbot':
+    ensure => latest,
   }
 }

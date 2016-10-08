@@ -1,11 +1,10 @@
-class network_manager (
-  $packages     = undef,
-) {
-  if ($packages != undef) {
-    include shell
+class network_manager {
+  include shell
 
-    package { $packages:
-      ensure => latest,
-    }
+  package { [
+    'ifplugd',
+    'wpa_actiond',
+  ]:
+    ensure => latest,
   }
 }
