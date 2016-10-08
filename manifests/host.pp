@@ -83,3 +83,4 @@ include window_manager
 include x_server_input_configuration_utility
 include x_server_modifier_map_utility
 include x_server_resource_database_utility
+include x_server_resource_killer
