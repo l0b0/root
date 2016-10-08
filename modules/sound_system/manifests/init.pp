@@ -1,7 +1,7 @@
 class sound_system {
   include window_manager
 
-  package { 'pulseaudio':
+  package { ['pavucontrol', 'pulseaudio']:
     ensure => latest,
   }
 }
