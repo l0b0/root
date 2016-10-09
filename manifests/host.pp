@@ -68,6 +68,7 @@ include shell_code_checker
 include sound_system
 include spell_checker
 include ssh_client
+include ssh_filesystem_client
 include ssh_server
 include storage_hardware_monitor
 include terminal
