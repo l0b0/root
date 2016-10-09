@@ -7,6 +7,7 @@ repository_directory="$(dirname "$directory")"
 
 find "${repository_directory}" \
     \( \
+        -path "${repository_directory}/modules/archive" -o \
         -path "${repository_directory}/modules/idea" -o \
         -path "${repository_directory}/modules/stdlib" -o \
         -path "${repository_directory}/modules/ufw" \
