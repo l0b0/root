@@ -27,6 +27,10 @@ test-modules: deploy | $(module_test_files) $(run_alone_module_test_files)
 $(module_test_files) $(run_alone_module_test_files):
 	test/run_module_test.sh $@
 
+.PHONY: test-project
+test-project:
+	test/project.sh
+
 .PHONY: install
 install: $(PUPPET)
 	$(PUPPET) apply --verbose --debug --modulepath modules --detailed-exitcodes --hiera_config=hieradata/hiera.yaml manifests/host.pp || [ $$? -eq 2 ]
