@@ -84,7 +84,6 @@ lint: deploy
 test-deploy: \
 	test-antivirus \
 	test-automated-certificate-management-environment-client \
-	test-battery-indicator \
 	test-bitmap-image-editor \
 	test-bittorrent-client \
 	test-browser \
@@ -146,13 +145,6 @@ test-deploy: \
 	test-window-manager \
 	| \
 	test-firewall
-
-.PHONY: test-battery-indicator
-test-battery-indicator: deploy $(GREP)
-	# Change to `--version` when <https://github.com/valr/cbatticon/issues/17> is fixed
-	if $(GREP) -q Battery /sys/class/power_supply/*/type; then \
-		$(vm_shell) 'cbatticon --help'; \
-	fi
 
 .PHONY: test-antivirus
 test-antivirus: deploy
