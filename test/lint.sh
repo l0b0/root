@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 set -o errexit -o noclobber -o nounset -o xtrace
 
-dir=/vagrant/test
-PATH="$("$GEM" env gempath | tr ':' '\n' | sed 's#$#/bin#' | tr '\n' ':'):$PATH"
+directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PATH="$(gem env gempath | tr ':' '\n' | sed 's#$#/bin#' | tr '\n' ':'):$PATH"
 
 export PATH
 
-"${dir}/puppet-lint.sh"
-"${dir}/reek.sh"
+"${directory}/puppet-lint.sh"
+"${directory}/reek.sh"
