@@ -35,6 +35,7 @@ include firewall
 include fonts
 include general_development_tools
 include graph_editor
+include hardware_drivers
 include image_viewer
 include image_viewer_cli
 include integrated_development_environment

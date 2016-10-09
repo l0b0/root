@@ -4,5 +4,6 @@
 :yaml:
   :datadir: hieradata
 :hierarchy:
+  - "board/product/%{::boardproductname}"
   - "chassis/type/%{::chassistype}"
   - "manufacturer/%{::manufacturer}/product/%{::productname}"
