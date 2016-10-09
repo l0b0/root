@@ -73,6 +73,7 @@ include storage_hardware_monitor
 include terminal
 include text_editor
 include users
+include userspace_virtual_filesystem
 include vcard_validator
 include vector_image_editor
 include video_downloader

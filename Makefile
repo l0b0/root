@@ -139,6 +139,7 @@ test-deploy: \
 	test-text-editor \
 	test-undelete-utility \
 	test-users \
+	test-userspace-virtual-filesystem \
 	test-vcard-validator \
 	test-vector-image-editor \
 	test-video-downloader \
@@ -399,6 +400,10 @@ test-undelete-utility: deploy
 .PHONY: test-users
 test-users: deploy
 	$(vm_shell) '[[ "$$(sudo passwd --status root)" =~ ^root\ L\ .*$$ ]]'
+
+.PHONY: test-userspace-virtual-filesystem
+test-userspace-virtual-filesystem: deploy
+	$(vm_shell) 'path=$$(mktemp) && gvfs-trash "$$path"'
 
 .PHONY: test-vcard-validator
 test-vcard-validator: deploy
