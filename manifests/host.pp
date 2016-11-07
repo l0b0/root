@@ -85,6 +85,7 @@ include web_video_streamer
 include window_manager
 include x_server_input_configuration_utility
 include x_server_modifier_map_utility
+include x_server_resource_configuration
 include x_server_resource_database_utility
 include x_server_resource_killer
 include x_server_video_driver
