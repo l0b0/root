@@ -1,2 +1,3 @@
+hardware_drivers::intel: true
 x_server_resource_configuration::dpi: 276
 x_server_video_driver::intel: true
