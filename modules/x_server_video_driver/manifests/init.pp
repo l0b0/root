@@ -1,16 +1,28 @@
 class x_server_video_driver (
   $intel = false,
 ) {
-  $intel_ensure = str2bool($intel) ? {
-    true    => latest,
-    default => absent,
+  case str2bool($intel) {
+    true: {
+      $intel_package_ensure = latest
+      $intel_file_ensure = present
+    }
+    default: {
+      $intel_package_ensure = absent
+      $intel_file_ensure = absent
+    }
   }
 
   package { ['xf86-video-fbdev', 'xf86-video-vesa']:
     ensure => latest,
   }
 
-  package { 'xf86-video-intel':
-    ensure => $intel_ensure,
+  package { ['xf86-video-intel', 'mesa-libgl', 'lib32-mesa-libgl']:
+    ensure => $intel_package_ensure,
+  }
+
+  file { '/etc/X11/xorg.conf.d/20-intel.conf':
+    ensure => $intel_file_ensure,
+    source => 'puppet:///modules/x_server_video_driver/intel.conf',
+    mode   => '0644',
   }
 }
