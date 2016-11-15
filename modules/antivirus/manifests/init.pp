@@ -3,5 +3,9 @@ class antivirus {
 
   package { 'clamav':
     ensure => latest,
+  }->
+  service { 'clamd':
+    ensure => running,
+    enable => true,
   }
 }
