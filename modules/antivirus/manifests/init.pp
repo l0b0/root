@@ -1,11 +1,14 @@
 class antivirus {
   include shell
 
-  package { 'clamav':
-    ensure => latest,
-  }->
-  service { 'clamd':
+  Service {
     ensure => running,
     enable => true,
   }
+
+  package { 'clamav':
+    ensure => latest,
+  }->
+  service { 'freshclamd': }->
+  service { 'clamd': }
 }
