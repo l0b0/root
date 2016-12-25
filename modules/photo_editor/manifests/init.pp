@@ -1,7 +1,7 @@
 class photo_editor {
   include window_manager
 
-  package { 'digikam':
+  package { ['digikam', 'qt5ct']:
     ensure => latest,
   }
 }
