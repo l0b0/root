@@ -1,1 +1,0 @@
-class { 'apacheds': master => true' }

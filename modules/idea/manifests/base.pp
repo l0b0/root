@@ -12,11 +12,6 @@
 #   Specify the absolute URL of the IntelliJ IDEA tarball. This overrides any
 #   version which has been set before.
 #
-# [*build*]
-#   Specify the directory of IntelliJ IDEA inside the tarball. You have to
-#   specify this for every new version of IntelliJ IDEA since it doesn't match
-#   the version number or anything else which could be automatically set.
-#
 # [*target*]
 #   Specify the location of the symlink to the IntelliJ IDEA installation on
 #   the local filesystem.
@@ -37,10 +32,9 @@
 #
 # Copyright 2012, 2013 smarchive GmbH
 #
-class idea::base(
+class idea::base (
   $version,
   $url,
-  $build,
   $target,
   $timeout,
 ) {
@@ -55,18 +49,19 @@ class idea::base(
   }
 
   archive { "idea-${version}":
-    ensure     => present,
-    url        => $url,
-    checksum   => false,
-    src_target => '/var/tmp',
-    target     => '/opt',
-    extension  => 'tar.gz',
-    timeout    => $timeout,
+    ensure           => present,
+    url              => $url,
+    checksum         => false,
+    src_target       => '/var/tmp',
+    target           => '/opt',
+    extension        => 'tar.gz',
+    timeout          => $timeout,
+    strip_components => 1,
   }
 
   file { $target:
     ensure  => link,
-    target  => "/opt/idea-${version}/${build}",
+    target  => "/opt/idea-${version}",
     require => Archive["idea-${version}"],
   }
 }

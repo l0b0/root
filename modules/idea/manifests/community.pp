@@ -16,11 +16,6 @@
 #   Specify the absolute URL of the IntelliJ IDEA tarball. This overrides any
 #   version which has been set before.
 #
-# [*build*]
-#   Specify the build number of IntelliJ IDEA inside the tarball. You have to
-#   specify this for every new version of IntelliJ IDEA since it doesn't match
-#   the version number or anything else which could be automatically set.
-#
 # [*target*]
 #   Specify the location of the symlink to the IntelliJ IDEA installation on
 #   the local filesystem.
@@ -37,7 +32,6 @@
 #
 #  class { 'idea::community':
 #    version => '12.1.3',
-#    build   => '129.451',
 #  }
 #
 # === Authors
@@ -48,53 +42,44 @@
 #
 # Copyright 2012, 2013 smarchive GmbH
 #
-class idea::community(
-  $version  = 'UNSET',
-  $base_url = 'UNSET',
-  $url      = 'UNSET',
-  $build    = 'UNSET',
-  $target   = 'UNSET',
-  $timeout  = 'UNSET',
+class idea::community (
+  $version  = undef,
+  $base_url = undef,
+  $url      = undef,
+  $target   = undef,
+  $timeout  = undef,
 ) {
 
   include idea::params
 
   $version_real = $version ? {
-    'UNSET' => $::idea::params::version,
+    undef   => $::idea::params::version,
     default => $version,
   }
 
   $base_url_real = $base_url ? {
-    'UNSET' => $::idea::params::base_url,
+    undef   => $::idea::params::base_url,
     default => $base_url,
   }
 
   $url_real = $url ? {
-    'UNSET' => "${base_url_real}/ideaIC-${version_real}.tar.gz",
+    undef   => "${base_url_real}/ideaIC-${version_real}.tar.gz",
     default => $url,
   }
 
   $target_real = $target ? {
-    'UNSET' => $::idea::params::target,
+    undef   => $::idea::params::target,
     default => $target,
   }
 
   $timeout_real = $timeout ? {
-    'UNSET' => $::idea::params::timeout,
+    undef   => $::idea::params::timeout,
     default => $timeout,
   }
-
-  $build_real = $build ? {
-    'UNSET' => $::idea::params::build,
-    default => $build,
-  }
-
-  $community_build = "idea-IC-${build_real}"
 
   class { 'idea::base':
     version => $version_real,
     url     => $url_real,
-    build   => $community_build,
     target  => $target_real,
     timeout => $timeout_real,
   }

@@ -1,0 +1,16 @@
+language: ruby
+script: "rake spec lint"
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+env:
+  - PUPPET_VERSION="~> 2.7.0"
+  - PUPPET_VERSION="~> 3.2.0"
+  - PUPPET_VERSION="~> 3.4.0"
+matrix:
+  exclude:
+    - rvm: 2.0.0
+      env: PUPPET_VERSION="~> 2.7.0"
+gemfile: .gemfile
+

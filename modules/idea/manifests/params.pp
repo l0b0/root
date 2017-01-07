@@ -29,28 +29,13 @@ class idea::params {
     default => $::idea_ultimate_url,
   }
 
-  $build = $::idea_build ? {
-    undef   => '129.451',
-    default => $::idea_build,
-  }
-
-  $community_build = $::idea_community_build ? {
-    undef   => "idea-IC-${build}",
-    default => $::idea_community_build,
-  }
-
-  $ultimate_build = $::idea_ultimate_build ? {
-    undef   => "idea-IU-${build}",
-    default => $::idea_ultimate_dir,
-  }
-
   $target = $::idea_target ? {
     undef   => '/opt/idea',
     default => $::idea_target,
   }
 
   $timeout = $::idea_timeout ? {
-    undef   => 300,
+    undef   => 600,
     default => $::idea_timeout,
   }
 }
