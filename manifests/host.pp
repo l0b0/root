@@ -71,6 +71,7 @@ include spell_checker
 include ssh_client
 include ssh_filesystem_client
 include ssh_server
+include steam
 include storage_hardware_monitor
 include terminal
 include text_editor
