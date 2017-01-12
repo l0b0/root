@@ -76,7 +76,6 @@ include steam
 include storage_hardware_monitor
 include terminal
 include text_editor
-include touchpad_driver
 include users
 include userspace_virtual_filesystem
 include vcard_validator

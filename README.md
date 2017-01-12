@@ -61,7 +61,6 @@ Automated system configuration setup:
     - [Storage hardware monitor](https://www.smartmontools.org/)
     - [Terminal](http://invisible-island.net/xterm/)
     - [Text editor](http://www.vim.org/)
-    - [Touchpad driver](https://freedesktop.org/wiki/Software/libinput/)
     - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)
     - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
