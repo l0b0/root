@@ -3,4 +3,8 @@ class firewall {
   include ssh_server
 
   ufw::limit { 'ssh': }
+
+  ufw::deny { 'Insecure HTTP':
+    port => 80,
+  }
 }
