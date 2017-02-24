@@ -13,4 +13,23 @@ class ssh_server {
     ensure => running,
     enable => true,
   }
+
+  firewall { '200 limit incoming SSH connections to 6 per minute':
+    dport     => 22,
+    proto     => tcp,
+    recent    => update,
+    rseconds  => 60,
+    rhitcount => 6,
+    rname     => 'SSH',
+    rsource   => true,
+    action    => drop,
+  } ->
+  firewall { '201 allow incoming SSH connections':
+    dport   => 22,
+    proto   => tcp,
+    recent  => set,
+    rname   => 'SSH',
+    rsource => true,
+    action  => accept,
+  }
 }

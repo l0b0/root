@@ -44,6 +44,7 @@ include keyboard_layout
 include keyring_daemon
 include locale
 include media_player
+include my_firewall
 include network_analyzer
 include network_manager
 include ntpd
@@ -91,3 +92,12 @@ include x_server_resource_configuration
 include x_server_resource_database_utility
 include x_server_resource_killer
 include x_server_video_driver
+
+resources { 'firewall':
+  purge => true,
+}
+
+Firewall {
+  before  => Class['my_firewall::post'],
+  require => Class['my_firewall::pre'],
+}
