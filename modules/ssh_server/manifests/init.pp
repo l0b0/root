@@ -8,7 +8,7 @@ class ssh_server {
     '/etc/ssh/ssh_config':
       ensure => present,
       source => 'puppet:///modules/ssh_server/ssh_config'
-  }~>
+  } ~>
   service { 'sshd':
     ensure => running,
     enable => true,
