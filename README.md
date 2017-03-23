@@ -3,6 +3,7 @@ root
 
 Automated system configuration setup:
 
+- [Block outgoing insecure HTTP connections](https://l0b0.wordpress.com/2017/02/25/the-https-only-experience/)
 - [Disable the root user password](https://wiki.archlinux.org/index.php/sudo#Disable_root_login)
 - [Rate limit SSH connections](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 - [Disable root SSH login](http://www.howtogeek.com/howto/linux/security-tip-disable-root-ssh-login-on-linux/)
