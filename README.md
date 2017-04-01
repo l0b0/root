@@ -66,7 +66,7 @@ Automated system configuration setup:
     - [Vector image editor](https://inkscape.org/)
     - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
     - [Virtual machine manager](https://www.vagrantup.com/) and [hypervisor](https://www.virtualbox.org/)
-    - [Web video streamer](http://livestreamer.io/)
+    - [Web video streamer](https://streamlink.github.io/)
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
