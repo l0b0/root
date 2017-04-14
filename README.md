@@ -23,6 +23,7 @@ Automated system configuration setup:
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
+    - [EDID tools](http://polypux.org/projects/read-edid/)
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)
     - [File copier](http://rsync.samba.org/)
     - [File manager](http://wiki.lxde.org/en/PCManFM)
