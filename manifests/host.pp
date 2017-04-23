@@ -45,6 +45,7 @@ include keyboard_layout
 include keyring_daemon
 include locale
 include media_player
+include mind_mapper
 include my_firewall
 include network_analyzer
 include network_manager

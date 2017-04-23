@@ -36,6 +36,7 @@ Automated system configuration setup:
     - [JSON processor](https://stedolan.github.io/jq/)
     - [Keyring daemon](https://wiki.gnome.org/Projects/GnomeKeyring)
     - [Media player](https://www.videolan.org/vlc/)
+    - [Mind mapper](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
     - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://wiki.archlinux.org/index.php/Netctl) (Arch Linux only)
     - [Office suite](http://www.libreoffice.org/) (Arch Linux only)
