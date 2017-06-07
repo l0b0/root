@@ -121,4 +121,4 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 Copyright
 ---------
 
-© 2014-2016 Victor Engmark
+© 2014-2017 Victor Engmark
