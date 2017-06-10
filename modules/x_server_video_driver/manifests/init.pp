@@ -16,7 +16,7 @@ class x_server_video_driver (
     ensure => latest,
   }
 
-  package { ['xf86-video-intel', 'mesa-libgl', 'lib32-mesa-libgl', 'libva-intel-driver']:
+  package { ['xf86-video-intel', 'lib32-mesa', 'libva-intel-driver', 'mesa']:
     ensure => $intel_package_ensure,
   }
 
