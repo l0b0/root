@@ -45,7 +45,7 @@ Automated system configuration setup:
     - [OpenPGP tools](https://www.gnupg.org/)
     - [Packet capture (pcap) analyzer](https://www.wireshark.org/) (Arch Linux only)
     - [Panorama editor](http://hugin.sourceforge.net/)
-    - [Password manager](https://www.keepassx.org/)
+    - [Password manager](https://keepassxc.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [Photo editor](https://www.digikam.org/)

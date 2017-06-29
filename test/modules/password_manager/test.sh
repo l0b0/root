@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-vm_command 'which keepassx'
+vm_command 'which keepassxc'
