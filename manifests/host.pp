@@ -61,6 +61,7 @@ include pdf_editor
 include pdf_reader
 include photo_editor
 include photo_metadata_editor
+include plot_generator
 include printing_system
 include random_access_file_generator
 include rust

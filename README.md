@@ -48,6 +48,7 @@ Automated system configuration setup:
     - [Password manager](https://keepassxc.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
+    - [Plot generator](http://gnuplot.info/)
     - [Photo editor](https://www.digikam.org/)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Printing system](https://www.cups.org/) with [service auto-discovery](http://avahi.org/) (the latter is Arch Linux only)
