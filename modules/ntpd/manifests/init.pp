@@ -1,8 +1,7 @@
 class ntpd {
   package { 'ntp':
     ensure => latest,
-  }~>
-  service { 'ntpd':
+  } ~> service { 'ntpd':
     ensure => running,
     enable => true,
   }

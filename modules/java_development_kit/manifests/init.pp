@@ -3,8 +3,7 @@ class java_development_kit {
 
   package { 'jdk8-openjdk':
     ensure => latest,
-  }~>
-  exec { "/usr/bin/archlinux-java set ${java_environment_name}":
+  } ~> exec { "/usr/bin/archlinux-java set ${java_environment_name}":
     unless => "/usr/bin/test \"$(archlinux-java get)\" = '${java_environment_name}'",
   }
 }

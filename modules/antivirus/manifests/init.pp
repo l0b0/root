@@ -8,7 +8,7 @@ class antivirus {
 
   package { 'clamav':
     ensure => latest,
-  }->
-  service { 'freshclamd': }->
-  service { 'clamd': }
+  } -> service { 'freshclamd':
+  } -> service { 'clamd':
+  }
 }

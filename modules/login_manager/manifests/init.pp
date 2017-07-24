@@ -3,8 +3,7 @@ class login_manager {
 
   package { ['lightdm', 'lightdm-gtk-greeter']:
     ensure => latest,
-  }->
-  service { 'lightdm':
+  } -> service { 'lightdm':
     enable => true,
   }
 }

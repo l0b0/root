@@ -8,8 +8,7 @@ class storage_hardware_monitor {
 
   package { 'smartmontools':
     ensure => latest,
-  }~>
-  service { 'smartd':
+  } ~> service { 'smartd':
     ensure => $service_ensure,
     enable => true,
   }

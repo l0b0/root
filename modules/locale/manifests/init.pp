@@ -8,8 +8,7 @@ class locale {
       ensure => present,
       source => 'puppet:///modules/locale/locale.conf',
       mode   => '0644';
-  }~>
-  exec { '/usr/bin/locale-gen':
+  } ~> exec { '/usr/bin/locale-gen':
     refreshonly => true,
   }
 }

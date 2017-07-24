@@ -8,8 +8,7 @@ class spell_checker {
     'hunspell-fr',
   ]:
     ensure => latest,
-  }->
-  file {
+  } -> file {
     [
       '/usr/share/hunspell',
       '/usr/share/myspell/dicts',

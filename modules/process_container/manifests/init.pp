@@ -3,8 +3,7 @@ class process_container {
 
   package { 'docker':
     ensure => latest,
-  }~>
-  service { 'docker':
+  } ~> service { 'docker':
     ensure => running,
     enable => true,
   }

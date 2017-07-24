@@ -13,8 +13,7 @@ class browser {
     log_level  => debug,
     log_prefix => 'outgoing HTTP traffic ',
     log_uid    => true,
-  } ->
-  firewall { '101 drop insecure outgoing HTTP traffic':
+  } -> firewall { '101 drop insecure outgoing HTTP traffic':
     chain  => 'OUTPUT',
     dport  => 80,
     proto  => tcp,
