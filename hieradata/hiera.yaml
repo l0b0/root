@@ -1,9 +1,10 @@
----
-:backends:
-  - yaml
-:yaml:
-  :datadir: hieradata
-:hierarchy:
-  - "board/product/%{::boardproductname}"
-  - "chassis/type/%{::chassistype}"
-  - "manufacturer/%{::manufacturer}/product/%{::productname}"
+version: 5
+defaults:
+  datadir: hieradata
+  data_hash: yaml_data
+hierarchy:
+  - name: Hardware-specific data
+    paths:
+    - "board/product/%{::boardproductname}"
+    - "chassis/type/%{::chassistype}"
+    - "manufacturer/%{::manufacturer}/product/%{::productname}"
