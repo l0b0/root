@@ -1,8 +1,6 @@
-#firewall
+# firewall
 
-[![Build Status](https://travis-ci.org/puppetlabs/puppetlabs-firewall.png?branch=master)](https://travis-ci.org/puppetlabs/puppetlabs-firewall)
-
-####Table of Contents
+#### Table of Contents
 
 1. [Overview - What is the firewall module?](#overview)
 2. [Module Description - What does the module do?](#module-description)
@@ -341,6 +339,19 @@ firewall { '100 my rule':
 }
 ~~~
 
+Setup NFLOG for a rule.
+
+~~~puppet
+firewall {'666 for NFLOG':
+  proto => 'all',
+  jump  => 'NFLOG',
+  nflog_group => 3,
+  nflog_prefix => "nflog-test",
+  nflog_range = 256,
+  nflog_threshold => 1,
+}
+~~~
+
 ### Additional Information
 
 Access the inline documentation:
@@ -393,6 +404,10 @@ Parameter that controls the state of the iptables package on your system, allowi
 
 `ensure` can either be 'present' or 'latest'. Defaults to 'present'.
 
+#### ebtables_manage
+
+Parameter that controls whether puppet manages the ebtables package or not. If managed, the package will use the value of `pkg_ensure` as its ensure value.
+
 #### service_name
 
 Specify the name of the IPv4 iptables service. Defaults defined in `firewall::params`.
@@ -405,7 +420,7 @@ Specify the name of the IPv6 ip6tables service. Defaults defined in `firewall::p
 
 Specify the platform-specific package(s) to install. Defaults defined in `firewall::params`.
 
-###Type: firewall
+### Type: firewall
 
 This type enables you to manage firewall rules within Puppet.
 
@@ -419,7 +434,7 @@ This type enables you to manage firewall rules within Puppet.
 * `iptables`: Iptables type provider
     * Required binaries: `iptables-save`, `iptables`.
     * Default for `kernel` == `linux`.
-    * Supported features: `address_type`, `clusterip`, `connection_limiting`, `dnat`, `icmp_match`, `interface_match`, `iprange`, `ipsec_dir`, `ipsec_policy`, `ipset`, `iptables`, `isfragment`, `length`, `log_level`, `log_prefix`, `log_uid`, `mark`, `mask`, `mss`, `netmap`, `owner`, `pkttype`, `queue_bypass`, `queue_num`, `rate_limiting`, `recent_limiting`, `reject_type`, `snat`, `socket`, `state_match`, `string_matching`, `tcp_flags`.
+    * Supported features: `address_type`, `clusterip`, `connection_limiting`, `dnat`, `icmp_match`, `interface_match`, `iprange`, `ipsec_dir`, `ipsec_policy`, `ipset`, `iptables`, `isfragment`, `length`, `log_level`, `log_prefix`, `log_uid`, `mark`, `mask`, `mss`, `netmap`, `nflog_group`, `nflog_prefix`, `nflog_range`, `nflog_threshold`, `owner`, `pkttype`, `queue_bypass`, `queue_num`, `rate_limiting`, `recent_limiting`, `reject_type`, `snat`, `socket`, `state_match`, `string_matching`, `tcp_flags`.
 
 **Autorequires:**
 
@@ -470,6 +485,14 @@ If Puppet is managing the iptables or iptables-persistent packages, and the prov
 * `mark`: The ability to match or set the netfilter mark value associated with the packet.
 
 * `mask`:  The ability to match recent rules based on the ipv4 mask.
+
+* `nflog_group`: The ability to set the group number for NFLOG.
+
+* `nflog_prefix`: The ability to set a prefix for nflog messages.
+
+* `nflog_range`: The ability to set nflog\_range.
+
+* `nflog_threshold`: The ability to set nflog\_threshold.
 
 * `owner`: The ability to match owners.
 
@@ -590,7 +613,7 @@ If Puppet is managing the iptables or iptables-persistent packages, and the prov
 
 * `islastfrag`: If true, matches when the packet is the last fragment of a fragmented ipv6 packet. Supported by ipv6 only. Valid values are 'true', 'false'. Requires the `islastfrag`.
 
-* `jump`: The value for the iptables `--jump` parameter. Any valid chain name is allowed, but normal values are: 'QUEUE', 'RETURN', 'DNAT', 'SNAT', 'LOG', 'MASQUERADE', 'REDIRECT', 'MARK', 'TCPMSS', 'DSCP'.
+* `jump`: The value for the iptables `--jump` parameter. Any valid chain name is allowed, but normal values are: 'QUEUE', 'RETURN', 'DNAT', 'SNAT', 'LOG', 'MASQUERADE', 'REDIRECT', 'MARK', 'TCPMSS', 'DSCP', 'NFLOG'.
 
   For the values 'ACCEPT', 'DROP', and 'REJECT', you must use the generic `action` parameter. This is to enforce the use of generic parameters where possible for maximum cross-platform modeling.
 
@@ -610,6 +633,14 @@ If Puppet is managing the iptables or iptables-persistent packages, and the prov
 
 * `log_uid`: The ability to log the userid of the process which generated the packet.
 
+* `nflog_group`: When combined with `jump => 'NFLOG'` grants the ability to specify the NFLOG group number. Requires the `nflog_group` feature.
+
+* `nflog_prefix`: When combined with `jump => 'NFLOG'` grants the ability to specify a prefix for log entries. Requires the `nflog_prefix` feature.
+
+* `nflog_range`: When combined with `jump => 'NFLOG'` grants the ability to specify the number of bytes to be copied to userspace. Requires the `nflog_range` feature.
+
+* `nflog_threshold`: When combined with `jump => 'NFLOG'` grants the ability to specify the size of the NFLOG threshold. Requires the `nflog_threshold` feature.
+
 * `mask`: Sets the mask to use when `recent` is enabled. Requires the `mask` feature.
 
 * `month_days`: Only match on the given days of the month. Possible values are '1' to '31'. Note that specifying '31' will not match on months that do not have a 31st day; the same goes for 28- or 29-day February.
@@ -621,12 +652,12 @@ If Puppet is managing the iptables or iptables-persistent packages, and the prov
 * `name`: The canonical name of the rule. This name is also used for ordering, so make sure you prefix the rule with a number. For example:
 
   ~~~puppet
-firewall { '000 this runs first':
-  # this rule will run first
-}
-firewall { '999 this runs last':
-  # this rule will run last
-}
+  firewall { '000 this runs first':
+    # this rule will run first
+  }
+  firewall { '999 this runs last':
+    # this rule will run last
+  }
   ~~~
 
   Depending on the provider, the name of the rule can be stored using the comment feature of the underlying firewall subsystem. Values must match '/^\d+[[:graph:][:space:]]+$/'.
@@ -638,6 +669,10 @@ firewall { '999 this runs last':
 * `physdev_out`: Match if the packet is leaving a bridge via the given interface. Values must match '/^[a-zA-Z0-9\-\._\+]+$/'.
 
 * `physdev_is_bridged`: Match if the packet is transversing a bridge. Valid values are true or false.
+
+* `physdev_is_in`: Match if the packet has entered through a bridge interface. Valid values are true or false.
+
+* `physdev_is_bridged`: Match if the packet will leave through a bridge interface. Valid values are true or false.
 
 * `pkttype`: Sets the packet type to match. Valid values are: 'unicast', 'broadcast', and'multicast'. Requires the `pkttype` feature.
 
@@ -675,29 +710,29 @@ firewall { '999 this runs last':
 
 * `recent`: Enable the recent module. Valid values are: 'set', 'update', 'rcheck', or 'remove'. For example:
 
-~~~puppet
-# If anyone's appeared on the 'badguy' blacklist within
-# the last 60 seconds, drop their traffic, and update the timestamp.
-firewall { '100 Drop badguy traffic':
-  recent   => 'update',
-  rseconds => 60,
-  rsource  => true,
-  rname    => 'badguy',
-  action   => 'DROP',
-  chain    => 'FORWARD',
-}
-# No-one should be sending us traffic on eth0 from localhost
-# Blacklist them
-firewall { '101 blacklist strange traffic':
-  recent      => 'set',
-  rsource     => true,
-  rname       => 'badguy',
-  destination => '127.0.0.0/8',
-  iniface     => 'eth0',
-  action      => 'DROP',
-  chain       => 'FORWARD',
-}
-~~~
+  ~~~puppet
+  # If anyone's appeared on the 'badguy' blacklist within
+  # the last 60 seconds, drop their traffic, and update the timestamp.
+  firewall { '100 Drop badguy traffic':
+    recent   => 'update',
+    rseconds => 60,
+    rsource  => true,
+    rname    => 'badguy',
+    action   => 'DROP',
+    chain    => 'FORWARD',
+  }
+  # No-one should be sending us traffic on eth0 from localhost
+  # Blacklist them
+  firewall { '101 blacklist strange traffic':
+    recent      => 'set',
+    rsource     => true,
+    rname       => 'badguy',
+    destination => '127.0.0.0/8',
+    iniface     => 'eth0',
+    action      => 'DROP',
+    chain       => 'FORWARD',
+  }
+  ~~~
 
   Requires the `recent_limiting` feature.
 
@@ -813,17 +848,17 @@ Currently this type supports only iptables, ip6tables, and ebtables on Linux. It
 * `ignore`: Regex to perform on firewall rules to exempt unmanaged rules from purging (when enabled). This is matched against the output of iptables-save. This can be a single regex or an array of them. To support flags, use the ruby inline flag mechanism: a regex such as '/foo/i' can be written as '(?i)foo' or '(?i:foo)'. Only when purge is 'true'.
 
   Full example:
-~~~puppet
-firewallchain { 'INPUT:filter:IPv4':
-  purge  => true,
-  ignore => [
-    # ignore the fail2ban jump rule
-    '-j fail2ban-ssh',
-    # ignore any rules with "ignore" (case insensitive) in the comment in the rule
-    '--comment "[^"](?i:ignore)[^"]"',
-    ],
-}
-~~~
+  ~~~puppet
+  firewallchain { 'INPUT:filter:IPv4':
+    purge  => true,
+    ignore => [
+      # ignore the fail2ban jump rule
+      '-j fail2ban-ssh',
+      # ignore any rules with "ignore" (case insensitive) in the comment in the rule
+      '--comment "[^"](?i:ignore)[^"]"',
+      ],
+  }
+  ~~~
 
 * `name`: Specify the canonical name of the chain. For iptables the format must be {chain}:{table}:{protocol}.
 
@@ -844,13 +879,13 @@ firewallchain { 'INPUT:filter:IPv4':
 
 * `purge`: Purge unmanaged firewall rules in this chain. Valid values are 'false', 'true'.
 
-**Note** This `purge` is purging unmanaged rules in a firewall chain, not unmanaged firewall chains. To purge unmanaged firewall chains, use the following instead.
+  **Note** This `purge` is purging unmanaged rules in a firewall chain, not unmanaged firewall chains. To purge unmanaged firewall chains, use the following instead.
 
-~~~puppet
-resources { 'firewallchain':
-  purge => true,
-}
-~~~
+  ~~~puppet
+  resources { 'firewallchain':
+    purge => true,
+  }
+  ~~~
 
 ### Fact: ip6tables_version
 

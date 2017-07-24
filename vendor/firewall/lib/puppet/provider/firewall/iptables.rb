@@ -23,6 +23,10 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
   has_feature :log_uid
   has_feature :mark
   has_feature :mss
+  has_feature :nflog_group
+  has_feature :nflog_prefix
+  has_feature :nflog_range
+  has_feature :nflog_threshold
   has_feature :tcp_flags
   has_feature :pkttype
   has_feature :isfragment
@@ -88,6 +92,10 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     :match_mark            => "-m mark --mark",
     :mss                   => '-m tcpmss --mss',
     :name                  => "-m comment --comment",
+    :nflog_group           => "--nflog-group",
+    :nflog_prefix          => "--nflog-prefix",
+    :nflog_range           => "--nflog-range",
+    :nflog_threshold       => "--nflog-threshold",
     :outiface              => "-o",
     :pkttype               => "-m pkttype --pkt-type",
     :port                  => '-m multiport --ports',
@@ -132,6 +140,8 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     :physdev_in            => "--physdev-in",
     :physdev_out           => "--physdev-out",
     :physdev_is_bridged    => "--physdev-is-bridged",
+    :physdev_is_in         => "--physdev-is-in",
+    :physdev_is_out        => "--physdev-is-out",
     :date_start            => "--datestart",
     :date_stop             => "--datestop",
     :time_start            => "--timestart",
@@ -146,6 +156,8 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     :clusterip_total_nodes => "--total-nodes",
     :clusterip_local_node  => "--local-node",
     :clusterip_hash_init   => "--hash-init",
+    :src_cc                => "--source-country",
+    :dst_cc                => "--destination-country",
   }
 
   # These are known booleans that do not take a value, but we want to munge
@@ -162,6 +174,8 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     :rttl,
     :socket,
     :physdev_is_bridged,
+    :physdev_is_in,
+    :physdev_is_out,
     :time_contiguous,
     :kernel_timezone,
     :clusterip_new,
@@ -181,11 +195,12 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
   #                ones.
   #
   @module_to_argument_mapping = {
-    :physdev   => [:physdev_in, :physdev_out, :physdev_is_bridged],
+    :physdev   => [:physdev_in, :physdev_out, :physdev_is_bridged, :physdev_is_in, :physdev_is_out],
     :addrtype  => [:src_type, :dst_type],
     :iprange   => [:src_range, :dst_range],
     :owner     => [:uid, :gid],
-    :time      => [:time_start, :time_stop, :month_days, :week_days, :date_start, :date_stop, :time_contiguous, :kernel_timezone]
+    :time      => [:time_start, :time_stop, :month_days, :week_days, :date_start, :date_stop, :time_contiguous, :kernel_timezone],
+    :geoip     => [:src_cc, :dst_cc]
   }
 
   def self.munge_resource_map_from_existing_values(resource_map_original, compare)
@@ -263,18 +278,20 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
   # changes between puppet runs, the changed rules will be re-applied again.
   # This order can be determined by going through iptables source code or just tweaking and trying manually
   @resource_list = [
-    :table, :source, :destination, :iniface, :outiface, :physdev_in, :physdev_out, :physdev_is_bridged, :proto, :isfragment,
-    :stat_mode, :stat_every, :stat_packet, :stat_probability,
+    :table, :source, :destination, :iniface, :outiface,
+    :physdev_in, :physdev_out, :physdev_is_bridged, :physdev_is_in, :physdev_is_out,
+    :proto, :isfragment, :stat_mode, :stat_every, :stat_packet, :stat_probability,
     :src_range, :dst_range, :tcp_flags, :uid, :gid, :mac_source, :sport, :dport, :port,
     :src_type, :dst_type, :socket, :pkttype, :name, :ipsec_dir, :ipsec_policy,
     :state, :ctstate, :icmp, :limit, :burst, :length, :recent, :rseconds, :reap,
     :rhitcount, :rttl, :rname, :mask, :rsource, :rdest, :ipset, :string, :string_algo,
     :string_from, :string_to, :jump, :goto, :clusterip_new, :clusterip_hashmode,
     :clusterip_clustermac, :clusterip_total_nodes, :clusterip_local_node, :clusterip_hash_init, :queue_num, :queue_bypass,
-    :clamp_mss_to_pmtu, :gateway, :set_mss, :set_dscp, :set_dscp_class, :todest, :tosource, :toports, :to, :checksum_fill, :random, :log_prefix,
+    :nflog_group, :nflog_prefix, :nflog_range, :nflog_threshold, :clamp_mss_to_pmtu, :gateway,
+    :set_mss, :set_dscp, :set_dscp_class, :todest, :tosource, :toports, :to, :checksum_fill, :random, :log_prefix,
     :log_level, :log_uid, :reject, :set_mark, :match_mark, :mss, :connlimit_above, :connlimit_mask, :connmark, :time_start, :time_stop,
-    :month_days, :week_days, :date_start, :date_stop, :time_contiguous, :kernel_timezone
-  ]
+    :month_days, :week_days, :date_start, :date_stop, :time_contiguous, :kernel_timezone,
+    :src_cc, :dst_cc ]
 
   def insert
     debug 'Inserting rule %s' % resource[:name]
@@ -367,6 +384,8 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     end
     # we do a similar thing for negated address masks (source and destination).
     values = values.gsub(/(-\S+) (!)\s?(\S*)/,'\1 "\2 \3"')
+    # fix negated physdev rules
+    values = values.gsub(/-m physdev ! (--physdev-is-\S+)/, '-m physdev \1 "!"')
     # the actual rule will have the ! mark before the option.
     values = values.gsub(/(!)\s*(-\S+)\s*(\S*)/, '\2 "\1 \3"')
     # The match extension for tcp & udp are optional and throws off the @resource_map.
@@ -400,7 +419,8 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
         # distinguish between -f and the '-f' inside of --tcp-flags.
         values = values.sub(/\s-f(?!l)(?=.*--comment)/, ' -f true')
       else
-        values = values.sub(/#{resource_map[bool]}/, "#{resource_map[bool]} true")
+        # append `true` to booleans that are not already negated (followed by "!")
+        values = values.sub(/#{resource_map[bool]}(?! "!")/, "#{resource_map[bool]} true")
       end
     end
 
@@ -489,13 +509,10 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
      end
     end
 
-
     # Convert booleans removing the previous cludge we did
     @known_booleans.each do |bool|
-      if hash[bool] != nil then
-        if hash[bool] != "true" then
-          raise "Parser error: #{bool} was meant to be a boolean but received value: #{hash[bool]}."
-        end
+      unless [nil, 'true', '!'].include?(hash[bool])
+        raise "Parser error: #{bool} was meant to be a boolean but received value: #{hash[bool]}."
       end
     end
 
@@ -521,6 +538,9 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
       :dst_range,
       :dst_type,
       :port,
+      :physdev_is_bridged,
+      :physdev_is_in,
+      :physdev_is_out,
       :proto,
       :source,
       :sport,
@@ -634,6 +654,11 @@ Puppet::Type.type(:firewall).provide :iptables, :parent => Puppet::Provider::Fir
     iptables_version = Facter.value('iptables_version')
     if (iptables_version && Puppet::Util::Package.versioncmp(iptables_version, '1.4.20') >= 0)
       args << ['--wait']
+    end
+
+    #nflog options are not available on older OSes
+    [:nflog_group,:nflog_prefix,:nflog_threshold,:nflog_range].each do |nflog_feature|
+      fail "#{nflog_feature} is not available on iptables version #{iptables_version}" if resource[nflog_feature] && (iptables_version && iptables_version < '1.3.7')
     end
 
     resource_list.each do |res|
