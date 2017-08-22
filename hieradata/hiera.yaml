@@ -1,10 +1,7 @@
 version: 5
-defaults:
-  datadir: hieradata
-  data_hash: yaml_data
 hierarchy:
   - name: Hardware-specific data
     paths:
-    - "board/product/%{::boardproductname}"
-    - "chassis/type/%{::chassistype}"
-    - "manufacturer/%{::manufacturer}/product/%{::productname}"
+    - "board/product/%{facts.dmi.board.product}.yaml"
+    - "chassis/type/%{facts.dmi.chassis.type}.yaml"
+    - "manufacturer/%{facts.dmi.manufacturer}/product/%{facts.dmi.product.name}.yaml"
