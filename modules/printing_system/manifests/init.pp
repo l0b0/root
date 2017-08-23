@@ -1,7 +1,7 @@
 class printing_system {
   $browser_service = 'cups-browsed'
 
-  package { ['cups', 'cups-filters', 'gtk3-print-backends', 'gutenprint']:
+  package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gtk3-print-backends', 'gutenprint']:
     ensure => latest,
   }
 
