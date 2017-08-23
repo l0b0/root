@@ -29,7 +29,6 @@ Automated system configuration setup:
     - [File manager](http://wiki.lxde.org/en/PCManFM)
     - [File recovery utility](http://extundelete.sourceforge.net/)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
-    - [File Transfer Protocol (FTP) client](https://filezilla-project.org/)
     - Fonts
     - [Graph editor](http://www.graphviz.org/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
