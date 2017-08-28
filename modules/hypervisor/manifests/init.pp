@@ -4,4 +4,6 @@ class hypervisor {
   } -> package { 'virtualbox':
     ensure => latest,
   }
+
+  warning("Make sure to add VirtualBox users to the 'vboxusers' group.")
 }
