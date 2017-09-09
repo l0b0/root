@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-vm_command 'pcmanfm --help'
+vm_command 'thunar --help'

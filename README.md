@@ -26,7 +26,7 @@ Automated system configuration setup:
     - [EDID tools](http://polypux.org/projects/read-edid/)
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)
     - [File copier](http://rsync.samba.org/)
-    - [File manager](http://wiki.lxde.org/en/PCManFM)
+    - [File manager](https://docs.xfce.org/xfce/thunar/start)
     - [File recovery utility](http://extundelete.sourceforge.net/)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
     - Fonts
