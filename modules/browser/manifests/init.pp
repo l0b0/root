@@ -7,11 +7,16 @@ class browser {
 
   $firewall_index_start = 100
   $ocsp_hosts = [
+    'clients1.google.com',
+    'commercial.ocsp.identrust.com',
+    'gp.symcd.com',
+    'mssl-ocsp.ws.symantec.com',
     'ocsp.comodoca.com',
     'ocsp.digicert.com',
     'ocsp.int-x3.letsencrypt.org',
     'ocsp.msocsp.com',
     'ocsp.sca1b.amazontrust.com',
+    'ocsp.trendmicro.com',
     'ocsp.usertrust.com',
     'ocsp2.globalsign.com',
   ]
