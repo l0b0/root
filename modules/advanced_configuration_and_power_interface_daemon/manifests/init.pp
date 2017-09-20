@@ -1,8 +1,19 @@
-class advanced_configuration_and_power_interface_daemon {
+class advanced_configuration_and_power_interface_daemon (
+  $enable = true,
+) {
+  $package_ensure = str2bool($enable) ? {
+    true    => latest,
+    default => absent,
+  }
+  $service_ensure = str2bool($enable) ? {
+    true    => running,
+    default => stopped,
+  }
+
   package { ['acpi', 'acpid']:
-    ensure => latest,
+    ensure => $package_ensure,
   } -> service { 'acpid':
-    ensure => running,
-    enable => true,
+    ensure => $service_ensure,
+    enable => $enable,
   }
 }

@@ -1,7 +1,9 @@
-class network_analyzer {
+class network_analyzer (
+  $ensure = latest,
+) {
   include shell
 
   package { 'gnu-netcat':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

@@ -1,7 +1,9 @@
-class random_access_file_generator {
+class random_access_file_generator (
+  $ensure = latest,
+) {
   include shell
 
   package { 'fortune-mod':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

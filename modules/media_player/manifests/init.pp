@@ -1,7 +1,9 @@
-class media_player {
+class media_player (
+  $ensure = latest,
+) {
   include window_manager
 
   package { 'vlc':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

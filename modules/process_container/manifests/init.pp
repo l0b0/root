@@ -1,12 +1,25 @@
-class process_container {
+class process_container (
+  $enable = true,
+) {
   include shell
 
-  package { 'docker':
-    ensure => latest,
-  } ~> service { 'docker':
-    ensure => running,
-    enable => true,
+  $package_ensure = str2bool($enable) ? {
+    true    => latest,
+    default => absent,
+  }
+  $service_ensure = str2bool($enable) ? {
+    true    => running,
+    default => stopped,
   }
 
-  warning("Make sure to add privileged users to the 'docker' group.")
+  package { 'docker':
+    ensure => $package_ensure,
+  } ~> service { 'docker':
+    ensure => $service_ensure,
+    enable => $enable,
+  }
+
+  if ($enable) {
+    warning("Make sure to add privileged users to the 'docker' group.")
+  }
 }

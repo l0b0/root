@@ -1,8 +1,10 @@
-class password_manager {
+class password_manager (
+  $ensure = latest,
+) {
   include window_manager
 
   package { 'keepassxc':
-    ensure => latest,
+    ensure => $ensure,
   }
   package { 'keepassx':
     ensure => absent,

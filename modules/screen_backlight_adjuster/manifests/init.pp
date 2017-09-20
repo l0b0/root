@@ -1,7 +1,9 @@
-class screen_backlight_adjuster {
+class screen_backlight_adjuster (
+  $ensure = latest,
+) {
   include window_manager
 
   package { 'xorg-xbacklight':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

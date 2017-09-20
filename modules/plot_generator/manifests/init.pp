@@ -1,8 +1,10 @@
-class plot_generator {
+class plot_generator (
+  $ensure = latest,
+) {
   include shell
   include window_manager
 
   package { 'gnuplot':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

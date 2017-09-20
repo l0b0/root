@@ -1,7 +1,9 @@
-class mind_mapper {
+class mind_mapper (
+  $ensure = latest,
+) {
   include window_manager
 
   package { 'freemind':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

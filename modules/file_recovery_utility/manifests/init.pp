@@ -1,7 +1,9 @@
-class file_recovery_utility {
+class file_recovery_utility (
+  $ensure = latest,
+) {
   include shell
 
   package { 'extundelete':
-    ensure => latest,
+    ensure => $ensure,
   }
 }

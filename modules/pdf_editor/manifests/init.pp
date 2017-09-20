@@ -1,7 +1,9 @@
-class pdf_editor {
+class pdf_editor (
+  $ensure = latest,
+) {
   include window_manager
 
   package { 'xournal':
-    ensure => latest,
+    ensure => $ensure,
   }
 }
