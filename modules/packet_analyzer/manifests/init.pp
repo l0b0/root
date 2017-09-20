@@ -7,4 +7,6 @@ class packet_analyzer {
   ]:
     ensure => latest,
   }
+
+  warning("Make sure to add Wireshark users to the 'wireshark' group.")
 }
