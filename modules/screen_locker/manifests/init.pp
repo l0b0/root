@@ -1,7 +1,7 @@
 class screen_locker {
   include window_manager
 
-  package { 'slock':
+  package { 'xscreensaver':
     ensure => latest,
   }
 }

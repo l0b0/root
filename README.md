@@ -56,7 +56,7 @@ Automated system configuration setup:
     - [Scanner](https://launchpad.net/simple-scan)
     - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/) (Arch Linux only)
     - [Screen grabber](http://freecode.com/projects/scrot)
-    - [Screen locker](http://tools.suckless.org/slock/)
+    - [Screen locker](https://www.jwz.org/xscreensaver/)
     - [Shell](https://www.gnu.org/software/bash/)
     - [Sound system](https://www.freedesktop.org/wiki/Software/PulseAudio/)
     - Spell checkers for English, French and German
