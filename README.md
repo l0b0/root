@@ -19,6 +19,7 @@ Automated system configuration setup:
     - [BitTorrent client](http://www.transmissionbt.com/)
     - [Browser](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
+    - [Compositor](https://github.com/chjj/compton)
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Diagram editor](http://dia-installer.de/)
