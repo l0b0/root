@@ -70,6 +70,7 @@ Automated system configuration setup:
     - [Vector image editor](https://inkscape.org/)
     - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
     - [Virtual machine manager](https://www.vagrantup.com/) and [hypervisor](https://www.virtualbox.org/)
+    - [VPN client](https://openvpn.net/)
     - [Web video streamer](https://streamlink.github.io/)
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
