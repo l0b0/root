@@ -7,7 +7,7 @@ class integrated_development_environment (
 
     class { 'archive::prerequisites':
     } -> class { 'idea::ultimate':
-      version  => '2017.1.5',
+      version  => '2017.2.5',
       base_url => 'https://download.jetbrains.com/idea',
       timeout  => 1200,
     } -> file { '/usr/local/bin/idea':
