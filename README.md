@@ -63,7 +63,7 @@ Automated system configuration setup:
     - Spell checkers for English, French and German
     - [SSH client and server](http://www.openssh.com/)
     - [Storage hardware monitor](https://www.smartmontools.org/)
-    - [Terminal](http://invisible-island.net/xterm/)
+    - Terminals [XTerm](http://invisible-island.net/xterm/) and [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
     - [Text editor](http://www.vim.org/)
     - [Text searcher](https://github.com/BurntSushi/ripgrep)
     - [vCard validator](https://github.com/l0b0/vcard/)

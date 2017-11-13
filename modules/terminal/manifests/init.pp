@@ -2,7 +2,7 @@ class terminal {
   include shell
   include window_manager
 
-  package { 'xterm':
+  package { ['xterm', 'rxvt-unicode']:
     ensure => latest,
   }
 }
