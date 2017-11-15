@@ -1,4 +1,4 @@
-class login_manager {
+class display_manager {
   include display_server
 
   package { ['lightdm', 'lightdm-gtk-greeter']:
