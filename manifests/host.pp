@@ -24,6 +24,7 @@ include process_container
 include desktop_management_interface_table_decoder
 include development_tools
 include diagram_editor
+include login_manager
 include dvcs
 include dvcs_gui
 include email_reader
