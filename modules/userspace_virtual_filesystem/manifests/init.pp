@@ -1,5 +1,5 @@
 class userspace_virtual_filesystem {
-  package { 'gvfs':
+  package { ['gvfs', 'gvfs-mtp']:
     ensure => latest,
   }
 }
