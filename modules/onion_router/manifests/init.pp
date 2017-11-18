@@ -3,7 +3,7 @@ class onion_router {
     ensure => latest,
   } -> file { '/etc/tor/torrc':
     ensure => present,
-    source => 'puppet:///modules/onion_router/torrc',
+    source => "puppet:///modules/${module_name}/torrc",
     mode   => '0644';
   } ~> service { 'tor':
     ensure => running,

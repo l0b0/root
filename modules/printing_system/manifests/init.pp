@@ -23,7 +23,7 @@ class printing_system (
   $paper_size_file = '/etc/papersize'
   file { $paper_size_file:
     ensure => $file_ensure,
-    source => 'puppet:///modules/printing_system/papersize',
+    source => "puppet:///modules/${module_name}/papersize",
     mode   => '0644';
   }
 

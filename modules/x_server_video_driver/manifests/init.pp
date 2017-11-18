@@ -22,7 +22,7 @@ class x_server_video_driver (
 
   file { '/etc/X11/xorg.conf.d/20-intel.conf':
     ensure => $intel_file_ensure,
-    source => 'puppet:///modules/x_server_video_driver/intel.conf',
+    source => "puppet:///modules/${module_name}/intel.conf",
     mode   => '0644',
   }
 }

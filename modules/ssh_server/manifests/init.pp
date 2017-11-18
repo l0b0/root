@@ -7,7 +7,7 @@ class ssh_server {
       content => template('ssh_server/sshd_config.erb');
     '/etc/ssh/ssh_config':
       ensure => present,
-      source => 'puppet:///modules/ssh_server/ssh_config'
+      source => "puppet:///modules/${module_name}/ssh_config"
   } ~> service { 'sshd':
     ensure => running,
     enable => true,
