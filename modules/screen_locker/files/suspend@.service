@@ -1,0 +1,13 @@
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xscreensaver-command -lock
+ExecStartPost=/usr/bin/sleep 11
+
+[Install]
+WantedBy=sleep.target
