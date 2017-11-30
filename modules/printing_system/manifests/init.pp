@@ -16,7 +16,7 @@ class printing_system (
     default => absent,
   }
 
-  package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gtk3-print-backends', 'gutenprint']:
+  package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gutenprint']:
     ensure => $package_ensure,
   }
 
