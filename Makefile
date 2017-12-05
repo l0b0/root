@@ -41,3 +41,6 @@ clean: clean-deploy
 .PHONY: clean-deploy
 clean-deploy: $(VAGRANT)
 	$(VAGRANT) destroy --force
+
+include make-includes/variables.mk
+include make-includes/xml.mk
