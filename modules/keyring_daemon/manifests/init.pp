@@ -1,5 +1,9 @@
 class keyring_daemon {
-  package { 'gnome-keyring':
+  package { 'keychain':
     ensure => latest,
+  }
+
+  package { 'gnome-keyring':
+    ensure => absent,
   }
 }

@@ -36,7 +36,7 @@ Automated system configuration setup:
     - [Graph editor](http://www.graphviz.org/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [JSON processor](https://stedolan.github.io/jq/)
-    - [Keyring daemon](https://wiki.gnome.org/Projects/GnomeKeyring)
+    - [Keyring daemon](https://www.funtoo.org/Keychain)
     - [Media player](https://www.videolan.org/vlc/)
     - [Mind mapper](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
     - [Network analyzer](http://netcat.sourceforge.net/)
