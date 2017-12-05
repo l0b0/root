@@ -18,6 +18,7 @@ Automated system configuration setup:
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://www.transmissionbt.com/)
+    - [Bluetooth](http://www.bluez.org/)
     - [Browser](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Compositor](https://github.com/chjj/compton)
