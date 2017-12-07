@@ -68,6 +68,7 @@ include plot_generator
 include printing_system
 include process_container
 include random_access_file_generator
+include root_privilege_simulator
 include rust
 include scanner
 include screen_backlight_adjuster

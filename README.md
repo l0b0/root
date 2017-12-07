@@ -81,6 +81,7 @@ Automated system configuration setup:
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
+    - [Root privilege simulator](https://wiki.debian.org/FakeRoot)
     - [Shell script static analysis tool](http://www.shellcheck.net/)
     - [System call tracer](http://sourceforge.net/projects/strace/)
 
