@@ -75,6 +75,7 @@ Automated system configuration setup:
     - [Virtual machine manager](https://www.vagrantup.com/) and [hypervisor](https://www.virtualbox.org/)
     - [VPN client](https://openvpn.net/)
     - [Web video streamer](https://streamlink.github.io/)
+    - [WebDAV file system driver](https://savannah.nongnu.org/projects/davfs2)
     - [Window manager](http://awesome.naquadah.org/)
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)

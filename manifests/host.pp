@@ -94,6 +94,7 @@ include video_downloader
 include virtual_machine_manager
 include virtual_private_network_client
 include web_downloader
+include web_distributed_authoring_and_versioning_file_system_driver
 include web_video_streamer
 include window_manager
 include x_server_compositor
