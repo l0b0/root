@@ -59,6 +59,7 @@ include open_document_text_to_plain_text_converter
 include openpgp_tools
 include packet_analyzer
 include panorama_editor
+include partition_table_editor_gui
 include password_manager
 include pdf_editor
 include pdf_reader
