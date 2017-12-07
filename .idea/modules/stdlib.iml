@@ -5,6 +5,10 @@
     <content url="file://$MODULE_DIR$/../../vendor/stdlib" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="RModuleSettingsStorage">
+    <LOAD_PATH number="0" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../vendor/stdlib/locales" />
+  </component>
   <component name="RubyModuleProperties">
     <option name="autoCreated" value="true" />
   </component>
