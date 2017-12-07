@@ -40,6 +40,7 @@ include graph_editor
 include hardware_drivers
 include image_viewer
 include image_viewer_cli
+include instant_messaging_client
 include integrated_development_environment
 include json_processor
 include keyboard_layout
