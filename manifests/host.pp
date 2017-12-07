@@ -21,11 +21,9 @@ include bluetooth
 include browser
 include cad_editor
 include calculator
-include process_container
 include desktop_management_interface_table_decoder
 include development_tools
 include diagram_editor
-include login_manager
 include dvcs
 include dvcs_gui
 include email_reader
@@ -47,6 +45,7 @@ include json_processor
 include keyboard_layout
 include keyring_daemon
 include locale
+include login_manager
 include media_player
 include mind_mapper
 include my_firewall
@@ -66,6 +65,7 @@ include photo_editor
 include photo_metadata_editor
 include plot_generator
 include printing_system
+include process_container
 include random_access_file_generator
 include rust
 include scanner
