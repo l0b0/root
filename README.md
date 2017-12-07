@@ -19,7 +19,7 @@ Automated system configuration setup:
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://www.transmissionbt.com/)
     - [Bluetooth](http://www.bluez.org/)
-    - [Browser](https://www.mozilla.org/firefox)
+    - Browsers [Chromium](https://www.chromium.org/) and [Firefox](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Compositor](https://github.com/chjj/compton)
     - [Calculator](https://www.gnu.org/software/bc/)

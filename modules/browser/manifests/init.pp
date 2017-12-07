@@ -1,7 +1,7 @@
 class browser {
   include window_manager
 
-  package { 'firefox':
+  package { ['chromium', 'firefox']:
     ensure => latest,
   }
 
