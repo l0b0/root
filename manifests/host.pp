@@ -63,6 +63,7 @@ include partition_table_editor_gui
 include password_manager
 include pdf_editor
 include pdf_reader
+include perl_gnu_readline_library_interface
 include photo_editor
 include photo_metadata_editor
 include plot_generator
