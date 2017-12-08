@@ -45,6 +45,7 @@ include integrated_development_environment
 include json_processor
 include keyboard_layout
 include keyring_daemon
+include lightweight_directory_access_protocol_client
 include locale
 include login_manager
 include media_player
