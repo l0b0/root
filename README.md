@@ -24,6 +24,7 @@ Automated system configuration setup:
     - [Compositor](https://github.com/chjj/compton)
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
+    - [Desktop publishing platform](https://www.scribus.net/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
     - [EDID tools](http://polypux.org/projects/read-edid/)

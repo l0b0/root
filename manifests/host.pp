@@ -22,6 +22,7 @@ include browser
 include cad_editor
 include calculator
 include desktop_management_interface_table_decoder
+include desktop_publishing_platform
 include development_tools
 include diagram_editor
 include dvcs
