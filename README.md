@@ -39,6 +39,7 @@ Automated system configuration setup:
     - [JSON processor](https://stedolan.github.io/jq/)
     - [Keyring daemon](https://www.funtoo.org/Keychain)
     - [Instant messaging client](https://pidgin.im/)
+    - [Job scheduler](https://github.com/cronie-crond/cronie)
     - [Mail transfer agent (MTA)](http://www.untroubled.org/nullmailer/)
     - [Media player](https://www.videolan.org/vlc/)
     - [Mind mapper](http://freemind.sourceforge.net/wiki/index.php/Main_Page)

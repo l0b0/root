@@ -43,6 +43,7 @@ include image_viewer
 include image_viewer_cli
 include instant_messaging_client
 include integrated_development_environment
+include job_scheduler
 include json_processor
 include keyboard_layout
 include keyring_daemon
