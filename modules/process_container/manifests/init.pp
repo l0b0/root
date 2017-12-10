@@ -19,6 +19,10 @@ class process_container (
     enable => $enable,
   }
 
+  package { 'docker-compose':
+    ensure => $package_ensure,
+  }
+
   if ($enable) {
     warning("Make sure to add privileged users to the 'docker' group.")
   }
