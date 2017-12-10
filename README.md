@@ -22,6 +22,7 @@ Automated system configuration setup:
     - Browsers [Chromium](https://www.chromium.org/) and [Firefox](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Calculator](https://www.gnu.org/software/bc/)
+    - [Clipboard CLI](https://github.com/astrand/xclip)
     - [Compositor](https://github.com/chjj/compton)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Desktop publishing platform](https://www.scribus.net/)

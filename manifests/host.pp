@@ -103,6 +103,7 @@ include web_downloader
 include web_distributed_authoring_and_versioning_file_system_driver
 include web_video_streamer
 include window_manager
+include x_server_clipboard_cli
 include x_server_compositor
 include x_server_input_configuration_utility
 include x_server_modifier_map_utility
