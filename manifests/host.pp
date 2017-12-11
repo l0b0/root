@@ -30,6 +30,7 @@ include dvcs_gui
 include email_reader
 include extended_display_identification_data_tools
 include file_copier
+include file_locator
 include file_manager
 include file_recovery_utility
 include file_renamer
