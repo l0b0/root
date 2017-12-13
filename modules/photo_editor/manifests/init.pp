@@ -3,7 +3,7 @@ class photo_editor (
 ) {
   include window_manager
 
-  package { ['digikam', 'qt5ct']:
+  package { ['digikam', 'oxygen-icons', 'qt5ct']:
     ensure => $ensure,
   }
 }
