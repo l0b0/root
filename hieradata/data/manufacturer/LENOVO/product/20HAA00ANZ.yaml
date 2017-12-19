@@ -1,0 +1,2 @@
+hardware_drivers::intel: true
+x_server_video_driver::intel: true

@@ -1,6 +1,8 @@
 class x_server_video_driver (
   $intel = false,
 ) {
+  require package_manager
+
   case str2bool($intel) {
     true: {
       $intel_package_ensure = latest
