@@ -57,6 +57,8 @@ include mind_mapper
 include my_firewall
 include network_analyzer
 include network_manager
+include nodejs
+include nodejs_dependency_manager
 include ntpd
 include office_suite
 include onion_router
