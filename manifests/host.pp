@@ -27,6 +27,7 @@ include development_tools
 include diagram_editor
 include dvcs
 include dvcs_gui
+include ebook_management_system
 include email_reader
 include extended_display_identification_data_tools
 include file_copier
