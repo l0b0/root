@@ -14,6 +14,7 @@ include advanced_configuration_and_power_interface_daemon
 include android_tools
 include antivirus
 include automated_certificate_management_environment_client
+include backup_client
 include battery_indicator
 include bitmap_image_editor
 include bittorrent_client

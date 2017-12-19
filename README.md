@@ -15,6 +15,7 @@ Automated system configuration setup:
     - Android Debug Bridge (ADB) tools
     - [Antivirus](http://www.clamav.net/)
     - [Automated Certificate Management Environment (ACME) client](https://letsencrypt.org/)
+    - [Backup client](https://borgbackup.readthedocs.io/en/stable/)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://www.transmissionbt.com/)
