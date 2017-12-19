@@ -83,6 +83,7 @@ Automated system configuration setup:
     - [Web video streamer](https://streamlink.github.io/)
     - [WebDAV file system driver](https://savannah.nongnu.org/projects/davfs2)
     - [Window manager](http://awesome.naquadah.org/)
+    - [X server automation tool](https://www.semicomplete.com/projects/xdotool/)
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
