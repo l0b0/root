@@ -19,7 +19,12 @@ class antivirus (
 
   package { 'clamav':
     ensure => $package_ensure,
-  } -> service { 'freshclamd':
-  } -> service { 'clamd':
+  } ~> service { 'freshclamd': }
+
+  service { 'clamd':
+    subscribe => [
+      Package['clamav'],
+      Service['freshclamd'],
+    ],
   }
 }

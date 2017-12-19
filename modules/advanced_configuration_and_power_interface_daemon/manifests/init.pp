@@ -12,7 +12,7 @@ class advanced_configuration_and_power_interface_daemon (
 
   package { ['acpi', 'acpid']:
     ensure => $package_ensure,
-  } -> service { 'acpid':
+  } ~> service { 'acpid':
     ensure => $service_ensure,
     enable => $enable,
   }
