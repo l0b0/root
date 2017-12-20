@@ -19,4 +19,6 @@ class bluetooth {
     enable    => true,
     subscribe => [File[$configuration_path], Package[$service_package]],
   }
+
+  warning("Make sure to add Bluetooth users to the 'lp' group.")
 }
