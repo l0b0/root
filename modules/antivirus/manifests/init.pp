@@ -1,24 +1,13 @@
-class antivirus (
-  $enable = true,
-) {
+class antivirus {
   include shell
 
-  $package_ensure = str2bool($enable) ? {
-    true    => latest,
-    default => absent,
-  }
-  $service_ensure = str2bool($enable) ? {
-    true    => running,
-    default => stopped,
-  }
-
   Service {
-    ensure => $service_ensure,
-    enable => $enable,
+    ensure => running,
+    enable => true,
   }
 
   package { 'clamav':
-    ensure => $package_ensure,
+    ensure => latest,
   } ~> service { 'freshclamd': }
 
   service { 'clamd':

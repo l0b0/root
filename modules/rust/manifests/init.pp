@@ -1,7 +1,5 @@
-class rust (
-  $ensure = latest,
-) {
+class rust {
   package { 'rustup':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

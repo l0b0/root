@@ -1,43 +1,28 @@
-class printing_system (
-  $enable = true,
-) {
+class printing_system {
   $browser_service = 'cups-browsed'
 
-  $package_ensure = str2bool($enable) ? {
-    true    => latest,
-    default => absent,
-  }
-  $service_ensure = str2bool($enable) ? {
-    true    => running,
-    default => stopped,
-  }
-  $file_ensure = str2bool($enable) ? {
-    true    => present,
-    default => absent,
-  }
-
   package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gutenprint']:
-    ensure => $package_ensure,
+    ensure => latest,
   }
 
   $paper_size_file = '/etc/papersize'
   file { $paper_size_file:
-    ensure => $file_ensure,
+    ensure => present,
     source => "puppet:///modules/${module_name}/papersize",
     mode   => '0644';
   }
 
   service {
     'org.cups.cupsd':
-      ensure    => $service_ensure,
-      enable    => $enable,
+      ensure    => running,
+      enable    => true,
       subscribe => [File[$paper_size_file], Package['cups']];
   }
 
   service {
     $browser_service:
-      ensure    => $service_ensure,
-      enable    => $enable,
+      ensure    => running,
+      enable    => true,
       subscribe => Package['cups'];
   }
 }

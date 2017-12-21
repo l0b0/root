@@ -1,9 +1,7 @@
-class image_viewer (
-  $ensure = latest,
-) {
+class image_viewer {
   include window_manager
 
   package { 'eog':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

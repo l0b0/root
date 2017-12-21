@@ -1,9 +1,7 @@
-class desktop_management_interface_table_decoder (
-  $ensure = latest,
-) {
+class desktop_management_interface_table_decoder {
   include shell
 
   package { 'dmidecode':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

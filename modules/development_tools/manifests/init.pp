@@ -1,10 +1,8 @@
-class development_tools (
-  $ensure = latest,
-) {
+class development_tools {
   include shell
 
   package { 'base-devel':
-    ensure        => $ensure,
+    ensure        => latest,
     allow_virtual => true,
   }
 }

@@ -1,9 +1,7 @@
-class photo_metadata_editor (
-  $ensure = latest,
-) {
+class photo_metadata_editor {
   include shell
 
   package { 'jhead':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

@@ -1,22 +1,11 @@
-class service_discovery_system (
-  $enable = true,
-) {
+class service_discovery_system {
   require printing_system
 
-  $package_ensure = str2bool($enable) ? {
-    true    => latest,
-    default => absent,
-  }
-  $service_ensure = str2bool($enable) ? {
-    true    => running,
-    default => stopped,
-  }
-
   package { 'avahi':
-    ensure => $package_ensure,
+    ensure => latest,
   } ~> service { 'avahi-daemon':
-    ensure => $service_ensure,
-    enable => $enable,
+    ensure => running,
+    enable => true,
     notify => Service[$::printing_system::browser_service],
   }
 }

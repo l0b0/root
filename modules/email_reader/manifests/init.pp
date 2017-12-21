@@ -1,9 +1,7 @@
-class email_reader (
-  $ensure = latest,
-) {
+class email_reader {
   include window_manager
 
   package { 'thunderbird-i18n-en-gb':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

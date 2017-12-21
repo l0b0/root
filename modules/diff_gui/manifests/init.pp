@@ -1,9 +1,7 @@
-class diff_gui (
-  $ensure = latest,
-) {
+class diff_gui {
   include window_manager
 
   package { 'kdiff3':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

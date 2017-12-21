@@ -1,7 +1,5 @@
-class shell_code_checker (
-  $ensure = latest,
-) {
+class shell_code_checker {
   package { 'shellcheck':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

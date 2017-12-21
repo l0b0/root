@@ -1,9 +1,7 @@
-class cad_editor (
-  $ensure = latest,
-) {
+class cad_editor {
   include window_manager
 
   package { 'openscad':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

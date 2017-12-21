@@ -1,7 +1,5 @@
-class extended_display_identification_data_tools (
-  $ensure = latest,
-) {
+class extended_display_identification_data_tools {
   package { 'read-edid':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

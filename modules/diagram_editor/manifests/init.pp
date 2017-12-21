@@ -1,9 +1,7 @@
-class diagram_editor (
-  $ensure = latest,
-) {
+class diagram_editor {
   include window_manager
 
   package { 'dia':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

@@ -1,9 +1,7 @@
-class graph_editor (
-  $ensure = latest,
-) {
+class graph_editor {
   include shell
 
   package { 'graphviz':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

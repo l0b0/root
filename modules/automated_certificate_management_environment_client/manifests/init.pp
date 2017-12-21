@@ -1,9 +1,7 @@
-class automated_certificate_management_environment_client (
-  $ensure = latest,
-) {
+class automated_certificate_management_environment_client {
   include shell
 
   package { 'certbot':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

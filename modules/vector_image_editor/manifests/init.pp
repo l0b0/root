@@ -1,9 +1,7 @@
-class vector_image_editor (
-  $ensure = latest,
-) {
+class vector_image_editor {
   include window_manager
 
   package { 'inkscape':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

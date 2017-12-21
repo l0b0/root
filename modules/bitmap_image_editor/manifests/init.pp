@@ -1,9 +1,7 @@
-class bitmap_image_editor (
-  $ensure = latest,
-) {
+class bitmap_image_editor {
   include window_manager
 
   package { 'gimp':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

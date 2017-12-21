@@ -1,10 +1,8 @@
-class image_viewer_cli (
-  $ensure = latest,
-) {
+class image_viewer_cli {
   include shell
   include window_manager
 
   package { 'feh':
-    ensure => $ensure,
+    ensure => latest,
   }
 }

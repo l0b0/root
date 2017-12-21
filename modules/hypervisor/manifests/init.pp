@@ -1,13 +1,9 @@
-class hypervisor (
-  $ensure = latest,
-) {
+class hypervisor {
   package { 'virtualbox-host-modules-arch':
-    ensure => $ensure,
+    ensure => latest,
   } -> package { 'virtualbox':
-    ensure => $ensure,
+    ensure => latest,
   }
 
-  if ($ensure != absent) {
-    warning("Make sure to add VirtualBox users to the 'vboxusers' group.")
-  }
+  warning("Make sure to add VirtualBox users to the 'vboxusers' group.")
 }
