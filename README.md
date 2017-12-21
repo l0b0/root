@@ -60,6 +60,7 @@ Automated system configuration setup:
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [Photo editor](https://www.digikam.org/)
+    - [Power consumption and management diagnosis tool](https://01.org/powertop)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Plot generator](http://gnuplot.info/)
     - [Printing system](https://www.cups.org/) with [service auto-discovery](http://avahi.org/) (the latter is Arch Linux only)

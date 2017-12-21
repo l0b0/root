@@ -76,6 +76,7 @@ include perl_gnu_readline_library_interface
 include photo_editor
 include photo_metadata_editor
 include plot_generator
+include power_consumption_and_management_diagnosis_tool
 include printing_system
 include process_container
 include random_access_file_generator
