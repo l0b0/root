@@ -44,6 +44,7 @@ include graph_editor
 include hardware_drivers
 include image_viewer
 include image_viewer_cli
+include insecure_http_blocker
 include instant_messaging_client
 include integrated_development_environment
 include job_scheduler
