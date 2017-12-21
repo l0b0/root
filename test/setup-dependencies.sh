@@ -43,7 +43,7 @@ for package in "${packages[@]}"
 do
     if pacman --query "$package"
     then
-        pacman --remove --noconfirm "$package"
+        pacman --noconfirm --nodeps --nodeps --remove "$package"
     else
         echo "Warning: Package was not installed: ${package}" >&2
     fi
