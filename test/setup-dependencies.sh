@@ -1,8 +1,54 @@
 #!/bin/sh
 set -o errexit -o xtrace
-pacman --remove --noconfirm ack bash-completion cloc colordiff cowsay dd_rescue ddrescue dmidecode dstat ethtool \
-    figlet fortune-mod gdb glances htop hwinfo inxi lshw lsof nethogs ngrep nmap ponysay pv ranger reptyr sl smem \
-    sshfs stow strace tmux virtualbox-guest-dkms virtualbox-guest-utils yaourt zsh
+
+packages=(
+    ack
+    bash-completion
+    cloc
+    colordiff
+    cowsay
+    dd_rescue
+    ddrescue
+    dmidecode
+    dstat
+    ethtool
+    figlet
+    fortune-mod
+    gdb
+    glances
+    htop
+    hwinfo
+    inxi
+    lshw
+    lsof
+    nethogs
+    ngrep
+    nmap
+    ponysay
+    pv
+    ranger
+    reptyr
+    sl
+    smem
+    sshfs
+    stow
+    strace
+    tmux
+    virtualbox-guest-dkms
+    virtualbox-guest-utils
+    yaourt
+    zsh
+)
+for package in "${packages[@]}"
+do
+    if pacman --query "$package"
+    then
+        pacman --remove --noconfirm "$package"
+    else
+        echo "Warning: Package was not installed: ${package}" >&2
+    fi
+done
+
 pacman-key --refresh-keys
 pacman --sync --refresh --noconfirm virtualbox-guest-modules-arch virtualbox-guest-utils
 pacman --sync --refresh --sysupgrade --noconfirm
