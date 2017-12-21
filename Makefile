@@ -13,7 +13,8 @@ test: lint test-modules
 
 .PHONY: deploy
 deploy:
-	$(VAGRANT) up || [ $$? -eq 2 ]
+	$(VAGRANT) up --no-provision
+	$(VAGRANT) provision || [ $$? -eq 2 ]
 
 .PHONY: lint
 lint:
