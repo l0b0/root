@@ -6,7 +6,7 @@ class browser {
   }
 
   $firewall_index_start = 100
-  $ocsp_hosts = [
+  $http_allowed_hosts = [
     'clients1.google.com',
     'commercial.ocsp.identrust.com',
     'gp.symcd.com',
@@ -21,10 +21,13 @@ class browser {
     'ocsp2.globalsign.com',
   ]
 
-  $ocsp_host_count = size($ocsp_hosts)
+  $http_allowed_host_count = size($http_allowed_hosts)
+  $log_entry_index = $firewall_index_start + $http_allowed_host_count
+  $drop_entry_index = $log_entry_index + 1
 
-  $ocsp_hosts.each |Integer $index, String $host| {
-    firewall { join([$firewall_index_start + $index, 'allow outgoing HTTP traffic to OCSP responders'], ' '):
+  $http_allowed_hosts.each |Integer $index, String $host| {
+    $rule_number = $firewall_index_start + $index
+    firewall { join([$rule_number, 'allow outgoing HTTP traffic to OCSP responders'], ' '):
       chain       => 'OUTPUT',
       destination => $host,
       dport       => 80,
@@ -33,7 +36,7 @@ class browser {
     }
   }
 
-  firewall { join([$firewall_index_start + $ocsp_host_count, 'log insecure outgoing HTTP traffic'], ' '):
+  firewall { "${log_entry_index} log insecure outgoing HTTP traffic":
     chain      => 'OUTPUT',
     dport      => 80,
     proto      => tcp,
@@ -41,7 +44,7 @@ class browser {
     log_level  => debug,
     log_prefix => 'outgoing HTTP traffic ',
     log_uid    => true,
-  } -> firewall { join([$firewall_index_start + $ocsp_host_count + 1, 'drop insecure outgoing HTTP traffic'], ' '):
+  } -> firewall { "${drop_entry_index} drop insecure outgoing HTTP traffic":
     chain  => 'OUTPUT',
     dport  => 80,
     proto  => tcp,
