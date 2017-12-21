@@ -8,6 +8,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.cpus = 2
   end
 
+  config.vm.provision 'shell' do |shell|
+    shell.inline = 'chown vagrant /etc/pacman.d/mirrorlist'
+    shell.privileged = true
+  end
+  config.vm.provision 'file', source: '/etc/pacman.d/mirrorlist', destination: '/etc/pacman.d/mirrorlist'
+
   config.vm.provision 'shell', :path => 'test/setup-dependencies.sh'
   config.vm.provision :reload
   config.vm.provision :puppet do |puppet|
