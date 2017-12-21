@@ -16,7 +16,7 @@ deploy:
 	$(VAGRANT) up || [ $$? -eq 2 ]; \
 
 .PHONY: lint
-lint: deploy
+lint:
 	$(GEM) install --no-document --user-install puppet-lint reek
 	test/lint.sh
 
