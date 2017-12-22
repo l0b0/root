@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-vm_command 'digikam --version'
+vm_command 'which digikam'
