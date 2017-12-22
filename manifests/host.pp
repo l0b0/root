@@ -36,7 +36,6 @@ include file_locator
 include file_manager
 include file_recovery_utility
 include file_renamer
-include file_transfer_protocol_client_gui
 include firewall
 include fonts
 include general_development_tools
