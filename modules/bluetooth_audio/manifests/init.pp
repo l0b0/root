@@ -1,7 +1,7 @@
 class bluetooth_audio {
   require bluetooth
 
-  package { ['pulseaudio-bluetooth']:
+  package { ['pulseaudio-alsa', 'pulseaudio-bluetooth']:
     ensure => latest,
   }
 
