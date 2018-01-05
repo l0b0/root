@@ -19,6 +19,7 @@ include battery_indicator
 include bitmap_image_editor
 include bittorrent_client
 include bluetooth
+include bluetooth_audio
 include browser
 include cad_editor
 include calculator

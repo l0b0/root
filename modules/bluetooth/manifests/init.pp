@@ -3,7 +3,7 @@ class bluetooth {
 
   $service_package = 'bluez'
 
-  package { [$service_package, 'bluez-utils', 'pulseaudio-bluetooth']:
+  package { [$service_package, 'bluez-utils']:
     ensure => latest,
   }
 
