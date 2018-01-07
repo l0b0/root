@@ -15,7 +15,7 @@ class idea::params {
   }
 
   $base_url = $::idea_base_url ? {
-    undef   => 'http://download.jetbrains.com/idea',
+    undef   => 'https://download.jetbrains.com/idea',
     default => $::idea_base_url,
   }
 
