@@ -10,8 +10,7 @@ class antivirus {
 
   package { 'clamav':
     ensure => latest,
-  } ~> service {
-    'freshclamd':
+  } ~> service { 'freshclamd':
   } ~> exec { '/usr/bin/freshclam':
     user        => clamav,
     before      => Service['clamd'],
