@@ -13,8 +13,9 @@ class antivirus {
   } ~> service {
     'freshclamd':
   } ~> exec { '/usr/bin/freshclam':
-    user   => clamav,
-    before => Service['clamd'],
+    user        => clamav,
+    before      => Service['clamd'],
+    refreshonly => true,
   }
 
   service { 'clamd':
