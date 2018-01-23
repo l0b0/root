@@ -1,6 +1,10 @@
 class insecure_http_blocker {
   $firewall_index_start = 100
   $http_allowed_hosts = [
+    '10.0.0.0/8',
+    '127.0.0.0/8',
+    '172.16.0.0/12',
+    '192.168.0.0/16',
     'clients1.google.com',
     'commercial.ocsp.identrust.com',
     'database.clamav.net',
