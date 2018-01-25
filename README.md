@@ -59,6 +59,7 @@ Automated system configuration setup:
     - [Password manager](https://keepassxc.org/)
     - [PDF editor](http://xournal.sourceforge.net/)
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
+    - [PDF transformer](http://qpdf.sourceforge.net)
     - [Photo editor](https://www.digikam.org/)
     - [Power consumption and management diagnosis tool](https://01.org/powertop)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
