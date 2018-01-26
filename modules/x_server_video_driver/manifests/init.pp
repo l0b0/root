@@ -15,7 +15,7 @@ class x_server_video_driver (
     }
   }
 
-  package { ['xf86-video-fbdev', 'xf86-video-vesa', 'lib32-mesa', 'mesa']:
+  package { ['xf86-video-fbdev', 'xf86-video-vesa', 'lib32-mesa', 'libvdpau', 'mesa']:
     ensure => latest,
   }
 
@@ -41,7 +41,7 @@ class x_server_video_driver (
   }
   $nvidia_driver_package = 'nvidia-dkms'
 
-  package { [$nvidia_driver_package, 'lib32-nvidia-utils', 'libvdpau', 'nvidia-settings', 'nvidia-utils']:
+  package { [$nvidia_driver_package, 'lib32-nvidia-utils', 'nvidia-settings', 'nvidia-utils']:
     ensure => $nvidia_package_ensure,
   }
 
