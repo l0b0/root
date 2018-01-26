@@ -16,6 +16,7 @@ Automated system configuration setup:
     - [Antivirus](http://www.clamav.net/)
     - [Automated Certificate Management Environment (ACME) client](https://letsencrypt.org/)
     - [Backup client](https://borgbackup.readthedocs.io/en/stable/)
+    - [Bandwidth monitor](http://www.ex-parrot.com/pdw/iftop/)
     - [Battery indicator](https://github.com/valr/cbatticon/) (if necessary)
     - [Bitmap image editor](http://www.gimp.org/)
     - [BitTorrent client](http://www.transmissionbt.com/)

@@ -15,6 +15,7 @@ include android_tools
 include antivirus
 include automated_certificate_management_environment_client
 include backup_client
+include bandwidth_monitor
 include battery_indicator
 include bitmap_image_editor
 include bittorrent_client
