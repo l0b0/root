@@ -29,6 +29,7 @@ include desktop_management_interface_table_decoder
 include desktop_publishing_platform
 include development_tools
 include diagram_editor
+include disk_usage_overview_utility
 include dvcs
 include dvcs_gui
 include ebook_management_system

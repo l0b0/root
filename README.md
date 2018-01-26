@@ -26,6 +26,7 @@ Automated system configuration setup:
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Clipboard CLI](https://github.com/astrand/xclip)
     - [Colour temperature adjuster](http://jonls.dk/redshift/)
+    - [Disk usage overview utility](https://dev.yorhel.nl/ncdu)
     - [Compositor](https://github.com/chjj/compton)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Desktop publishing platform](https://www.scribus.net/)
