@@ -25,6 +25,7 @@ Automated system configuration setup:
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Calculator](https://www.gnu.org/software/bc/)
     - [Clipboard CLI](https://github.com/astrand/xclip)
+    - [Colour temperature adjuster](http://jonls.dk/redshift/)
     - [Compositor](https://github.com/chjj/compton)
     - [Desktop Management Interface (DMI) table decoder](http://www.nongnu.org/dmidecode/)
     - [Desktop publishing platform](https://www.scribus.net/)

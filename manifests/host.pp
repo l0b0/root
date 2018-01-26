@@ -24,6 +24,7 @@ include bluetooth_audio
 include browser
 include cad_editor
 include calculator
+include colour_temperature_adjuster
 include desktop_management_interface_table_decoder
 include desktop_publishing_platform
 include development_tools
