@@ -14,11 +14,11 @@ class x_server_video_driver (
     }
   }
 
-  package { ['xf86-video-fbdev', 'xf86-video-vesa']:
+  package { ['xf86-video-fbdev', 'xf86-video-vesa', 'lib32-mesa', 'mesa']:
     ensure => latest,
   }
 
-  package { ['xf86-video-intel', 'lib32-mesa', 'libva-intel-driver', 'mesa']:
+  package { ['xf86-video-intel', 'libva-intel-driver']:
     ensure => $intel_package_ensure,
   }
 
