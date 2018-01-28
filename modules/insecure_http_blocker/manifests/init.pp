@@ -1,4 +1,6 @@
-class insecure_http_blocker {
+class insecure_http_blocker (
+  $ensure = absent,
+) {
   $firewall_index_start = 100
   $http_allowed_hosts = [
     '10.0.0.0/8',
@@ -27,6 +29,7 @@ class insecure_http_blocker {
   $http_allowed_hosts.each |Integer $index, String $host| {
     $rule_number = $firewall_index_start + $index
     firewall { join([$rule_number, 'allow outgoing HTTP traffic to OCSP responders'], ' '):
+      ensure      => $ensure,
       chain       => 'OUTPUT',
       destination => $host,
       dport       => 80,
@@ -36,6 +39,7 @@ class insecure_http_blocker {
   }
 
   firewall { "${log_entry_index} log insecure outgoing HTTP traffic":
+    ensure     => $ensure,
     chain      => 'OUTPUT',
     dport      => 80,
     proto      => tcp,
@@ -44,6 +48,7 @@ class insecure_http_blocker {
     log_prefix => 'outgoing HTTP traffic ',
     log_uid    => true,
   } -> firewall { "${drop_entry_index} drop insecure outgoing HTTP traffic":
+    ensure => $ensure,
     chain  => 'OUTPUT',
     dport  => 80,
     proto  => tcp,

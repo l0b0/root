@@ -1,1 +1,2 @@
+insecure_http_blocker::ensure: present
 x_server_resource_configuration::dpi: 94

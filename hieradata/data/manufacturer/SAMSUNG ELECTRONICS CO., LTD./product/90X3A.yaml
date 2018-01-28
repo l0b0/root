@@ -1,3 +1,4 @@
 hardware_drivers::intel: true
+insecure_http_blocker::ensure: present
 x_server_resource_configuration::dpi: 118
 x_server_video_driver::intel: true
