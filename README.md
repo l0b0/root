@@ -43,6 +43,7 @@ Automated system configuration setup:
     - [File renamer](http://search.cpan.org/~pederst/rename/)
     - [Firmware analysis tool](https://github.com/ReFirmLabs/binwalk)
     - Fonts
+    - [Fuzzy matching library](https://github.com/trendmicro/tlsh)
     - [Graph editor](http://www.graphviz.org/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [Instant messaging client](https://pidgin.im/)

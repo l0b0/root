@@ -45,6 +45,7 @@ include filesystem_event_monitor
 include firewall
 include firmware_analysis_tool
 include fonts
+include fuzzy_matching_library
 include general_development_tools
 include graph_editor
 include hardware_drivers
