@@ -95,6 +95,7 @@ Automated system configuration setup:
     - [Window manager](http://awesome.naquadah.org/)
     - [X server automation tool](https://www.semicomplete.com/projects/xdotool/)
 - General purpose development tools:
+    - [Argparse tab completion](https://github.com/kislyuk/argcomplete)
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [JavaScript beautifier](https://github.com/beautify-web/js-beautify)
