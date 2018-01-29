@@ -33,6 +33,7 @@ Automated system configuration setup:
     - [Desktop publishing platform](https://www.scribus.net/)
     - [Diagram editor](http://dia-installer.de/)
     - [Distributed version control system](http://git-scm.com/)
+    - [Docx to text converter](http://docx2txt.sourceforge.net/)
     - [E-book management system](https://calibre-ebook.com/)
     - [EDID tools](http://polypux.org/projects/read-edid/)
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)

@@ -34,6 +34,7 @@ include development_tools
 include device_tree_compiler
 include diagram_editor
 include disk_usage_overview_utility
+include docx_to_text_converter
 include dvcs
 include dvcs_gui
 include ebook_management_system
