@@ -102,6 +102,7 @@ Automated system configuration setup:
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
     - [LDAP client](https://www.openldap.org/)
+    - [Mono .NET framework](http://www.mono-project.com/)
     - [Node.js](https://nodejs.org/) and [dependency manager](https://yarnpkg.com/)
     - [Perl GNU readline library interface](http://search.cpan.org/dist/Term-ReadLine-Gnu)
     - [Python progress bar](https://github.com/WoLpH/python-progressbar)

@@ -66,6 +66,7 @@ include login_manager
 include mail_transfer_agent
 include media_player
 include mind_mapper
+include mono
 include my_firewall
 include network_analyzer
 include network_manager
