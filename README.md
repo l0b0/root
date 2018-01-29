@@ -106,6 +106,7 @@ Automated system configuration setup:
     - [Device Tree Compiler](https://github.com/dgibson/dtc) toolchain
     - [Haskell compiler](https://www.haskell.org/ghc/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
+    - [JavaFX](https://java.com/javafx)
     - [JavaScript beautifier](https://github.com/beautify-web/js-beautify)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
