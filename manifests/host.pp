@@ -63,6 +63,7 @@ include json_processor
 include keyboard_layout
 include keyring_daemon
 include lightweight_directory_access_protocol_client
+include llvm
 include locale
 include login_manager
 include mail_transfer_agent
