@@ -24,6 +24,7 @@ Automated system configuration setup:
     - Browsers [Chromium](https://www.chromium.org/) and [Firefox](https://www.mozilla.org/firefox)
     - [CAD editor](http://www.openscad.org/) (Arch Linux only)
     - [Calculator](https://www.gnu.org/software/bc/)
+    - [Optical disk recording tools](http://cdrtools.sourceforge.net/private/cdrecord.html)
     - [Clipboard CLI](https://github.com/astrand/xclip)
     - [Colour temperature adjuster](http://jonls.dk/redshift/)
     - [Disk usage overview utility](https://dev.yorhel.nl/ncdu)

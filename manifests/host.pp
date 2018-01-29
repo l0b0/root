@@ -83,6 +83,7 @@ include office_suite
 include onion_router
 include open_document_text_to_plain_text_converter
 include openpgp_tools
+include optical_disk_recording_tools
 include packet_analyzer
 include panorama_editor
 include partition_table_editor_gui
