@@ -35,6 +35,7 @@ Automated system configuration setup:
     - [E-book management system](https://calibre-ebook.com/)
     - [EDID tools](http://polypux.org/projects/read-edid/)
     - [Email reader](https://www.mozilla.org/en-GB/thunderbird/) (Arch Linux only)
+    - [File comparison tool](https://diffoscope.org/)
     - [File copier](http://rsync.samba.org/)
     - [File locator](https://pagure.io/mlocate)
     - [File manager](https://docs.xfce.org/xfce/thunar/start)

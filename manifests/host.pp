@@ -35,6 +35,7 @@ include dvcs_gui
 include ebook_management_system
 include email_reader
 include extended_display_identification_data_tools
+include file_comparison_tool
 include file_copier
 include file_locator
 include file_manager
