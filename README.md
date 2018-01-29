@@ -97,6 +97,7 @@ Automated system configuration setup:
 - General purpose development tools:
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
+    - [JavaScript beautifier](https://github.com/beautify-web/js-beautify)
     - [Newline converter](http://dos2unix.sourceforge.net/)
     - [Open files lister](http://people.freebsd.org/~abe/)
     - [LDAP client](https://www.openldap.org/)

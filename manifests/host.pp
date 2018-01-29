@@ -54,6 +54,7 @@ include image_viewer_cli
 include insecure_http_blocker
 include instant_messaging_client
 include integrated_development_environment
+include javascript_beautifier
 include job_scheduler
 include json_processor
 include keyboard_layout
