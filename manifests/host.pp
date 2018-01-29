@@ -30,6 +30,7 @@ include dalvik_bytecode_to_java_bytecode_converter
 include desktop_management_interface_table_decoder
 include desktop_publishing_platform
 include development_tools
+include device_tree_compiler
 include diagram_editor
 include disk_usage_overview_utility
 include dvcs

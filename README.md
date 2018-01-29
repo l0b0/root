@@ -99,6 +99,7 @@ Automated system configuration setup:
     - [Argparse tab completion](https://github.com/kislyuk/argcomplete)
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Dalvik bytecode to Java bytecode converter](https://github.com/Storyyeller/enjarify)
+    - [Device Tree Compiler](https://github.com/dgibson/dtc) toolchain
     - [Haskell compiler](https://www.haskell.org/ghc/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [JavaScript beautifier](https://github.com/beautify-web/js-beautify)
