@@ -45,6 +45,7 @@ include file_renamer
 include filesystem_event_monitor
 include firewall
 include firmware_analysis_tool
+include font_editor
 include fonts
 include fuzzy_matching_library
 include general_development_tools

@@ -42,6 +42,7 @@ Automated system configuration setup:
     - [File recovery utility](http://extundelete.sourceforge.net/)
     - [File renamer](http://search.cpan.org/~pederst/rename/)
     - [Firmware analysis tool](https://github.com/ReFirmLabs/binwalk)
+    - [Font editor](https://fontforge.github.io/)
     - Fonts
     - [Fuzzy matching library](https://github.com/trendmicro/tlsh)
     - [Graph editor](http://www.graphviz.org/)
