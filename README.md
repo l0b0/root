@@ -105,6 +105,7 @@ Automated system configuration setup:
     - [Node.js](https://nodejs.org/) and [dependency manager](https://yarnpkg.com/)
     - [Perl GNU readline library interface](http://search.cpan.org/dist/Term-ReadLine-Gnu)
     - [Python progress bar](https://github.com/WoLpH/python-progressbar)
+    - [R language](https://www.r-project.org/)
     - [Root privilege simulator](https://wiki.debian.org/FakeRoot)
     - [Shell script static analysis tool](http://www.shellcheck.net/)
     - [Squashfs tools](http://squashfs.sourceforge.net/)

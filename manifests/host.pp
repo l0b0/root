@@ -91,6 +91,7 @@ include power_consumption_and_management_diagnosis_tool
 include printing_system
 include process_container
 include python_progress_bar
+include r_language
 include random_access_file_generator
 include root_privilege_simulator
 include rust
