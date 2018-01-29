@@ -2,6 +2,7 @@ class packet_analyzer {
   include shell
 
   package { [
+    'tcpdump',
     'wireshark-cli',
     'wireshark-gtk',
   ]:

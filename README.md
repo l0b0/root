@@ -62,6 +62,7 @@ Automated system configuration setup:
     - [Onion router](https://www.torproject.org/)
     - [Open Document Text (ODT) to plain text converter](https://github.com/dstosberg/odt2txt/)
     - [OpenPGP tools](https://www.gnupg.org/)
+    - [Packet analyzer](https://www.tcpdump.org/)
     - [Packet capture (pcap) analyzer](https://www.wireshark.org/) (Arch Linux only)
     - [Panorama editor](http://hugin.sourceforge.net/)
     - [Partition table editor](https://www.gnu.org/software/parted/)
