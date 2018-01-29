@@ -8,20 +8,31 @@ class antivirus {
     enable => true,
   }
 
-  package { 'clamav':
+  $package = 'clamav'
+  $service = 'clamav-daemon'
+  $update_service = 'clamav-freshclam'
+  $update_path = '/usr/bin/freshclam'
+
+  package { $package:
     ensure => latest,
-  } ~> service { 'freshclamd':
-  } ~> exec { '/usr/bin/freshclam':
+  } ~> service { $update_service:
+  } ~> exec { $update_path:
     user        => clamav,
-    before      => Service['clamd'],
+    before      => Service[$service],
     refreshonly => true,
   }
 
-  service { 'clamd':
+  service { $service:
     subscribe => [
-      Exec['/usr/bin/freshclam'],
-      Package['clamav'],
-      Service['freshclamd'],
+      Exec[$update_path],
+      Package[$package],
+      Service[$update_service],
     ],
+  }
+
+  service { ['freshclamd', 'clamd']:
+    ensure => stopped,
+    enable => false,
+    before => Package[$package],
   }
 }
