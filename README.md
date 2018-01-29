@@ -102,6 +102,7 @@ Automated system configuration setup:
     - [LDAP client](https://www.openldap.org/)
     - [Node.js](https://nodejs.org/) and [dependency manager](https://yarnpkg.com/)
     - [Perl GNU readline library interface](http://search.cpan.org/dist/Term-ReadLine-Gnu)
+    - [Python progress bar](https://github.com/WoLpH/python-progressbar)
     - [Root privilege simulator](https://wiki.debian.org/FakeRoot)
     - [Shell script static analysis tool](http://www.shellcheck.net/)
     - [System call tracer](http://sourceforge.net/projects/strace/)
