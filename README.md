@@ -97,6 +97,7 @@ Automated system configuration setup:
 - General purpose development tools:
     - [Argparse tab completion](https://github.com/kislyuk/argcomplete)
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
+    - [Haskell compiler](https://www.haskell.org/ghc/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [JavaScript beautifier](https://github.com/beautify-web/js-beautify)
     - [Newline converter](http://dos2unix.sourceforge.net/)

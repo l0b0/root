@@ -50,6 +50,7 @@ include fuzzy_matching_library
 include general_development_tools
 include graph_editor
 include hardware_drivers
+include haskell_compiler
 include image_viewer
 include image_viewer_cli
 include insecure_http_blocker
