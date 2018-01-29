@@ -26,6 +26,7 @@ include browser
 include cad_editor
 include calculator
 include colour_temperature_adjuster
+include dalvik_bytecode_to_java_bytecode_converter
 include desktop_management_interface_table_decoder
 include desktop_publishing_platform
 include development_tools
