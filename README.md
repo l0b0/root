@@ -107,6 +107,7 @@ Automated system configuration setup:
     - [Python progress bar](https://github.com/WoLpH/python-progressbar)
     - [Root privilege simulator](https://wiki.debian.org/FakeRoot)
     - [Shell script static analysis tool](http://www.shellcheck.net/)
+    - [Squashfs tools](http://squashfs.sourceforge.net/)
     - [System call tracer](http://sourceforge.net/projects/strace/)
 
 Any of these can be disabled by removing the appropriate line in [`manifests/host.pp`](manifests/host.pp). Some of them are grouped as a single entry in that file, but it should be self-explanatory.
