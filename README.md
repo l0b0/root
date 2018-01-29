@@ -107,6 +107,7 @@ Automated system configuration setup:
     - [LLVM](https://llvm.org/)
     - [Mono .NET framework](http://www.mono-project.com/)
     - [Node.js](https://nodejs.org/) and [dependency manager](https://yarnpkg.com/)
+    - [Pascal compiler](https://freepascal.org/)
     - [Perl GNU readline library interface](http://search.cpan.org/dist/Term-ReadLine-Gnu)
     - [Python progress bar](https://github.com/WoLpH/python-progressbar)
     - [R language](https://www.r-project.org/)
