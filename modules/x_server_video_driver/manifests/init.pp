@@ -39,25 +39,17 @@ class x_server_video_driver (
       $nvidia_file_ensure = absent
     }
   }
-  $nvidia_driver_package = 'nvidia-dkms'
-
-  package { [$nvidia_driver_package, 'lib32-nvidia-utils', 'nvidia-settings', 'nvidia-utils']:
+  package { ['xf86-video-nouveau']:
     ensure => $nvidia_package_ensure,
   }
 
-  file { '/etc/modprobe.d/50-nvidia.conf':
-    ensure => $nvidia_file_ensure,
-    source => "puppet:///modules/${module_name}/nvidia.conf",
-    mode   => '0644',
+  package { ['nvidia-dkms', 'lib32-nvidia-utils', 'nvidia-settings', 'nvidia-utils']:
+    ensure => absent,
   }
-
-  file { '/etc/pacman.d/hooks':
-    ensure => directory,
-    mode   => '0755',
-  } ->
+  file { '/etc/modprobe.d/50-nvidia.conf':
+    ensure => absent,
+  }
   file { '/etc/pacman.d/hooks/nvidia.hook':
-    ensure  => $nvidia_file_ensure,
-    content => template("${module_name}/nvidia.hook.erb"),
-    mode    => '0644',
+    ensure  => absent,
   }
 }
