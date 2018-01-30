@@ -48,6 +48,7 @@ Automated system configuration setup:
     - Fonts
     - [Fuzzy matching library](https://github.com/trendmicro/tlsh)
     - [Graph editor](http://www.graphviz.org/)
+    - [Help to man page converter](https://www.gnu.org/software/help2man/)
     - Image viewer [GUI](https://wiki.gnome.org/Apps/EyeOfGnome) and [CLI](http://feh.finalrewind.org/)
     - [Instant messaging client](https://pidgin.im/)
     - [JSON processor](https://stedolan.github.io/jq/)

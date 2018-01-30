@@ -56,6 +56,7 @@ include general_development_tools
 include graph_editor
 include hardware_drivers
 include haskell_compiler
+include help_to_man_page_converter
 include image_viewer
 include image_viewer_cli
 include insecure_http_blocker
