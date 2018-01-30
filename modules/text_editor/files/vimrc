@@ -15,4 +15,4 @@ runtime! archlinux.vim
 " and configure vim to your own liking!
 
 " do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
+let skip_defaults_vim=1
