@@ -102,6 +102,7 @@ Automated system configuration setup:
     - [X server automation tool](https://www.semicomplete.com/projects/xdotool/)
 - General purpose development tools:
     - [Argparse tab completion](https://github.com/kislyuk/argcomplete)
+    - [Arch Linux package checker](https://wiki.archlinux.org/index.php/Namcap)
     - [cpio archiver](https://www.gnu.org/software/cpio/cpio.html)
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
     - [Dalvik bytecode to Java bytecode converter](https://github.com/Storyyeller/enjarify)
