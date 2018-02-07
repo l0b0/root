@@ -13,6 +13,6 @@ class fonts {
     'ttf-liberation',
     'ttf-ubuntu-font-family',
   ]:
-    ensure => latest,
+    ensure => installed,
   }
 }

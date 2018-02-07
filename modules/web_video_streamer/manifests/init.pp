@@ -3,6 +3,6 @@ class web_video_streamer {
   include shell
 
   package { 'streamlink':
-    ensure => latest,
+    ensure => installed,
   }
 }

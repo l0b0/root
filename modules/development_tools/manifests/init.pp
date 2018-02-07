@@ -2,7 +2,7 @@ class development_tools {
   include shell
 
   package { 'base-devel':
-    ensure        => latest,
+    ensure        => installed,
     allow_virtual => true,
   }
 }

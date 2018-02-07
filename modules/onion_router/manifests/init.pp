@@ -1,6 +1,6 @@
 class onion_router {
   package { 'torsocks':
-    ensure => latest,
+    ensure => installed,
   } -> file { '/etc/tor/torrc':
     ensure => present,
     source => "puppet:///modules/${module_name}/torrc",

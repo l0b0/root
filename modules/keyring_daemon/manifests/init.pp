@@ -1,6 +1,6 @@
 class keyring_daemon {
   package { 'keychain':
-    ensure => latest,
+    ensure => installed,
   }
 
   package { 'gnome-keyring':

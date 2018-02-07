@@ -2,7 +2,7 @@ class file_locator {
   include shell
 
   package { 'mlocate':
-    ensure => latest,
+    ensure => installed,
   } -> cron { 'updatedb':
     command => '/usr/bin/updatedb',
     hour    => fqdn_rand(24),

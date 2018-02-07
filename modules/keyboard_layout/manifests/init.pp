@@ -11,6 +11,6 @@ class keyboard_layout {
   }
 
   package { 'xorg-setxkbmap':
-    ensure => latest,
+    ensure => installed,
   }
 }

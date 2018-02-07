@@ -2,7 +2,7 @@ class screen_locker {
   include window_manager
 
   package { 'xscreensaver':
-    ensure => latest,
+    ensure => installed,
   } -> ::systemd::unit_file { 'suspend@.service':
     source => "puppet:///modules/${module_name}/suspend@.service",
   }

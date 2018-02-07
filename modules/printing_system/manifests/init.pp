@@ -2,7 +2,7 @@ class printing_system {
   $browser_service = 'cups-browsed'
 
   package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gutenprint']:
-    ensure => latest,
+    ensure => installed,
   }
 
   $paper_size_file = '/etc/papersize'

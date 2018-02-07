@@ -1,6 +1,6 @@
 class ssh_filesystem_client {
   package { 'sshfs':
-    ensure => latest,
+    ensure => installed,
   }
 
   file { ['/media', '/media/phone']:

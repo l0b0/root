@@ -1,5 +1,5 @@
 class nodejs {
   package { 'nodejs':
-    ensure => latest,
+    ensure => installed,
   }
 }

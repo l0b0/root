@@ -2,6 +2,6 @@ class image_viewer {
   include window_manager
 
   package { 'eog':
-    ensure => latest,
+    ensure => installed,
   }
 }

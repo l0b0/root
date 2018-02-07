@@ -1,5 +1,5 @@
 class javafx {
   package { 'java-openjfx':
-    ensure => latest,
+    ensure => installed,
   }
 }

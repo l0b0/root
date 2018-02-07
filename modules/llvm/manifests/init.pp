@@ -1,5 +1,5 @@
 class llvm {
   package { 'llvm':
-    ensure => latest,
+    ensure => installed,
   }
 }

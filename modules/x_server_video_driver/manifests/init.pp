@@ -6,7 +6,7 @@ class x_server_video_driver (
 
   case str2bool($intel) {
     true: {
-      $intel_package_ensure = latest
+      $intel_package_ensure = installed
       $intel_file_ensure = present
     }
     default: {
@@ -16,7 +16,7 @@ class x_server_video_driver (
   }
 
   package { ['xf86-video-fbdev', 'xf86-video-vesa', 'lib32-mesa', 'libvdpau', 'mesa']:
-    ensure => latest,
+    ensure => installed,
   }
 
   package { ['xf86-video-intel', 'libva-intel-driver']:
@@ -31,7 +31,7 @@ class x_server_video_driver (
 
   case str2bool($nvidia) {
     true: {
-      $nvidia_package_ensure = latest
+      $nvidia_package_ensure = installed
       $nvidia_file_ensure = present
     }
     default: {

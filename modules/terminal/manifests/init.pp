@@ -3,6 +3,6 @@ class terminal {
   include window_manager
 
   package { ['xterm', 'rxvt-unicode']:
-    ensure => latest,
+    ensure => installed,
   }
 }

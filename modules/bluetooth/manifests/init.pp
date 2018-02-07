@@ -4,7 +4,7 @@ class bluetooth {
   $service_package = 'bluez'
 
   package { [$service_package, 'bluez-utils']:
-    ensure => latest,
+    ensure => installed,
   }
 
   $configuration_path = '/etc/bluetooth/main.conf'

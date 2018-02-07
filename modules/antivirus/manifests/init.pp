@@ -14,7 +14,7 @@ class antivirus {
   $update_path = '/usr/bin/freshclam'
 
   package { $package:
-    ensure => latest,
+    ensure => installed,
   } ~> service { $update_service:
   } ~> exec { $update_path:
     user        => clamav,

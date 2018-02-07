@@ -6,7 +6,7 @@ class packet_analyzer {
     'wireshark-cli',
     'wireshark-gtk',
   ]:
-    ensure => latest,
+    ensure => installed,
   }
 
   warning("Make sure to add Wireshark users to the 'wireshark' group.")

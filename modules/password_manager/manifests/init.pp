@@ -2,7 +2,7 @@ class password_manager {
   include window_manager
 
   package { 'keepassxc':
-    ensure => latest,
+    ensure => installed,
   }
   package { 'keepassx':
     ensure => absent,

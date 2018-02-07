@@ -9,7 +9,7 @@ class display_manager {
   }
 
   package { ['lightdm', 'lightdm-gtk-greeter', 'lightdm-gtk-greeter-settings']:
-    ensure => latest,
+    ensure => installed,
   } -> file {
     '/etc/lightdm/lightdm.conf':
       source => "puppet:///modules/${module_name}/lightdm.conf";

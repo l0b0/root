@@ -2,7 +2,7 @@ class bluetooth_audio {
   require bluetooth
 
   package { ['pulseaudio-alsa', 'pulseaudio-bluetooth']:
-    ensure => latest,
+    ensure => installed,
   }
 
   file { '/etc/pulse/default.pa':

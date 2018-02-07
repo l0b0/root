@@ -1,5 +1,5 @@
 class argparse_tab_completion {
   package { 'python-argcomplete':
-    ensure => latest,
+    ensure => installed,
   }
 }

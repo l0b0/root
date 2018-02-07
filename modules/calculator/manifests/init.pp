@@ -2,6 +2,6 @@ class calculator {
   include shell
 
   package { 'bc':
-    ensure => latest,
+    ensure => installed,
   }
 }

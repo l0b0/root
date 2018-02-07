@@ -1,8 +1,8 @@
 class hypervisor {
   package { 'virtualbox-host-modules-arch':
-    ensure => latest,
+    ensure => installed,
   } -> package { 'virtualbox':
-    ensure => latest,
+    ensure => installed,
   }
 
   warning("Make sure to add VirtualBox users to the 'vboxusers' group.")

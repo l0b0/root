@@ -3,6 +3,6 @@ class plot_generator {
   include window_manager
 
   package { 'gnuplot':
-    ensure => latest,
+    ensure => installed,
   }
 }

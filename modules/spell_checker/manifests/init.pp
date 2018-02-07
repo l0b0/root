@@ -7,7 +7,7 @@ class spell_checker {
     'hunspell-en',
     'hunspell-fr',
   ]:
-    ensure => latest,
+    ensure => installed,
   } -> file {
     [
       '/usr/share/hunspell',

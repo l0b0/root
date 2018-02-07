@@ -1,6 +1,6 @@
 class job_scheduler {
   package { 'cronie':
-    ensure => latest,
+    ensure => installed,
   } ~> service { 'cronie':
     ensure => running,
     enable => true,

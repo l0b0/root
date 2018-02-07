@@ -6,6 +6,6 @@ class network_manager {
     'ifplugd',
     'wpa_actiond',
   ]:
-    ensure => latest,
+    ensure => installed,
   }
 }

@@ -2,7 +2,7 @@ class service_discovery_system {
   require printing_system
 
   package { 'avahi':
-    ensure => latest,
+    ensure => installed,
   } ~> service { 'avahi-daemon':
     ensure => running,
     enable => true,

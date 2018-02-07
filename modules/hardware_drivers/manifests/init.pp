@@ -2,7 +2,7 @@ class hardware_drivers (
   $intel = false,
 ) {
   $intel_ensure = str2bool($intel) ? {
-    true    => latest,
+    true    => installed,
     default => absent,
   }
 
