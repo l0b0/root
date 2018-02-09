@@ -13,7 +13,6 @@ Automated system configuration setup:
 - [Synchronise time automatically](https://wiki.archlinux.org/index.php/Network_Time_Protocol_daemon)
 - Install packages:
     - Android Debug Bridge (ADB) tools
-    - [Antivirus](http://www.clamav.net/)
     - [Automated Certificate Management Environment (ACME) client](https://letsencrypt.org/)
     - [Backup client](https://borgbackup.readthedocs.io/en/stable/)
     - [Bandwidth monitor](http://www.ex-parrot.com/pdw/iftop/)

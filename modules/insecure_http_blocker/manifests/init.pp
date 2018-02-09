@@ -9,7 +9,6 @@ class insecure_http_blocker (
     '192.168.0.0/16',
     'clients1.google.com',
     'commercial.ocsp.identrust.com',
-    'database.clamav.net',
     'gp.symcd.com',
     'mssl-ocsp.ws.symantec.com',
     'ocsp.comodoca.com',
