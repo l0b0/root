@@ -74,6 +74,7 @@ Automated system configuration setup:
     - [Photo editor](https://www.digikam.org/)
     - [Power consumption and management diagnosis tool](https://01.org/powertop)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
+    - [Planetarium](http://stellarium.org/)
     - [Plot generator](http://gnuplot.info/)
     - [Printing system](https://www.cups.org/) with [service auto-discovery](http://avahi.org/) (the latter is Arch Linux only)
     - [Process container](https://www.docker.com/)

@@ -100,6 +100,7 @@ include pdf_transformer
 include perl_gnu_readline_library_interface
 include photo_editor
 include photo_metadata_editor
+include planetarium
 include plot_generator
 include power_consumption_and_management_diagnosis_tool
 include printing_system
