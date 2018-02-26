@@ -6,4 +6,8 @@ class java_development_kit {
   } ~> exec { "/usr/bin/archlinux-java set ${java_environment_name}":
     unless => "/usr/bin/test \"$(archlinux-java get)\" = '${java_environment_name}'",
   }
+
+  package { 'gradle':
+    ensure => installed,
+  }
 }
