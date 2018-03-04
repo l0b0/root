@@ -7,7 +7,7 @@ class java_development_kit {
     unless => "/usr/bin/test \"$(archlinux-java get)\" = '${java_environment_name}'",
   }
 
-  package { 'gradle':
+  package { ['gradle', 'jdk8-openjdk']:
     ensure => installed,
   }
 }
