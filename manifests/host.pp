@@ -103,6 +103,7 @@ include photo_editor
 include photo_metadata_editor
 include planetarium
 include plot_generator
+include portable_network_graphics_optimizer
 include power_consumption_and_management_diagnosis_tool
 include printing_system
 include process_container

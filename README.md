@@ -73,6 +73,7 @@ Automated system configuration setup:
     - [PDF reader](https://wiki.gnome.org/Apps/Evince)
     - [PDF transformer](http://qpdf.sourceforge.net)
     - [Photo editor](https://www.digikam.org/)
+    - [PNG optimizer](http://optipng.sourceforge.net/)
     - [Power consumption and management diagnosis tool](https://01.org/powertop)
     - [Photo metadata editor](http://www.sentex.net/~mwandel/jhead/)
     - [Planetarium](http://stellarium.org/)
