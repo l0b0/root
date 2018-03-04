@@ -83,6 +83,7 @@ include network_analyzer
 include network_manager
 include nodejs
 include nodejs_dependency_manager
+include ntfs_filesystem_driver
 include ntpd
 include office_suite
 include onion_router

@@ -59,6 +59,7 @@ Automated system configuration setup:
     - [Mind mapper](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
     - [Network analyzer](http://netcat.sourceforge.net/)
     - [Network manager](https://wiki.archlinux.org/index.php/Netctl)
+    - [NTFS filesystem driver](https://www.tuxera.com/community/open-source-ntfs-3g/)
     - [Office suite](http://www.libreoffice.org/)
     - [Onion router](https://www.torproject.org/)
     - [Open Document Text (ODT) to plain text converter](https://github.com/dstosberg/odt2txt/)
