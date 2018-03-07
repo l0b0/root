@@ -8,7 +8,7 @@ class display_manager {
     mode   => '0644',
   }
 
-  package { ['lightdm', 'lightdm-gtk-greeter', 'lightdm-gtk-greeter-settings']:
+  package { ['lightdm', 'lightdm-gtk-greeter', 'lightdm-gtk-greeter-settings', 'numlockx']:
     ensure => installed,
   } -> file {
     '/etc/lightdm/lightdm.conf':
