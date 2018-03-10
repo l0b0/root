@@ -1,7 +1,7 @@
 class file_manager {
   include window_manager
 
-  package { 'thunar':
+  package { ['file-roller', 'thunar']:
     ensure => installed,
   }
 }
