@@ -7,5 +7,5 @@ class screen_locker {
     source => "puppet:///modules/${module_name}/suspend@.service",
   }
 
-  warning("Make sure to `systemctl enable suspend@\$USER.service` to lock when suspending")
+  warning('Make sure to `systemctl enable suspend@$USER.service` to lock when suspending')
 }
