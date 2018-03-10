@@ -27,7 +27,7 @@ class insecure_http_blocker (
 
   $http_allowed_hosts.each |Integer $index, String $host| {
     $rule_number = $firewall_index_start + $index
-    firewall { join([$rule_number, 'allow outgoing HTTP traffic to OCSP responders'], ' '):
+    firewall { join([$rule_number, 'allow outgoing HTTP traffic to private network and OCSP responders'], ' '):
       ensure      => $ensure,
       chain       => 'OUTPUT',
       destination => $host,
