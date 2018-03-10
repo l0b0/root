@@ -6,8 +6,7 @@ Before=sleep.target
 User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/xscreensaver-command -lock
-ExecStartPost=/usr/bin/sleep 11
+ExecStart=/usr/bin/light-locker-command --lock
 
 [Install]
 WantedBy=sleep.target

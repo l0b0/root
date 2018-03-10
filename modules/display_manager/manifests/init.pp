@@ -1,27 +1,21 @@
 class display_manager {
   include display_server
 
-  File {
+  package { ['lightdm', 'numlockx']:
+    ensure => installed,
+  } -> file { '/etc/lightdm/lightdm.conf':
     ensure => present,
+    source => "puppet:///modules/${module_name}/lightdm.conf",
     owner  => lightdm,
     group  => lightdm,
     mode   => '0644',
   }
 
-  package { ['lightdm', 'lightdm-gtk-greeter', 'lightdm-gtk-greeter-settings', 'numlockx']:
-    ensure => installed,
-  } -> file {
-    '/etc/lightdm/lightdm.conf':
-      source => "puppet:///modules/${module_name}/lightdm.conf";
-    '/etc/lightdm/lightdm-gtk-greeter.conf':
-      source => "puppet:///modules/${module_name}/lightdm-gtk-greeter.conf";
-  }
-
   service { 'lightdm':
     enable  => true,
     require => [
-      Package['lightdm', 'lightdm-gtk-greeter'],
-      File['/etc/lightdm/lightdm.conf', '/etc/lightdm/lightdm-gtk-greeter.conf'],
+      Package['lightdm'],
+      File['/etc/lightdm/lightdm.conf'],
     ],
   }
 }
