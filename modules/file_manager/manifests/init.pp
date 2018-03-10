@@ -4,8 +4,4 @@ class file_manager {
   package { 'thunar':
     ensure => installed,
   }
-
-  package { 'pcmanfm':
-    ensure => absent,
-  }
 }
