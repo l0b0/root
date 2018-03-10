@@ -1,12 +1,44 @@
 class insecure_http_blocker (
   $ensure = absent,
 ) {
-  $firewall_index_start = 100
-  $http_allowed_hosts = [
+  $ipv4_private_network_hosts = [
     '10.0.0.0/8',
     '127.0.0.0/8',
     '172.16.0.0/12',
     '192.168.0.0/16',
+  ]
+  $ipv4_private_network_hosts_index_start = 100
+  $ipv4_private_network_hosts.each |Integer $index, String $host| {
+    $rule_number = $ipv4_private_network_hosts_index_start + $index
+    firewall { join([$rule_number, 'allow outgoing HTTP traffic to IPv4 private network'], ' '):
+      ensure      => $ensure,
+      chain       => 'OUTPUT',
+      destination => $host,
+      dport       => 80,
+      proto       => tcp,
+      action      => accept,
+      provider    => 'iptables',
+    }
+  }
+
+  $ipv6_private_network_hosts = [
+    'fc00::/7',
+  ]
+  $ipv6_private_network_hosts_index_start = $ipv4_private_network_hosts_index_start + size($ipv4_private_network_hosts)
+  $ipv6_private_network_hosts.each |Integer $index, String $host| {
+    $rule_number = $ipv6_private_network_hosts_index_start + $index
+    firewall { join([$rule_number, 'allow outgoing HTTP traffic to IPv6 private network'], ' '):
+      ensure      => $ensure,
+      chain       => 'OUTPUT',
+      destination => $host,
+      dport       => 80,
+      proto       => tcp,
+      action      => accept,
+      provider    => 'ip6tables',
+    }
+  }
+
+  $ocsp_hosts = [
     'clients1.google.com',
     'commercial.ocsp.identrust.com',
     'gp.symcd.com',
@@ -20,37 +52,46 @@ class insecure_http_blocker (
     'ocsp.usertrust.com',
     'ocsp2.globalsign.com',
   ]
-
-  $http_allowed_host_count = size($http_allowed_hosts)
-  $log_entry_index = $firewall_index_start + $http_allowed_host_count
-  $drop_entry_index = $log_entry_index + 1
-
-  $http_allowed_hosts.each |Integer $index, String $host| {
-    $rule_number = $firewall_index_start + $index
-    firewall { join([$rule_number, 'allow outgoing HTTP traffic to private network and OCSP responders'], ' '):
+  $ocsp_hosts_index_start = $ipv6_private_network_hosts_index_start + size($ipv6_private_network_hosts)
+  $ocsp_hosts.each |Integer $index, String $host| {
+    $rule_number = $ocsp_hosts_index_start + $index
+    firewall { join([$rule_number, 'allow outgoing HTTP traffic to IPv4 OCSP responders'], ' '):
       ensure      => $ensure,
       chain       => 'OUTPUT',
       destination => $host,
       dport       => 80,
       proto       => tcp,
       action      => accept,
+      provider    => 'iptables',
     }
   }
 
-  firewall { "${log_entry_index} log insecure outgoing HTTP traffic":
-    ensure     => $ensure,
-    chain      => 'OUTPUT',
-    dport      => 80,
-    proto      => tcp,
-    jump       => 'LOG',
-    log_level  => debug,
-    log_prefix => 'outgoing HTTP traffic ',
-    log_uid    => true,
-  } -> firewall { "${drop_entry_index} drop insecure outgoing HTTP traffic":
-    ensure => $ensure,
-    chain  => 'OUTPUT',
-    dport  => 80,
-    proto  => tcp,
-    action => reject,
+  $log_entry_index_start = $ocsp_hosts_index_start + size($ocsp_hosts)
+  ['iptables', 'ip6tables'].each |Integer $index, String $provider| {
+    $rule_number = $log_entry_index_start + $index
+    firewall { "${rule_number} log insecure outgoing HTTP traffic":
+      ensure     => $ensure,
+      chain      => 'OUTPUT',
+      dport      => 80,
+      proto      => tcp,
+      jump       => 'LOG',
+      log_level  => debug,
+      log_prefix => 'outgoing HTTP traffic ',
+      log_uid    => true,
+      provider   => $provider,
+    }
+  }
+
+  $drop_entry_index_start = $log_entry_index_start + 2
+  ['iptables', 'ip6tables'].each |Integer $index, String $provider| {
+    $rule_number = $drop_entry_index_start + $index
+    firewall { "${rule_number} drop insecure outgoing HTTP traffic":
+      ensure   => $ensure,
+      chain    => 'OUTPUT',
+      dport    => 80,
+      proto    => tcp,
+      action   => reject,
+      provider => $provider,
+    }
   }
 }
