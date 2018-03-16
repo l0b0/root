@@ -111,6 +111,7 @@ Automated system configuration setup:
     - [Dalvik bytecode to Java bytecode converter](https://github.com/Storyyeller/enjarify)
     - [Device Tree Compiler](https://github.com/dgibson/dtc) toolchain
     - [GDB](https://www.gnu.org/software/gdb/)
+    - [Gradle](https://gradle.org/)
     - [Haskell compiler](https://www.haskell.org/ghc/)
     - [Integrated development environment](https://www.jetbrains.com/idea/)
     - [JavaFX](https://java.com/javafx)
