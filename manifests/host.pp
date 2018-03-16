@@ -81,6 +81,7 @@ include mono
 include my_firewall
 include network_analyzer
 include network_manager
+include network_tools
 include nodejs
 include nodejs_dependency_manager
 include ntfs_filesystem_driver
