@@ -84,7 +84,7 @@ Automated system configuration setup:
     - [Scanner](https://launchpad.net/simple-scan)
     - [Screen backlight adjuster](http://www.x.org/wiki/UserDocumentation/GettingStarted/)
     - [Screen grabber](http://freecode.com/projects/scrot)
-    - [Screen locker](https://www.jwz.org/xscreensaver/)
+    - [Screen locker](https://launchpad.net/lightdm-gtk-greeter)
     - [Shell](https://www.gnu.org/software/bash/)
     - [Sound system](https://www.freedesktop.org/wiki/Software/PulseAudio/)
     - Spell checkers for English, French and German
