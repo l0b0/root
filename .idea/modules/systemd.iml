@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$/../../vendor/systemd" />
-    <orderEntry type="sourceFolder" forTests="false" />
+    <content url="file://$MODULE_DIR$/../../vendor/systemd"/>
+    <exclude-output/>
+    <orderEntry type="sourceFolder" forTests="false"/>
   </component>
   <component name="RubyModuleProperties">
-    <option name="autoCreated" value="true" />
+    <option name="autoCreated" value="true"/>
   </component>
 </module>

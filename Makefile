@@ -2,6 +2,8 @@ GEM = /usr/bin/gem
 PUPPET = /usr/bin/puppet
 VAGRANT = /usr/bin/vagrant
 
+XML_EXTENSIONS = iml xml
+
 module_test_files = $(wildcard test/modules/*/test.sh)
 run_alone_module_test_files = $(wildcard test/run_alone_modules/*/test.sh)
 

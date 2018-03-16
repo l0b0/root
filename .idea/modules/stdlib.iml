@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$/../../vendor/stdlib" />
-    <orderEntry type="sourceFolder" forTests="false" />
+    <content url="file://$MODULE_DIR$/../../vendor/stdlib"/>
+    <exclude-output/>
+    <orderEntry type="sourceFolder" forTests="false"/>
   </component>
   <component name="RModuleSettingsStorage">
-    <LOAD_PATH number="0" />
-    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../vendor/stdlib/locales" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/../../vendor/stdlib/locales"/>
+    <LOAD_PATH number="0"/>
   </component>
   <component name="RubyModuleProperties">
-    <option name="autoCreated" value="true" />
+    <option name="autoCreated" value="true"/>
   </component>
 </module>
