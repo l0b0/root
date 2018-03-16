@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/firewall.iml" filepath="$PROJECT_DIR$/.idea/modules/firewall.iml"/>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/idea.iml" filepath="$PROJECT_DIR$/.idea/modules/idea.iml"/>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/stdlib.iml" filepath="$PROJECT_DIR$/.idea/modules/stdlib.iml"/>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sysctl.iml" filepath="$PROJECT_DIR$/.idea/modules/sysctl.iml"/>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/systemd.iml" filepath="$PROJECT_DIR$/.idea/modules/systemd.iml"/>
       <module fileurl="file://$PROJECT_DIR$/.idea/root.iml" filepath="$PROJECT_DIR$/.idea/root.iml"/>
     </modules>
