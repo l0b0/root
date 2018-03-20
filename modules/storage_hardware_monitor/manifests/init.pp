@@ -10,6 +10,6 @@ class storage_hardware_monitor {
     ensure => installed,
   } ~> service { 'smartd':
     ensure => $service_ensure,
-    enable => true,
+    enable => $smart_supported,
   }
 }
