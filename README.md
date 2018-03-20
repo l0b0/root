@@ -106,6 +106,7 @@ Automated system configuration setup:
 - General purpose development tools:
     - [Argparse tab completion](https://github.com/kislyuk/argcomplete)
     - [Arch Linux package checker](https://wiki.archlinux.org/index.php/Namcap)
+    - [Bundler](https://bundler.io/)
     - [CMake](https://cmake.org)
     - [cpio archiver](https://www.gnu.org/software/cpio/cpio.html)
     - [Diff and merge GUI](http://kdiff3.sourceforge.net/)
