@@ -3,9 +3,19 @@ class network_manager {
 
   package { [
     'dialog',
-    'ifplugd',
     'wpa_actiond',
   ]:
     ensure => installed,
+  }
+  package { 'dhcpcd':
+    ensure => installed,
+  } ~>
+  service { 'dhcpcd':
+    ensure => running,
+    enable => true,
+  }
+
+  package { 'ifplugd':
+    ensure => absent,
   }
 }
