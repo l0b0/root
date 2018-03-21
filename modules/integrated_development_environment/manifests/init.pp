@@ -6,7 +6,7 @@ class integrated_development_environment {
   } -> class { 'idea::ultimate':
     version  => '2017.3.4',
     base_url => 'https://download.jetbrains.com/idea',
-    timeout  => 1200,
+    timeout  => 3600,
   } -> file { '/usr/local/bin/idea':
     target => '/opt/idea/bin/idea.sh',
   }
