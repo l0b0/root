@@ -94,7 +94,6 @@ Automated system configuration setup:
     - Terminals [XTerm](http://invisible-island.net/xterm/) and [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
     - [Text editor](http://www.vim.org/)
     - [Text searcher](https://github.com/BurntSushi/ripgrep)
-    - [vCard validator](https://github.com/l0b0/vcard/)
     - [Vector image editor](https://inkscape.org/)
     - [Video](https://rg3.github.io/youtube-dl/) & [web](https://www.gnu.org/software/wget/) downloaders
     - [Virtual machine manager](https://www.vagrantup.com/) and [hypervisor](https://www.virtualbox.org/)

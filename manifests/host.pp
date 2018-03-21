@@ -132,7 +132,6 @@ include text_editor
 include text_searcher
 include users
 include userspace_virtual_filesystem
-include vcard_validator
 include vector_image_editor
 include video_downloader
 include virtual_machine_manager
