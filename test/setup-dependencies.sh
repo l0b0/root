@@ -2,42 +2,10 @@
 set -o errexit -o xtrace
 
 packages=(
-    ack
     bash-completion
-    cloc
-    colordiff
-    cowsay
-    dd_rescue
-    ddrescue
     dmidecode
-    dstat
-    ethtool
-    figlet
-    fortune-mod
     gdb
-    glances
-    htop
-    hwinfo
-    inxi
-    lshw
-    lsof
-    nethogs
-    ngrep
-    nmap
-    ponysay
-    pv
-    ranger
-    reptyr
-    sl
-    smem
-    sshfs
-    stow
-    strace
-    tmux
-    virtualbox-guest-dkms
     virtualbox-guest-utils
-    yaourt
-    zsh
 )
 for package in "${packages[@]}"
 do
