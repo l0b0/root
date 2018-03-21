@@ -9,8 +9,7 @@ class network_manager {
   }
   package { 'dhcpcd':
     ensure => installed,
-  } ~>
-  service { 'dhcpcd':
+  } ~> service { 'dhcpcd':
     ensure => running,
     enable => true,
   }
