@@ -74,6 +74,7 @@ include lightweight_directory_access_protocol_client
 include llvm
 include locale
 include login_manager
+include logs
 include mail_transfer_agent
 include media_player
 include mind_mapper
