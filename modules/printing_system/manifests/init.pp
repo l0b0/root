@@ -1,5 +1,6 @@
 class printing_system {
   $browser_service = 'cups-browsed'
+  $printing_service = 'org.cups.cupsd'
 
   package { ['cups', 'cups-filters', 'foomatic-db-gutenprint-ppds', 'gutenprint']:
     ensure => installed,
@@ -13,7 +14,7 @@ class printing_system {
   }
 
   service {
-    'org.cups.cupsd':
+    $printing_service:
       ensure    => running,
       enable    => true,
       subscribe => [File[$paper_size_file], Package['cups']];

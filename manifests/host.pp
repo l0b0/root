@@ -118,6 +118,7 @@ include scanner
 include screen_backlight_adjuster
 include screen_grabber
 include screen_locker
+include service_discovery_system
 include shell
 include shell_code_checker
 include sound_system
