@@ -25,4 +25,7 @@ class printing_system {
       enable    => true,
       subscribe => Package['cups'];
   }
+
+  warning("Make sure to add printer users to the 'cups' group.")
+  warning("Make sure to add printer admins to the 'sys' group.")
 }
